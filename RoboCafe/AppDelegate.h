@@ -7,11 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ALPS/ALPS.h>
+#import "SRWebSocket.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#define RECORD_LENGTH 168960 //Needs to be divisible by 1024
+
+@class ALPSCore, ViewController, ViewControllerSettings;
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate, ALPSDelegate, SRWebSocketDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (nonatomic) ViewController *vC;
+@property (nonatomic) ViewControllerSettings *vCSettings;
+@property (nonatomic) SRWebSocket *wS;
+@property (nonatomic) ALPSCore *ALPS;
+@property (nonatomic) BOOL wSConnected;
 
 @end
 
