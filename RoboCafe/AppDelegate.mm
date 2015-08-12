@@ -28,8 +28,8 @@
     
     // Reporting websocket
     _reportWSConnected = NO;
-    //_reportWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://141.212.11.234:8081"]]];
-    _reportWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://pfet-v2.eecs.umich.edu:8080"]]];
+    _reportWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://141.212.11.234:8081"]]];
+    //_reportWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://pfet-v2.eecs.umich.edu:8080"]]];
     _reportWS.delegate = self;
     [_reportWS open];
 
