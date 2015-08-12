@@ -29,7 +29,7 @@
     _thresholdDivisorLabel.text = [[NSNumber numberWithFloat:[alps thresholdDivisor]] stringValue];
     
     _thresholdMultiplierSlider.minimumValue = 1;
-    _thresholdMultiplierSlider.maximumValue = 3000;
+    _thresholdMultiplierSlider.maximumValue = 500;
     _thresholdMultiplierSlider.continuous = NO;
     _thresholdMultiplierSlider.value = [alps thresholdMultiplier];
     _thresholdMultiplierLabel.text = [[NSNumber numberWithFloat:[alps thresholdMultiplier]] stringValue];
