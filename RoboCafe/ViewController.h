@@ -18,6 +18,18 @@
 - (IBAction)cancelTwixTouch:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *twixStatus;
 
+@property (strong, nonatomic) IBOutlet UIButton *orderSquirtGunButton;
+@property (strong, nonatomic) IBOutlet UIButton *cancelSquirtGunButton;
+@property (strong, nonatomic) IBOutlet UILabel *squirtGunStatus;
+- (IBAction)orderSquirtGunTouch:(id)sender;
+- (IBAction)cancelSquirtGunTouch:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *orderBouncyBallButton;
+@property (strong, nonatomic) IBOutlet UIButton *cancelBouncyBallButton;
+@property (strong, nonatomic) IBOutlet UILabel *bouncyBallStatus;
+- (IBAction)orderBouncyBallTouch:(id)sender;
+- (IBAction)cancelBouncyBallTouch:(id)sender;
+
 
 @end
 
