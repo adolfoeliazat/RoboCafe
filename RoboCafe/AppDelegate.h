@@ -23,5 +23,10 @@
 @property (nonatomic) ALPSCore *ALPS;
 @property (nonatomic) BOOL wSConnected;
 
+@property (nonatomic) BOOL reportWSConnected;
+@property (nonatomic) SRWebSocket *reportWS;
+
+- (void)sendToRobotWS:(NSDictionary*)data;
+
 @end
 

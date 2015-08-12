@@ -25,10 +25,32 @@
     _wS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://192.168.1.3:30000"]]];
     _wS.delegate = self;
     [_wS open];
+    
+    // Reporting websocket
+    _reportWSConnected = NO;
+    //_reportWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://141.212.11.234:8081"]]];
+    _reportWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://pfet-v2.eecs.umich.edu:8080"]]];
+    _reportWS.delegate = self;
+    [_reportWS open];
 
     return YES;
 }
 
+- (void)sendToRobotWS:(NSDictionary *)data {
+    
+    NSError *error = nil;
+    NSData *json = [NSJSONSerialization dataWithJSONObject:data options:NSJSONWritingPrettyPrinted error:&error];
+    if (json != nil && error == nil) {
+        NSString *jsonString = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
+        
+        if (_reportWSConnected) {
+            NSLog(@"Sending to robot WS: %@", jsonString);
+            [_reportWS send:jsonString];
+        }
+    } else if (error != nil) {
+        NSLog(@"Error sending to Robot WS: %@", error);
+    }
+}
 
 /*----------ALPS Methods-----------*/
 
@@ -54,32 +76,47 @@
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
     NSLog(@"Got message");
+    NSLog(message);
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket;
 {
     NSLog(@"Websocket Connected");
-    _wSConnected = YES;
-    [[_vCSettings solverConnectionStatusLabel] setText:@"Connected"];
-    [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor greenColor]];
+    if (webSocket == _reportWS) {
+        _reportWSConnected = YES;
+    } else if (webSocket == _wS) {
+        _wSConnected = YES;
+        [[_vCSettings solverConnectionStatusLabel] setText:@"Connected"];
+        [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor greenColor]];
+    }
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
 {
-    _wSConnected = NO;
     NSLog(@":( Websocket Failed With Error %@", error);
-    _wS = nil;
-    [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
-    [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor redColor]];
+    if (webSocket == _reportWS) {
+        _reportWSConnected = NO;
+        _reportWS = nil;
+    } else if (webSocket == _wS) {
+        _wSConnected = NO;
+        _wS = nil;
+        [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
+        [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor redColor]];
+    }
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
 {
-    _wSConnected = NO;
     NSLog(@"WebSocket closed");
-    _wS = nil;
-    [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
-    [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor redColor]];
+    if (webSocket == _reportWS) {
+        _reportWSConnected = NO;
+        _reportWS = nil;
+    } else if (webSocket == _wS) {
+        _wSConnected = NO;
+        _wS = nil;
+        [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
+        [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor redColor]];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
