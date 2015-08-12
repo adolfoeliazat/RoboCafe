@@ -89,7 +89,7 @@ AppDelegate *appDelegate;
         NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
                              [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
                              @"selection", @"type",
-                             @"Squirt Gun", @"selection",
+                             @"SquirtGun", @"selection",
                              nil];
         [appDelegate sendToRobotWS:msg];
         
@@ -100,7 +100,7 @@ AppDelegate *appDelegate;
         NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
                              [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
                              @"finished", @"type",
-                             @"Squirt Gun", @"selection",
+                             @"SquirtGun", @"selection",
                              nil];
         [appDelegate sendToRobotWS:msg];
         [_squirtGunStatus setText:@""];
@@ -113,7 +113,7 @@ AppDelegate *appDelegate;
     NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
                          [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
                          @"cancelled", @"type",
-                         @"Squirt Gun", @"selection",
+                         @"SquirtGun", @"selection",
                          nil];
     [appDelegate sendToRobotWS:msg];
     [_squirtGunStatus setText:@"Cancelled Squirt Gun order"];
@@ -126,7 +126,7 @@ AppDelegate *appDelegate;
         NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
                              [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
                              @"selection", @"type",
-                             @"Bouncy Ball", @"selection",
+                             @"BouncyBalls", @"selection",
                              nil];
         [appDelegate sendToRobotWS:msg];
         
@@ -138,7 +138,7 @@ AppDelegate *appDelegate;
         NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
                              [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
                              @"finished", @"type",
-                             @"Bouncy Ball", @"selection",
+                             @"BouncyBalls", @"selection",
                              nil];
         [appDelegate sendToRobotWS:msg];
         [_bouncyBallStatus setText:@""];
@@ -151,7 +151,7 @@ AppDelegate *appDelegate;
     NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
                          [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
                          @"cancelled", @"type",
-                         @"Bouncy Ball", @"selection",
+                         @"BouncyBalls", @"selection",
                          nil];
     [appDelegate sendToRobotWS:msg];
     [_bouncyBallStatus setText:@"Cancelled Bouncy Ball order"];
