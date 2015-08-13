@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewControllerSettings.h"
+#import "ViewControllerCafeSettings.h"
 
 @implementation AppDelegate
 
@@ -27,9 +28,8 @@
     [_wS open];
     
     // Reporting websocket
-    _reportWSConnected = NO;
-    _reportWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://141.212.11.234:8081"]]];
-    //_reportWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://pfet-v2.eecs.umich.edu:8080"]]];
+    [self setValue:[NSNumber numberWithBool:NO] forKey:@"reportWSConnected"];
+    _reportWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_CAFE_WEBSOCKET]]];
     _reportWS.delegate = self;
     [_reportWS open];
 
@@ -43,7 +43,7 @@
     if (json != nil && error == nil) {
         NSString *jsonString = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
         
-        if (_reportWSConnected) {
+        if ([self valueForKey:@"reportWSConnected"]) {
             NSLog(@"Sending to robot WS: %@", jsonString);
             [_reportWS send:jsonString];
         }
@@ -83,7 +83,7 @@
 {
     NSLog(@"Websocket Connected");
     if (webSocket == _reportWS) {
-        _reportWSConnected = YES;
+        [self setValue:[NSNumber numberWithBool:YES] forKey:@"reportWSConnected"];
     } else if (webSocket == _wS) {
         _wSConnected = YES;
         [[_vCSettings solverConnectionStatusLabel] setText:@"Connected"];
@@ -95,7 +95,7 @@
 {
     NSLog(@":( Websocket Failed With Error %@", error);
     if (webSocket == _reportWS) {
-        _reportWSConnected = NO;
+        [self setValue:[NSNumber numberWithBool:NO] forKey:@"reportWSConnected"];
         _reportWS = nil;
     } else if (webSocket == _wS) {
         _wSConnected = NO;
@@ -109,7 +109,7 @@
 {
     NSLog(@"WebSocket closed");
     if (webSocket == _reportWS) {
-        _reportWSConnected = NO;
+        [self setValue:[NSNumber numberWithBool:NO] forKey:@"reportWSConnected"];
         _reportWS = nil;
     } else if (webSocket == _wS) {
         _wSConnected = NO;

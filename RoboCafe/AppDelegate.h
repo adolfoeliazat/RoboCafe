@@ -12,18 +12,22 @@
 
 #define RECORD_LENGTH 168960 //Needs to be divisible by 1024
 
-@class ALPSCore, ViewController, ViewControllerSettings;
+#define DEFAULT_CAFE_WEBSOCKET  @"ws://pfet-v2.eecs.umich.edu:8000"
+//#define DEFAULT_CAFE_WEBSOCKET    @"ws://141.212.11.234:8081"
+
+@class ALPSCore, ViewController, ViewControllerSettings, ViewControllerCafeSettings;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, ALPSDelegate, SRWebSocketDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic) ViewController *vC;
 @property (nonatomic) ViewControllerSettings *vCSettings;
+@property (nonatomic) ViewControllerCafeSettings *vCCafeSettings;
 @property (nonatomic) SRWebSocket *wS;
 @property (nonatomic) ALPSCore *ALPS;
 @property (nonatomic) BOOL wSConnected;
 
-@property (nonatomic) BOOL reportWSConnected;
+@property (nonatomic) NSInteger reportWSConnected;
 @property (nonatomic) SRWebSocket *reportWS;
 
 - (void)sendToRobotWS:(NSDictionary*)data;
