@@ -24,7 +24,7 @@
     [_ALPS start];
     
     // Set up websocket
-    _wS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://solver.bitten-byte.com:30005"]]];
+    _wS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_ALPS_WEBSOCKET]]];
     _wS.delegate = self;
     [_wS open];
     
@@ -117,6 +117,11 @@
         [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
         [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor redColor]];
     }
+    [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
+                                     target:self
+                                   selector:@selector(reconnectWebSocket:)
+                                   userInfo:webSocket
+                                    repeats:NO];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
@@ -130,6 +135,28 @@
         _wS = nil;
         [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
         [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor redColor]];
+    }
+    [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
+                                     target:self
+                                   selector:@selector(reconnectWebSocket:)
+                                   userInfo:webSocket
+                                    repeats:NO];
+}
+
+- (void)reconnectWebSocket:(NSTimer *)timer {
+    NSLog(@"Attempting to reconnect websocket");
+    SRWebSocket *webSocket = [timer userInfo];
+    if (webSocket == _reportWS){
+        _reportWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_CAFE_WEBSOCKET]]];
+        _reportWS.delegate = self;
+        [_reportWS open];
+    }
+    else{
+        [[_vCSettings solverConnectionStatusLabel] setText:@"Reconnecting..."];
+        [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor yellowColor]];
+        _wS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_ALPS_WEBSOCKET]]];
+        _wS.delegate = self;
+        [_wS open];
     }
 }
 
