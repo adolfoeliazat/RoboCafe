@@ -10,6 +10,7 @@
 		244264701B7C0FEA00C7A954 /* ViewControllerCafeSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2442646F1B7C0FEA00C7A954 /* ViewControllerCafeSettings.m */; };
 		244264781B7C43A700C7A954 /* ALPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244264771B7C43A700C7A954 /* ALPS.framework */; };
 		2442647A1B7C43D600C7A954 /* ALPS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 244264771B7C43A700C7A954 /* ALPS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		246288221B7D3DC200D7F1E8 /* LocationAnnounceWSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 246288211B7D3DC200D7F1E8 /* LocationAnnounceWSDelegate.m */; };
 		AB7EE1271B77102A008CFE34 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB7EE1261B77102A008CFE34 /* main.mm */; };
 		AB7EE12A1B77102A008CFE34 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB7EE1291B77102A008CFE34 /* AppDelegate.mm */; };
 		AB7EE12D1B77102A008CFE34 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7EE12C1B77102A008CFE34 /* ViewController.m */; };
@@ -57,6 +58,8 @@
 		2442646E1B7C0FEA00C7A954 /* ViewControllerCafeSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerCafeSettings.h; sourceTree = "<group>"; };
 		2442646F1B7C0FEA00C7A954 /* ViewControllerCafeSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerCafeSettings.m; sourceTree = "<group>"; };
 		244264771B7C43A700C7A954 /* ALPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALPS.framework; sourceTree = "<group>"; };
+		246288201B7D3DC200D7F1E8 /* LocationAnnounceWSDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAnnounceWSDelegate.h; sourceTree = "<group>"; };
+		246288211B7D3DC200D7F1E8 /* LocationAnnounceWSDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAnnounceWSDelegate.m; sourceTree = "<group>"; };
 		AB7EE1211B77102A008CFE34 /* RoboCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7EE1251B77102A008CFE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB7EE1261B77102A008CFE34 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				AB7EE1311B77102A008CFE34 /* Images.xcassets */,
 				AB7EE1331B77102A008CFE34 /* LaunchScreen.xib */,
 				AB7EE1241B77102A008CFE34 /* Supporting Files */,
+				246288201B7D3DC200D7F1E8 /* LocationAnnounceWSDelegate.h */,
+				246288211B7D3DC200D7F1E8 /* LocationAnnounceWSDelegate.m */,
 			);
 			path = RoboCafe;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 				AB7EE17A1B79C7FD008CFE34 /* SRWebSocket.m in Sources */,
 				AB7EE12D1B77102A008CFE34 /* ViewController.m in Sources */,
 				AB7EE12A1B77102A008CFE34 /* AppDelegate.mm in Sources */,
+				246288221B7D3DC200D7F1E8 /* LocationAnnounceWSDelegate.m in Sources */,
 				AB7EE1271B77102A008CFE34 /* main.mm in Sources */,
 				244264701B7C0FEA00C7A954 /* ViewControllerCafeSettings.m in Sources */,
 				AB7EE1A81B79EE0C008CFE34 /* ViewControllerSettings.m in Sources */,

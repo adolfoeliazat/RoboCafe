@@ -17,17 +17,18 @@
     
     _cafeStatusLabel.textAlignment = NSTextAlignmentRight;
     _cafeWSConnectButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    
     [appDelegate addObserver:self forKeyPath:@"reportWSConnected" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
+    
+    _locationStatusLabel.textAlignment = NSTextAlignmentRight;
+    _locationWSConnectButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    [appDelegate addObserver:self forKeyPath:@"locationAnnounceWSConnected" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"reportWSConnected"]) {
-        NSLog(@"OBSERVED!");
-        
-        appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        
         [self updateWSText];
+    } else if ([keyPath isEqualToString:@"locationAnnounceWSConnected"]) {
+        [self updateLocationAnnounceWSText];
     }
 }
 
@@ -63,6 +64,29 @@
     }
 }
 
+- (void)updateLocationAnnounceWSText {
+    if (appDelegate == nil) return;
+    
+    NSString* urlString;
+    if ([[appDelegate valueForKey:@"locationAnnounceWSConnected"] isEqualToNumber: [NSNumber numberWithBool:YES]]) {
+        urlString = [appDelegate.locationAnnounceWS.url absoluteString];
+        
+        [_locationStatusLabel setText:@"Connected"];
+        [_locationStatusLabel setTextColor:[UIColor greenColor]];
+        
+        [_locationWSConnectButton setTitle:@"Disconnect" forState:UIControlStateNormal];
+    } else {
+        urlString = DEFAULT_LOC_ANNOUNCE_WEBSOCKET;
+        
+        [_locationStatusLabel setText:@"Disconnected"];
+        [_locationStatusLabel setTextColor:[UIColor redColor]];
+        
+        [_locationWSConnectButton setTitle:@"Connect" forState:UIControlStateNormal];
+    }
+    
+    _locationWSEntry.text = urlString;
+}
+
 - (IBAction)cafeWSChanged:(id)sender {
     if (appDelegate.reportWSConnected) {
         [appDelegate.reportWS close];
@@ -73,8 +97,6 @@
 }
 
 - (IBAction)cafeWSConnectClick:(id)sender {
-    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-
     if (appDelegate.reportWSConnected) {
         [appDelegate.reportWS close];
     } else {
@@ -83,4 +105,23 @@
         [appDelegate.reportWS open];
     }
 }
+- (IBAction)locationWSChanged:(id)sender {
+    if (appDelegate.locationAnnounceWSConnected) {
+        [appDelegate.locationAnnounceWS close];
+    }
+    appDelegate.locationAnnounceWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_locationWSEntry.text]]];
+    appDelegate.locationAnnounceWS.delegate = appDelegate.locationAnnounceWSDelegate;
+    [appDelegate.locationAnnounceWS open];
+}
+- (IBAction)locationWSConnectClick:(id)sender {
+    NSLog(@"Clicked");
+    if (appDelegate.locationAnnounceWSConnected) {
+        [appDelegate.locationAnnounceWS close];
+    } else {
+        appDelegate.locationAnnounceWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_locationWSEntry.text]]];
+        appDelegate.locationAnnounceWS.delegate = appDelegate.locationAnnounceWSDelegate;
+        [appDelegate.locationAnnounceWS open];
+    }
+}
+
 @end

@@ -9,9 +9,9 @@
 #import "AppDelegate.h"
 #import "ViewControllerSettings.h"
 #import "ViewControllerCafeSettings.h"
+#import "LocationAnnounceWSDelegate.h"
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -28,28 +28,36 @@
     _wS.delegate = self;
     [_wS open];
     
-    // Reporting websocket
+    // Café reporting websocket
     [self setValue:[NSNumber numberWithBool:NO] forKey:@"reportWSConnected"];
     _reportWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_CAFE_WEBSOCKET]]];
     _reportWS.delegate = self;
     [_reportWS open];
+    
+    // Location result reporting websocket
+    _locationAnnounceWSDelegate = [[LocationAnnounceWSDelegate alloc] init];
+    [self setValue:[NSNumber numberWithBool:NO] forKey:@"locationAnnounceWSConnected"];
+    _locationAnnounceWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_LOC_ANNOUNCE_WEBSOCKET]]];
+    _locationAnnounceWS.delegate = _locationAnnounceWSDelegate;
+    [_locationAnnounceWS open];
 
     return YES;
 }
 
-- (void)sendToRobotWS:(NSDictionary *)data {
-    
+- (void)sendToWS: (NSDictionary *)data :(SRWebSocket*) WS{
     NSError *error = nil;
     NSData *json = [NSJSONSerialization dataWithJSONObject:data options:NSJSONWritingPrettyPrinted error:&error];
     if (json != nil && error == nil) {
-        NSString *jsonString = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
-        
-        if ([self valueForKey:@"reportWSConnected"]) {
-            NSLog(@"Sending to robot WS: %@", jsonString);
-            [_reportWS send:jsonString];
-        }
+        NSString *jsonString = [[NSString alloc] initWithData:json encoding: NSUTF8StringEncoding];
+        [WS send:jsonString];
     } else if (error != nil) {
-        NSLog(@"Error sending to Robot WS: %@", error);
+        NSLog(@"Error sending to %@ WS: %@", WS, error);
+    }
+}
+
+- (void)sendToRobotWS:(NSDictionary *)data {
+    if ([self valueForKey:@"reportWSConnected"]) {
+        [self sendToWS:data :_reportWS];
     }
 }
 
