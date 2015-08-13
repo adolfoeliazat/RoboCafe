@@ -16,14 +16,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     _wSConnected = NO;
+    _position = nil;
     
     // Set up ALPS
-    _ALPS = [[ALPSCore alloc] initWithOptions:RECORD_LENGTH :6];
+    _ALPS = [[ALPSCore alloc] initWithOptions:RECORD_LENGTH :TDMA_SLOTS];
     _ALPS.delegate = self;
     [_ALPS start];
     
     // Set up websocket
-    _wS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://192.168.1.3:30000"]]];
+    _wS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://solver.bitten-byte.com:30005"]]];
     _wS.delegate = self;
     [_wS open];
     
@@ -76,7 +77,12 @@
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
     NSLog(@"Got message");
-    NSLog(message);
+    _position = [_ALPS jsonPositionToDictionary:message];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        float x = [[_position objectForKey:@"x"] floatValue];
+        float y = [[_position objectForKey:@"y"] floatValue];
+        [[_vCSettings positionField] setText:[NSString stringWithFormat:@"X: %.2f, Y: %.2f", x, y]];
+    });
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket;

@@ -60,4 +60,5 @@
 - (int) writeWav:(NSString*) wavName;
 - (NSData*)toaAndRSSIToJSON:(NSArray*) toaData :(NSArray*) rssiData;
 - (NSString*)toaToTDOAString:(NSArray*) toaData;
+- (NSDictionary*)jsonPositionToDictionary:(NSString*) position;
 @end

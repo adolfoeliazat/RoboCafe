@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		244264701B7C0FEA00C7A954 /* ViewControllerCafeSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2442646F1B7C0FEA00C7A954 /* ViewControllerCafeSettings.m */; };
-		AB18E73C1B7A03F000446859 /* ALPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB18E73A1B7A03E300446859 /* ALPS.framework */; };
-		AB18E73D1B7A03F000446859 /* ALPS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB18E73A1B7A03E300446859 /* ALPS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		244264781B7C43A700C7A954 /* ALPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244264771B7C43A700C7A954 /* ALPS.framework */; };
+		2442647A1B7C43D600C7A954 /* ALPS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 244264771B7C43A700C7A954 /* ALPS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AB7EE1271B77102A008CFE34 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB7EE1261B77102A008CFE34 /* main.mm */; };
 		AB7EE12A1B77102A008CFE34 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB7EE1291B77102A008CFE34 /* AppDelegate.mm */; };
 		AB7EE12D1B77102A008CFE34 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7EE12C1B77102A008CFE34 /* ViewController.m */; };
@@ -40,13 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		AB7EE1A21B79E8C5008CFE34 /* Embed Frameworks */ = {
+		244264761B7C42D300C7A954 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AB18E73D1B7A03F000446859 /* ALPS.framework in Embed Frameworks */,
+				2442647A1B7C43D600C7A954 /* ALPS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,7 +56,7 @@
 /* Begin PBXFileReference section */
 		2442646E1B7C0FEA00C7A954 /* ViewControllerCafeSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerCafeSettings.h; sourceTree = "<group>"; };
 		2442646F1B7C0FEA00C7A954 /* ViewControllerCafeSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerCafeSettings.m; sourceTree = "<group>"; };
-		AB18E73A1B7A03E300446859 /* ALPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALPS.framework; sourceTree = "<group>"; };
+		244264771B7C43A700C7A954 /* ALPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALPS.framework; sourceTree = "<group>"; };
 		AB7EE1211B77102A008CFE34 /* RoboCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7EE1251B77102A008CFE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB7EE1261B77102A008CFE34 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB18E73C1B7A03F000446859 /* ALPS.framework in Frameworks */,
+				244264781B7C43A700C7A954 /* ALPS.framework in Frameworks */,
 				AB7EE1801B79CA83008CFE34 /* Security.framework in Frameworks */,
 				AB7EE17E1B79CA7B008CFE34 /* CFNetwork.framework in Frameworks */,
 				AB7EE17C1B79CA76008CFE34 /* libicucore.dylib in Frameworks */,
@@ -180,7 +180,7 @@
 		AB7EE15D1B7710B8008CFE34 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AB18E73A1B7A03E300446859 /* ALPS.framework */,
+				244264771B7C43A700C7A954 /* ALPS.framework */,
 				AB7EE17F1B79CA83008CFE34 /* Security.framework */,
 				AB7EE17D1B79CA7B008CFE34 /* CFNetwork.framework */,
 				AB7EE17B1B79CA76008CFE34 /* libicucore.dylib */,
@@ -214,7 +214,7 @@
 				AB7EE11D1B77102A008CFE34 /* Sources */,
 				AB7EE11E1B77102A008CFE34 /* Frameworks */,
 				AB7EE11F1B77102A008CFE34 /* Resources */,
-				AB7EE1A21B79E8C5008CFE34 /* Embed Frameworks */,
+				244264761B7C42D300C7A954 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

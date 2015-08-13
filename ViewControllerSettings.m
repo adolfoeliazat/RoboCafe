@@ -29,7 +29,7 @@
     _thresholdDivisorLabel.text = [[NSNumber numberWithFloat:[alps thresholdDivisor]] stringValue];
     
     _thresholdMultiplierSlider.minimumValue = 1;
-    _thresholdMultiplierSlider.maximumValue = 500;
+    _thresholdMultiplierSlider.maximumValue = 100;
     _thresholdMultiplierSlider.continuous = NO;
     _thresholdMultiplierSlider.value = [alps thresholdMultiplier];
     _thresholdMultiplierLabel.text = [[NSNumber numberWithFloat:[alps thresholdMultiplier]] stringValue];
@@ -42,6 +42,14 @@
         [_solverConnectionStatusLabel setText:@"Disconnected"];
         [_solverConnectionStatusLabel setTextColor:[UIColor redColor]];
     }
+    
+    if([appDelegate position] != nil){
+        float x = [[[appDelegate position] objectForKey:@"x"] floatValue];
+        float y = [[[appDelegate position] objectForKey:@"y"] floatValue];
+        [_positionField setText:[NSString stringWithFormat:@"X: %.2f, Y: %.2f", x, y]];
+    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

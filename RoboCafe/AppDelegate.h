@@ -11,6 +11,7 @@
 #import "SRWebSocket.h"
 
 #define RECORD_LENGTH 168960 //Needs to be divisible by 1024
+#define TDMA_SLOTS 6
 
 #define DEFAULT_CAFE_WEBSOCKET  @"ws://pfet-v2.eecs.umich.edu:8000"
 //#define DEFAULT_CAFE_WEBSOCKET    @"ws://141.212.11.234:8081"
@@ -26,6 +27,7 @@
 @property (nonatomic) SRWebSocket *wS;
 @property (nonatomic) ALPSCore *ALPS;
 @property (nonatomic) BOOL wSConnected;
+@property NSDictionary *position;
 
 @property (nonatomic) NSInteger reportWSConnected;
 @property (nonatomic) SRWebSocket *reportWS;

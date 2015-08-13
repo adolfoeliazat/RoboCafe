@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *tdoaDataField;
 - (IBAction)thresholdDivisorAction:(id)sender;
 - (IBAction)thresholdMultiplierAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *positionField;
 
 
 @end
