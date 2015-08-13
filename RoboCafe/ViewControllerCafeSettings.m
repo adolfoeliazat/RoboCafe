@@ -114,7 +114,6 @@
     [appDelegate.locationAnnounceWS open];
 }
 - (IBAction)locationWSConnectClick:(id)sender {
-    NSLog(@"Clicked");
     if (appDelegate.locationAnnounceWSConnected) {
         [appDelegate.locationAnnounceWS close];
     } else {

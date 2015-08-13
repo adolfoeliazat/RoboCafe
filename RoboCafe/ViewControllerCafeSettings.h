@@ -31,6 +31,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *locationWSEntry;
 - (IBAction)locationWSChanged:(id)sender;
 
+/*
+@property (weak, nonatomic) IBOutlet UIButton *locationWSConnectButton;
+- (IBAction)locationWSConnectClick:(id)sender;
+ */
 @property (weak, nonatomic) IBOutlet UIButton *locationWSConnectButton;
 - (IBAction)locationWSConnectClick:(id)sender;
 
