@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB18E73C1B7A03F000446859 /* ALPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB18E73A1B7A03E300446859 /* ALPS.framework */; };
-		AB18E73D1B7A03F000446859 /* ALPS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB18E73A1B7A03E300446859 /* ALPS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AB45F7071B7C3B6800CC363B /* ALPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB45F7061B7C3B6800CC363B /* ALPS.framework */; };
+		AB45F7081B7C3B6D00CC363B /* ALPS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB45F7061B7C3B6800CC363B /* ALPS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AB7EE1271B77102A008CFE34 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB7EE1261B77102A008CFE34 /* main.mm */; };
 		AB7EE12A1B77102A008CFE34 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB7EE1291B77102A008CFE34 /* AppDelegate.mm */; };
 		AB7EE12D1B77102A008CFE34 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7EE12C1B77102A008CFE34 /* ViewController.m */; };
@@ -45,7 +45,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AB18E73D1B7A03F000446859 /* ALPS.framework in Embed Frameworks */,
+				AB45F7081B7C3B6D00CC363B /* ALPS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,7 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AB18E73A1B7A03E300446859 /* ALPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALPS.framework; sourceTree = "<group>"; };
+		AB45F7061B7C3B6800CC363B /* ALPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALPS.framework; sourceTree = "<group>"; };
 		AB7EE1211B77102A008CFE34 /* RoboCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7EE1251B77102A008CFE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB7EE1261B77102A008CFE34 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB18E73C1B7A03F000446859 /* ALPS.framework in Frameworks */,
+				AB45F7071B7C3B6800CC363B /* ALPS.framework in Frameworks */,
 				AB7EE1801B79CA83008CFE34 /* Security.framework in Frameworks */,
 				AB7EE17E1B79CA7B008CFE34 /* CFNetwork.framework in Frameworks */,
 				AB7EE17C1B79CA76008CFE34 /* libicucore.dylib in Frameworks */,
@@ -175,10 +175,10 @@
 		AB7EE15D1B7710B8008CFE34 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AB18E73A1B7A03E300446859 /* ALPS.framework */,
 				AB7EE17F1B79CA83008CFE34 /* Security.framework */,
 				AB7EE17D1B79CA7B008CFE34 /* CFNetwork.framework */,
 				AB7EE17B1B79CA76008CFE34 /* libicucore.dylib */,
+				AB45F7061B7C3B6800CC363B /* ALPS.framework */,
 				AB7EE1641B783E83008CFE34 /* CoreBluetooth.framework */,
 				AB7EE1621B783E7E008CFE34 /* CoreLocation.framework */,
 				AB7EE15B1B7710B1008CFE34 /* CoreAudio.framework */,

@@ -11,6 +11,7 @@
 #import "SRWebSocket.h"
 
 #define RECORD_LENGTH 168960 //Needs to be divisible by 1024
+#define TDMA_SLOTS 6
 
 @class ALPSCore, ViewController, ViewControllerSettings;
 
@@ -22,6 +23,7 @@
 @property (nonatomic) SRWebSocket *wS;
 @property (nonatomic) ALPSCore *ALPS;
 @property (nonatomic) BOOL wSConnected;
+@property NSDictionary *position;
 
 @end
 

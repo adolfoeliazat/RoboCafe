@@ -16,4 +16,4 @@ FOUNDATION_EXPORT const unsigned char ALPSVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ALPS/PublicHeader.h>
 
-#import <ALPS/ALPSCore.h>"
+#import <ALPS/ALPSCore.h>
