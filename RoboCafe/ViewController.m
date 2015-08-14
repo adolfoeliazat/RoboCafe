@@ -35,7 +35,7 @@ AppDelegate *appDelegate;
     _roboCafeStatusLabel.font = [UIFont fontWithDescriptor:fontItalic size:0];
     [_roboCafeStatusLabel setTextColor:[UIColor redColor]];
 
-    [appDelegate addObserver:self forKeyPath:@"wSConnected" options:NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
+    [appDelegate addObserver:self forKeyPath:@"alpsWSState" options:NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
     [appDelegate addObserver:self forKeyPath:@"cafeOrderWSState" options:NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
     [appDelegate addObserver:self forKeyPath:@"locationAnnounceWSState" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
 }
@@ -52,7 +52,7 @@ AppDelegate *appDelegate;
         [self.orderSquirtGunButton setEnabled:NO];
         [self.orderBouncyBallButton setEnabled:NO];
         
-        if (!appDelegate.wSConnected) {
+        if (appDelegate.alpsWSState != WebsocketStateConnected) {
             [self.roboCafeStatusLabel setText:@"No connection to ALPS"];
         } else if (appDelegate.cafeOrderWSState != WebsocketStateConnected) {
             [self.roboCafeStatusLabel setText:@"No connection to RoboCafé server"];

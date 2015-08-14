@@ -34,11 +34,13 @@
     _thresholdMultiplierSlider.value = [alps thresholdMultiplier];
     _thresholdMultiplierLabel.text = [[NSNumber numberWithFloat:[alps thresholdMultiplier]] stringValue];
     
-    if([appDelegate wSConnected]){
+    if (appDelegate.alpsWSState == WebsocketStateConnected){
         [_solverConnectionStatusLabel setText:@"Connected"];
         [_solverConnectionStatusLabel setTextColor:[UIColor greenColor]];
-    }
-    else{
+    } else if (appDelegate.alpsWSState == WebsocketStateConnecting) {
+        [_solverConnectionStatusLabel setText:@"Connecting..."];
+        [_solverConnectionStatusLabel setTextColor:[UIColor yellowColor]];
+    } else {
         [_solverConnectionStatusLabel setText:@"Disconnected"];
         [_solverConnectionStatusLabel setTextColor:[UIColor redColor]];
     }

@@ -15,7 +15,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    _wSConnected = NO;
     _position = nil;
     
     // Set up ALPS
@@ -23,10 +22,9 @@
     _ALPS.delegate = self;
     [_ALPS start];
     
-    // Set up websocket
-    _wS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_ALPS_WEBSOCKET]]];
-    _wS.delegate = self;
-    [_wS open];
+    // ALPS websocket
+    self.alpsWSAddress = DEFAULT_ALPS_WEBSOCKET;
+    [self alpsWSConnect];
     
     // Café reporting websocket
     self.cafeOrderWSAddress = DEFAULT_CAFE_WEBSOCKET;
@@ -84,11 +82,11 @@
     NSLog(@"Got ALPS data");
     
     // Send ALPS data to solver via websocket
-    if(_wSConnected){
+    if(self.alpsWSState == WebsocketStateConnected){
         NSData *jsonData = [_ALPS toaAndRSSIToJSON:toa :rssi];
         NSString *jsonString = [[NSString alloc] initWithData:jsonData
                                                      encoding:NSUTF8StringEncoding];
-        [_wS send:jsonString];
+        [self.alpsWS send:jsonString];
     }
     // Update TDOA values
     NSString *tdoaString = [_ALPS toaToTDOAString:toa];
@@ -125,7 +123,7 @@
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket;
 {
     NSLog(@"ALPS Websocket Connected");
-    _wSConnected = YES;
+    self.alpsWSState = WebsocketStateConnected;
     [[_vCSettings solverConnectionStatusLabel] setText:@"Connected"];
     [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor greenColor]];
 }
@@ -133,8 +131,8 @@
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
 {
     NSLog(@"ALPS Websocket Failed With Error %@", error);
-    _wSConnected = NO;
-    _wS = nil;
+    self.alpsWSState = WebsocketStateDisconnected;
+    self.alpsWS = nil;
     [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
     [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor redColor]];
     [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
@@ -147,8 +145,8 @@
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
 {
     NSLog(@"ALPS WebSocket closed");
-    _wSConnected = NO;
-    _wS = nil;
+    self.alpsWSState = WebsocketStateDisconnected;
+    self.alpsWS = nil;
     [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
     [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor redColor]];
     [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
@@ -159,20 +157,20 @@
 }
 
 - (void)reconnectWebSocket:(NSTimer *)timer {
-    NSLog(@"Attempting to reconnect websocket");
-    SRWebSocket *webSocket = [timer userInfo];
-    if (webSocket == _cafeOrderWS){
-        _cafeOrderWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_CAFE_WEBSOCKET]]];
-        _cafeOrderWS.delegate = self;
-        [_cafeOrderWS open];
-    }
-    else{
-        [[_vCSettings solverConnectionStatusLabel] setText:@"Reconnecting..."];
-        [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor yellowColor]];
-        _wS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_ALPS_WEBSOCKET]]];
-        _wS.delegate = self;
-        [_wS open];
-    }
+    NSLog(@"Attempting to reconnect ALPS websocket");
+    [self alpsWSConnect];
+}
+
+- (void)alpsWSConnect {
+    [[_vCSettings solverConnectionStatusLabel] setText:@"Reconnecting..."];
+    [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor yellowColor]];
+    
+    self.alpsWSState = WebsocketStateConnecting;
+
+    self.alpsWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.alpsWSAddress]]];
+    self.alpsWS.delegate = self;
+    [self.alpsWS open];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
