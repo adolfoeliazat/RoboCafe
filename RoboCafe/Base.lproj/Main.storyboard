@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="robo_cafe_background_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="3hM-SO-JVa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="robo_cafe_background_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="3hM-SO-JVa">
                                 <rect key="frame" x="0.0" y="28" width="320" height="112"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3hM-SO-JVa" secondAttribute="height" multiplier="20:7" id="5E2-UH-cLx"/>
@@ -107,17 +107,24 @@
                         <constraints>
                             <constraint firstItem="5Um-2s-jez" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0Sp-Bm-5Yf"/>
                             <constraint firstItem="VH0-jH-iMT" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8El-vy-ipV"/>
+                            <constraint firstItem="jKT-27-Kmf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="AaM-J7-QBb"/>
                             <constraint firstItem="t4k-rM-Ho4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GAe-o0-JrS"/>
                             <constraint firstItem="3hM-SO-JVa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Hsc-RS-KXE"/>
                             <constraint firstItem="PRT-CL-PLD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Mgs-3Q-uIt"/>
                             <constraint firstItem="nzN-Ha-4ne" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QuD-HU-60S"/>
                             <constraint firstItem="jKT-27-Kmf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Slg-ta-2RO"/>
                             <constraint firstItem="ErZ-Bv-ioe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Spu-ns-UxX"/>
+                            <constraint firstItem="jKT-27-Kmf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YAG-xi-ra3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3hM-SO-JVa" secondAttribute="trailing" constant="-16" id="ZZ2-Hk-NGp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JaI-cP-age" secondAttribute="trailing" constant="-16" id="ai0-EF-pqP"/>
                             <constraint firstItem="JaI-cP-age" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="c9y-cG-vP0"/>
+                            <constraint firstItem="Ad5-Qy-Vic" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="dyZ-BH-4pq"/>
+                            <constraint firstItem="3hM-SO-JVa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="e8D-yv-1ah"/>
+                            <constraint firstItem="Ad5-Qy-Vic" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gIz-4v-74A"/>
                             <constraint firstAttribute="centerX" secondItem="3hM-SO-JVa" secondAttribute="centerX" id="i0S-jF-eiP"/>
+                            <constraint firstItem="nzN-Ha-4ne" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="iI9-xU-Mvo"/>
                             <constraint firstItem="Ad5-Qy-Vic" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pmH-Ml-1cw"/>
+                            <constraint firstItem="nzN-Ha-4ne" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="quH-7T-JXb"/>
                             <constraint firstItem="Gz4-m9-L61" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xXL-aq-o56"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JaI-cP-age" secondAttribute="bottom" id="zFv-Nn-nnD"/>
                         </constraints>
