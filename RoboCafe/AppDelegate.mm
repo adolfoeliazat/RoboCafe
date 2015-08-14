@@ -99,12 +99,14 @@
         [[_vCSettings positionField] setText:[NSString stringWithFormat:@"X: %.2f, Y: %.2f", x, y]];
     });
     
+    NSLog(@"X: %f, Y: %f", [[_position objectForKey:@"x"] floatValue], [[_position objectForKey:@"y"] floatValue]);
+    
     NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
                         [[UIDevice currentDevice] identifierForVendor].UUIDString, @"id",
                          @"ALPS", @"type",
-                         @"X", [_position objectForKey:@"x"],
-                         @"Y", [_position objectForKey:@"y"],
-                         @"Z", 0,
+                         [NSNumber numberWithFloat:[[_position objectForKey:@"x"] floatValue]], @"X",
+                         [NSNumber numberWithFloat:[[_position objectForKey:@"y"] floatValue]], @"Y",
+                         0.0, @"Z",
                          nil];
     
     [self sendToLocationAnnounceWS:msg];
