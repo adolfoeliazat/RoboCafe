@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2406B3AD1B7D648D003A4AB7 /* CafeOrderWSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2406B3AC1B7D648D003A4AB7 /* CafeOrderWSDelegate.m */; };
-		2406B3AF1B7DA395003A4AB7 /* robo_cafe_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2406B3AE1B7DA395003A4AB7 /* robo_cafe_background.png */; };
-		2406B3B21B7DA56F003A4AB7 /* robo_cafe_background_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 2406B3B01B7DA56F003A4AB7 /* robo_cafe_background_bottom.png */; };
-		2406B3B31B7DA56F003A4AB7 /* robo_cafe_background_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 2406B3B11B7DA56F003A4AB7 /* robo_cafe_background_top.png */; };
 		244264701B7C0FEA00C7A954 /* ViewControllerCafeSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2442646F1B7C0FEA00C7A954 /* ViewControllerCafeSettings.m */; };
 		244264781B7C43A700C7A954 /* ALPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244264771B7C43A700C7A954 /* ALPS.framework */; };
 		2442647A1B7C43D600C7A954 /* ALPS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 244264771B7C43A700C7A954 /* ALPS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		246288221B7D3DC200D7F1E8 /* LocationAnnounceWSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 246288211B7D3DC200D7F1E8 /* LocationAnnounceWSDelegate.m */; };
+		24DEFB4F1B7DCE3100F4F5E2 /* robo_cafe_background_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 24DEFB4D1B7DCE3100F4F5E2 /* robo_cafe_background_bottom.png */; };
+		24DEFB501B7DCE3100F4F5E2 /* robo_cafe_background_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 24DEFB4E1B7DCE3100F4F5E2 /* robo_cafe_background_top.png */; };
 		AB7EE1271B77102A008CFE34 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB7EE1261B77102A008CFE34 /* main.mm */; };
 		AB7EE12A1B77102A008CFE34 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB7EE1291B77102A008CFE34 /* AppDelegate.mm */; };
 		AB7EE12D1B77102A008CFE34 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7EE12C1B77102A008CFE34 /* ViewController.m */; };
@@ -61,14 +60,13 @@
 /* Begin PBXFileReference section */
 		2406B3AB1B7D648D003A4AB7 /* CafeOrderWSDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CafeOrderWSDelegate.h; sourceTree = "<group>"; };
 		2406B3AC1B7D648D003A4AB7 /* CafeOrderWSDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafeOrderWSDelegate.m; sourceTree = "<group>"; };
-		2406B3AE1B7DA395003A4AB7 /* robo_cafe_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robo_cafe_background.png; sourceTree = "<group>"; };
-		2406B3B01B7DA56F003A4AB7 /* robo_cafe_background_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robo_cafe_background_bottom.png; sourceTree = "<group>"; };
-		2406B3B11B7DA56F003A4AB7 /* robo_cafe_background_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robo_cafe_background_top.png; sourceTree = "<group>"; };
 		2442646E1B7C0FEA00C7A954 /* ViewControllerCafeSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerCafeSettings.h; sourceTree = "<group>"; };
 		2442646F1B7C0FEA00C7A954 /* ViewControllerCafeSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerCafeSettings.m; sourceTree = "<group>"; };
 		244264771B7C43A700C7A954 /* ALPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALPS.framework; sourceTree = "<group>"; };
 		246288201B7D3DC200D7F1E8 /* LocationAnnounceWSDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAnnounceWSDelegate.h; sourceTree = "<group>"; };
 		246288211B7D3DC200D7F1E8 /* LocationAnnounceWSDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAnnounceWSDelegate.m; sourceTree = "<group>"; };
+		24DEFB4D1B7DCE3100F4F5E2 /* robo_cafe_background_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = robo_cafe_background_bottom.png; path = images/robo_cafe_background_bottom.png; sourceTree = "<group>"; };
+		24DEFB4E1B7DCE3100F4F5E2 /* robo_cafe_background_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = robo_cafe_background_top.png; path = images/robo_cafe_background_top.png; sourceTree = "<group>"; };
 		AB7EE1211B77102A008CFE34 /* RoboCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7EE1251B77102A008CFE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB7EE1261B77102A008CFE34 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
@@ -170,9 +168,8 @@
 		AB7EE1241B77102A008CFE34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2406B3AE1B7DA395003A4AB7 /* robo_cafe_background.png */,
-				2406B3B01B7DA56F003A4AB7 /* robo_cafe_background_bottom.png */,
-				2406B3B11B7DA56F003A4AB7 /* robo_cafe_background_top.png */,
+				24DEFB4D1B7DCE3100F4F5E2 /* robo_cafe_background_bottom.png */,
+				24DEFB4E1B7DCE3100F4F5E2 /* robo_cafe_background_top.png */,
 				AB7EE1251B77102A008CFE34 /* Info.plist */,
 				AB7EE1261B77102A008CFE34 /* main.mm */,
 			);
@@ -305,11 +302,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24DEFB501B7DCE3100F4F5E2 /* robo_cafe_background_top.png in Resources */,
 				AB7EE1301B77102A008CFE34 /* Main.storyboard in Resources */,
-				2406B3B21B7DA56F003A4AB7 /* robo_cafe_background_bottom.png in Resources */,
-				2406B3B31B7DA56F003A4AB7 /* robo_cafe_background_top.png in Resources */,
+				24DEFB4F1B7DCE3100F4F5E2 /* robo_cafe_background_bottom.png in Resources */,
 				AB7EE1351B77102A008CFE34 /* LaunchScreen.xib in Resources */,
-				2406B3AF1B7DA395003A4AB7 /* robo_cafe_background.png in Resources */,
 				AB7EE1321B77102A008CFE34 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
