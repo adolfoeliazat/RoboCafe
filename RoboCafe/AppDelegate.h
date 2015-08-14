@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <ALPS/ALPS.h>
 #import "SRWebSocket.h"
+#import "CafeOrderWSDelegate.h"
 #import "LocationAnnounceWSDelegate.h"
 
 #define RECORD_LENGTH 168960 //Needs to be divisible by 1024
@@ -35,15 +36,17 @@
 @property (nonatomic) BOOL wSConnected;
 @property NSDictionary *position;
 
-@property (nonatomic) NSInteger reportWSConnected;
-@property (nonatomic) SRWebSocket *reportWS;
+@property (nonatomic) CafeOrderWSDelegate* cafeOrderWSDelegate;
+@property (nonatomic) NSInteger cafeOrderWSConnected;
+@property (nonatomic) SRWebSocket *cafeOrderWS;
 
 @property (nonatomic) LocationAnnounceWSDelegate* locationAnnounceWSDelegate;
 @property (nonatomic) NSInteger locationAnnounceWSConnected;
 @property (nonatomic) SRWebSocket* locationAnnounceWS;
 
 - (void)sendToWS :(NSDictionary*)data :(SRWebSocket*) WS;
-- (void)sendToRobotWS:(NSDictionary*)data;
+- (void)sendToCafeOrderWS:(NSDictionary*)data;
+- (void)sendToLocationAnnounceWS :(NSDictionary*) data;
 
 @end
 

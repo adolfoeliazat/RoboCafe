@@ -29,10 +29,11 @@
     [_wS open];
     
     // Café reporting websocket
-    [self setValue:[NSNumber numberWithBool:NO] forKey:@"reportWSConnected"];
-    _reportWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_CAFE_WEBSOCKET]]];
-    _reportWS.delegate = self;
-    [_reportWS open];
+    _cafeOrderWSDelegate = [[CafeOrderWSDelegate alloc] init];
+    [self setValue:[NSNumber numberWithBool:NO] forKey:@"cafeOrderWSConnected"];
+    _cafeOrderWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_CAFE_WEBSOCKET]]];
+    _cafeOrderWS.delegate = self;
+    [_cafeOrderWS open];
     
     // Location result reporting websocket
     _locationAnnounceWSDelegate = [[LocationAnnounceWSDelegate alloc] init];
@@ -55,9 +56,15 @@
     }
 }
 
-- (void)sendToRobotWS:(NSDictionary *)data {
-    if ([self valueForKey:@"reportWSConnected"]) {
-        [self sendToWS:data :_reportWS];
+- (void)sendToCafeOrderWS:(NSDictionary *)data {
+    if ([self valueForKey:@"cafeOrderWSConnected"]) {
+        [self sendToWS:data :_cafeOrderWS];
+    }
+}
+
+- (void)sendToLocationAnnounceWS :(NSDictionary*) data {
+    if ([self valueForKey:@"locationAnnounceWSConnected"]) {
+        [self sendToWS :data :_locationAnnounceWS];
     }
 }
 
@@ -91,32 +98,33 @@
         float y = [[_position objectForKey:@"y"] floatValue];
         [[_vCSettings positionField] setText:[NSString stringWithFormat:@"X: %.2f, Y: %.2f", x, y]];
     });
+    
+    NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
+                        [[UIDevice currentDevice] identifierForVendor].UUIDString, @"id",
+                         @"ALPS", @"type",
+                         @"X", [_position objectForKey:@"x"],
+                         @"Y", [_position objectForKey:@"y"],
+                         @"Z", 0,
+                         nil];
+    
+    [self sendToLocationAnnounceWS:msg];
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket;
 {
     NSLog(@"Websocket Connected");
-    if (webSocket == _reportWS) {
-        [self setValue:[NSNumber numberWithBool:YES] forKey:@"reportWSConnected"];
-    } else if (webSocket == _wS) {
-        _wSConnected = YES;
-        [[_vCSettings solverConnectionStatusLabel] setText:@"Connected"];
-        [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor greenColor]];
-    }
+    _wSConnected = YES;
+    [[_vCSettings solverConnectionStatusLabel] setText:@"Connected"];
+    [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor greenColor]];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
 {
     NSLog(@":( Websocket Failed With Error %@", error);
-    if (webSocket == _reportWS) {
-        [self setValue:[NSNumber numberWithBool:NO] forKey:@"reportWSConnected"];
-        _reportWS = nil;
-    } else if (webSocket == _wS) {
-        _wSConnected = NO;
-        _wS = nil;
-        [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
-        [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor redColor]];
-    }
+    _wSConnected = NO;
+    _wS = nil;
+    [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
+    [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor redColor]];
     [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
                                      target:self
                                    selector:@selector(reconnectWebSocket:)
@@ -127,15 +135,10 @@
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
 {
     NSLog(@"WebSocket closed");
-    if (webSocket == _reportWS) {
-        [self setValue:[NSNumber numberWithBool:NO] forKey:@"reportWSConnected"];
-        _reportWS = nil;
-    } else if (webSocket == _wS) {
-        _wSConnected = NO;
-        _wS = nil;
-        [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
-        [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor redColor]];
-    }
+    _wSConnected = NO;
+    _wS = nil;
+    [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
+    [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor redColor]];
     [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
                                      target:self
                                    selector:@selector(reconnectWebSocket:)
@@ -146,10 +149,10 @@
 - (void)reconnectWebSocket:(NSTimer *)timer {
     NSLog(@"Attempting to reconnect websocket");
     SRWebSocket *webSocket = [timer userInfo];
-    if (webSocket == _reportWS){
-        _reportWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_CAFE_WEBSOCKET]]];
-        _reportWS.delegate = self;
-        [_reportWS open];
+    if (webSocket == _cafeOrderWS){
+        _cafeOrderWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_CAFE_WEBSOCKET]]];
+        _cafeOrderWS.delegate = self;
+        [_cafeOrderWS open];
     }
     else{
         [[_vCSettings solverConnectionStatusLabel] setText:@"Reconnecting..."];

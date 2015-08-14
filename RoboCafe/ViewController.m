@@ -52,7 +52,7 @@ AppDelegate *appDelegate;
                              @"selection", @"type",
                              @"Twix", @"selection",
                              nil];
-        [appDelegate sendToRobotWS:msg];
+        [appDelegate sendToCafeOrderWS:msg];
         
         [_twixStatus setText:@"Ordered Twix"];
     } else {
@@ -64,7 +64,7 @@ AppDelegate *appDelegate;
                              @"finished", @"type",
                              @"Twix", @"selection",
                              nil];
-        [appDelegate sendToRobotWS:msg];
+        [appDelegate sendToCafeOrderWS:msg];
         
         [_twixStatus setText:@""];
     }
@@ -78,7 +78,7 @@ AppDelegate *appDelegate;
                          @"cancelled", @"type",
                          @"Twix", @"selection",
                          nil];
-    [appDelegate sendToRobotWS:msg];
+    [appDelegate sendToCafeOrderWS:msg];
     
     [_twixStatus setText:@"Cancelled Twix order"];
 }
@@ -91,7 +91,7 @@ AppDelegate *appDelegate;
                              @"selection", @"type",
                              @"SquirtGun", @"selection",
                              nil];
-        [appDelegate sendToRobotWS:msg];
+        [appDelegate sendToCafeOrderWS:msg];
         
         [_squirtGunStatus setText:@"Ordered Squirt Gun"];
     } else {
@@ -102,7 +102,7 @@ AppDelegate *appDelegate;
                              @"finished", @"type",
                              @"SquirtGun", @"selection",
                              nil];
-        [appDelegate sendToRobotWS:msg];
+        [appDelegate sendToCafeOrderWS:msg];
         [_squirtGunStatus setText:@""];
     }
 }
@@ -115,7 +115,7 @@ AppDelegate *appDelegate;
                          @"cancelled", @"type",
                          @"SquirtGun", @"selection",
                          nil];
-    [appDelegate sendToRobotWS:msg];
+    [appDelegate sendToCafeOrderWS:msg];
     [_squirtGunStatus setText:@"Cancelled Squirt Gun order"];
 }
 - (IBAction)orderBouncyBallTouch:(id)sender {
@@ -128,7 +128,7 @@ AppDelegate *appDelegate;
                              @"selection", @"type",
                              @"BouncyBalls", @"selection",
                              nil];
-        [appDelegate sendToRobotWS:msg];
+        [appDelegate sendToCafeOrderWS:msg];
         
         [_bouncyBallStatus setText:@"Ordered Bouncy Ball"];
     } else {
@@ -140,7 +140,7 @@ AppDelegate *appDelegate;
                              @"finished", @"type",
                              @"BouncyBalls", @"selection",
                              nil];
-        [appDelegate sendToRobotWS:msg];
+        [appDelegate sendToCafeOrderWS:msg];
         [_bouncyBallStatus setText:@""];
     }
 }
@@ -153,7 +153,7 @@ AppDelegate *appDelegate;
                          @"cancelled", @"type",
                          @"BouncyBalls", @"selection",
                          nil];
-    [appDelegate sendToRobotWS:msg];
+    [appDelegate sendToCafeOrderWS:msg];
     [_bouncyBallStatus setText:@"Cancelled Bouncy Ball order"];
 }
 

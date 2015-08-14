@@ -17,7 +17,7 @@
     
     _cafeStatusLabel.textAlignment = NSTextAlignmentRight;
     _cafeWSConnectButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    [appDelegate addObserver:self forKeyPath:@"reportWSConnected" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
+    [appDelegate addObserver:self forKeyPath:@"cafeOrderWSConnected" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
     
     _locationStatusLabel.textAlignment = NSTextAlignmentRight;
     _locationWSConnectButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
@@ -25,7 +25,7 @@
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"reportWSConnected"]) {
+    if ([keyPath isEqualToString:@"cafeOrderWSConnected"]) {
         [self updateWSText];
     } else if ([keyPath isEqualToString:@"locationAnnounceWSConnected"]) {
         [self updateLocationAnnounceWSText];
@@ -38,10 +38,10 @@
     if (appDelegate == nil) return;
     
     NSString* urlString;
-    if ([[appDelegate valueForKey:@"reportWSConnected"] isEqualToNumber: [NSNumber numberWithBool:YES]]) {
+    if ([[appDelegate valueForKey:@"cafeOrderWSConnected"] isEqualToNumber: [NSNumber numberWithBool:YES]]) {
         NSLog(@"It thinks it's connect");
-        NSLog(@"%@", [appDelegate valueForKey:@"reportWSConnected"]);
-        urlString = [appDelegate.reportWS.url absoluteString];
+        NSLog(@"%@", [appDelegate valueForKey:@"cafeOrderWSConnected"]);
+        urlString = [appDelegate.cafeOrderWS.url absoluteString];
     } else {
         NSLog(@"No worries, not connected bro");
         urlString = DEFAULT_CAFE_WEBSOCKET;
@@ -51,7 +51,7 @@
     NSLog(@"Setting to: %@", urlString);
     _cafeWSEntry.text = urlString;
 
-    if (appDelegate.reportWSConnected) {
+    if (appDelegate.cafeOrderWSConnected) {
         [_cafeStatusLabel setText:@"Connected"];
         [_cafeStatusLabel setTextColor:[UIColor greenColor]];
         
@@ -88,21 +88,21 @@
 }
 
 - (IBAction)cafeWSChanged:(id)sender {
-    if (appDelegate.reportWSConnected) {
-        [appDelegate.reportWS close];
+    if (appDelegate.cafeOrderWSConnected) {
+        [appDelegate.cafeOrderWS close];
     }
-    appDelegate.reportWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_cafeWSEntry.text]]];
-    appDelegate.reportWS.delegate = appDelegate;
-    [appDelegate.reportWS open];
+    appDelegate.cafeOrderWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_cafeWSEntry.text]]];
+    appDelegate.cafeOrderWS.delegate = appDelegate;
+    [appDelegate.cafeOrderWS open];
 }
 
 - (IBAction)cafeWSConnectClick:(id)sender {
-    if (appDelegate.reportWSConnected) {
-        [appDelegate.reportWS close];
+    if (appDelegate.cafeOrderWSConnected) {
+        [appDelegate.cafeOrderWS close];
     } else {
-        appDelegate.reportWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_cafeWSEntry.text]]];
-        appDelegate.reportWS.delegate = appDelegate;
-        [appDelegate.reportWS open];
+        appDelegate.cafeOrderWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_cafeWSEntry.text]]];
+        appDelegate.cafeOrderWS.delegate = appDelegate;
+        [appDelegate.cafeOrderWS open];
     }
 }
 - (IBAction)locationWSChanged:(id)sender {
