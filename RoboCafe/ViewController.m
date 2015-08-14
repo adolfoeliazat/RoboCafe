@@ -21,6 +21,10 @@ AppDelegate *appDelegate;
     [super viewDidLoad];
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate setVC:self];
+    
+    _orderTwixButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    _orderBouncyBallButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    _orderSquirtGunButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
 
     _cancelTwixButton.hidden = YES;
     _cancelBouncyBallButton.hidden = YES;
