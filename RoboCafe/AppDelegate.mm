@@ -29,20 +29,30 @@
     [_wS open];
     
     // Café reporting websocket
-    _cafeOrderWSDelegate = [[CafeOrderWSDelegate alloc] init];
-    [self setValue:[NSNumber numberWithBool:NO] forKey:@"cafeOrderWSConnected"];
-    _cafeOrderWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_CAFE_WEBSOCKET]]];
-    _cafeOrderWS.delegate = _cafeOrderWSDelegate;
-    [_cafeOrderWS open];
+    self.cafeOrderWSAddress = DEFAULT_CAFE_WEBSOCKET;
+    self.cafeOrderWSDelegate = [[CafeOrderWSDelegate alloc] init];
+    [self cafeOrderWSConnect];
     
     // Location result reporting websocket
-    _locationAnnounceWSDelegate = [[LocationAnnounceWSDelegate alloc] init];
-    [self setValue:[NSNumber numberWithBool:NO] forKey:@"locationAnnounceWSConnected"];
-    _locationAnnounceWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_LOC_ANNOUNCE_WEBSOCKET]]];
-    _locationAnnounceWS.delegate = _locationAnnounceWSDelegate;
-    [_locationAnnounceWS open];
+    self.locationAnnounceWSAddress = DEFAULT_LOC_ANNOUNCE_WEBSOCKET;
+    self.locationAnnounceWSDelegate = [[LocationAnnounceWSDelegate alloc] init];
+    [self locationAnnounceWSConnect];
 
     return YES;
+}
+
+- (void)cafeOrderWSConnect {
+    self.cafeOrderWSState = WebsocketStateConnecting;
+    self.cafeOrderWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_cafeOrderWSAddress]]];
+    self.cafeOrderWS.delegate = self.cafeOrderWSDelegate;
+    [self.cafeOrderWS open];
+}
+
+- (void)locationAnnounceWSConnect {
+    self.locationAnnounceWSState = WebsocketStateConnecting;
+    self.locationAnnounceWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.locationAnnounceWSAddress]]];
+    self.locationAnnounceWS.delegate = self.locationAnnounceWSDelegate;
+    [self.locationAnnounceWS open];
 }
 
 - (void)sendToWS: (NSDictionary *)data :(SRWebSocket*) WS{
@@ -57,13 +67,13 @@
 }
 
 - (void)sendToCafeOrderWS:(NSDictionary *)data {
-    if ([self valueForKey:@"cafeOrderWSConnected"]) {
+    if (self.cafeOrderWSState == WebsocketStateConnected) {
         [self sendToWS:data :_cafeOrderWS];
     }
 }
 
 - (void)sendToLocationAnnounceWS :(NSDictionary*) data {
-    if ([self valueForKey:@"locationAnnounceWSConnected"]) {
+    if (self.locationAnnounceWSState == WebsocketStateConnected) {
         [self sendToWS :data :_locationAnnounceWS];
     }
 }
@@ -106,7 +116,7 @@
                          @"ALPS", @"type",
                          [NSNumber numberWithFloat:[[_position objectForKey:@"x"] floatValue]], @"X",
                          [NSNumber numberWithFloat:[[_position objectForKey:@"y"] floatValue]], @"Y",
-                         0.0, @"Z",
+                         [NSNumber numberWithFloat: 0.0], @"Z",
                          nil];
     
     [self sendToLocationAnnounceWS:msg];

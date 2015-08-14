@@ -257,8 +257,8 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTd-sU-HOy">
-                                <rect key="frame" x="88" y="87" width="216" height="30"/>
-                                <state key="normal" title="XXX_CAFEWS_CONNECT_XXX">
+                                <rect key="frame" x="187" y="87" width="117" height="30"/>
+                                <state key="normal" title="Force Reconnect">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -292,8 +292,8 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7B-TX-t2s">
-                                <rect key="frame" x="96" y="224" width="208" height="30"/>
-                                <state key="normal" title="XXX_LOCWS_CONNECT_XXX">
+                                <rect key="frame" x="187" y="224" width="117" height="30"/>
+                                <state key="normal" title="Force Reconnect">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -306,10 +306,8 @@
                     <tabBarItem key="tabBarItem" title="Café Settings" image="Settings" id="Tbt-4z-YpL"/>
                     <connections>
                         <outlet property="cafeStatusLabel" destination="gwU-GK-1K3" id="jW7-Kz-BAA"/>
-                        <outlet property="cafeWSConnectButton" destination="cTd-sU-HOy" id="IQL-wU-8lx"/>
                         <outlet property="cafeWSEntry" destination="URg-kv-Cg3" id="qb6-gW-PEc"/>
                         <outlet property="locationStatusLabel" destination="y4h-er-JIj" id="YjG-hD-4jU"/>
-                        <outlet property="locationWSConnectButton" destination="A7B-TX-t2s" id="oRB-1k-t3K"/>
                         <outlet property="locationWSEntry" destination="mZ5-G6-zfR" id="atV-AG-IZJ"/>
                     </connections>
                 </viewController>

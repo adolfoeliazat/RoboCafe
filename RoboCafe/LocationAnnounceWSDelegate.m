@@ -19,7 +19,7 @@
     NSLog(@"LocationAnnounceWS Opened");
     
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate setValue:[NSNumber numberWithBool:YES] forKey:@"locationAnnounceWSConnected"];
+    appDelegate.locationAnnounceWSState = WebsocketStateConnected;
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
@@ -27,7 +27,13 @@
     NSLog(@"LocationAnnounceWS failed with error: %@", error);
     
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate setValue:[NSNumber numberWithBool:NO] forKey:@"locationAnnounceWSConnected"];
+    appDelegate.locationAnnounceWSState = WebsocketStateDisconnected;
+    
+    [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
+                                     target:self
+                                   selector:@selector(reconnectWebSocket:)
+                                   userInfo:nil
+                                    repeats:NO];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
@@ -35,8 +41,22 @@
     NSLog(@"LocationAnnounceWS closed (wasClean %d)", wasClean);
     
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate setValue:[NSNumber numberWithBool:NO] forKey:@"locationAnnounceWSConnected"];
+    appDelegate.locationAnnounceWSState = WebsocketStateDisconnected;
+    
+    if (!wasClean) {
+        [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
+                                         target:self
+                                       selector:@selector(reconnectWebSocket:)
+                                       userInfo:nil
+                                        repeats:NO];
+    }
+}
 
+- (void)reconnectWebSocket:(NSTimer *)timer {
+    if (appDelegate.locationAnnounceWSState == WebsocketStateDisconnected) {
+        NSLog(@"Attempting to reconnect CafeOrderWS");
+        [appDelegate locationAnnounceWSConnect];
+    }
 }
 
 @end

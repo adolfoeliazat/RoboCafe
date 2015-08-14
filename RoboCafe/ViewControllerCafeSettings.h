@@ -14,7 +14,7 @@
     AppDelegate *appDelegate;
 }
 
-- (void)updateWSText;
+- (void)updateCafeOrderWSText;
 - (void)updateLocationAnnounceWSText;
 
 
@@ -23,7 +23,6 @@
 - (IBAction)cafeWSChanged:(id)sender;
 
 
-@property (weak, nonatomic) IBOutlet UIButton *cafeWSConnectButton;
 - (IBAction)cafeWSConnectClick:(id)sender;
 
 
@@ -32,7 +31,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *locationWSEntry;
 - (IBAction)locationWSChanged:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIButton *locationWSConnectButton;
 - (IBAction)locationWSConnectClick:(id)sender;
 
 
