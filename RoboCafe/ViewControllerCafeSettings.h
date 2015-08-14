@@ -17,10 +17,11 @@
 - (void)updateWSText;
 - (void)updateLocationAnnounceWSText;
 
-@property (weak, nonatomic) IBOutlet UILabel *cafeStatusLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *cafeStatusLabel;
 @property (weak, nonatomic) IBOutlet UITextField *cafeWSEntry;
 - (IBAction)cafeWSChanged:(id)sender;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *cafeWSConnectButton;
 - (IBAction)cafeWSConnectClick:(id)sender;
@@ -31,10 +32,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *locationWSEntry;
 - (IBAction)locationWSChanged:(id)sender;
 
-/*
-@property (weak, nonatomic) IBOutlet UIButton *locationWSConnectButton;
-- (IBAction)locationWSConnectClick:(id)sender;
- */
 @property (weak, nonatomic) IBOutlet UIButton *locationWSConnectButton;
 - (IBAction)locationWSConnectClick:(id)sender;
 

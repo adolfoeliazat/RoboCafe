@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2406B3AD1B7D648D003A4AB7 /* CafeOrderWSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2406B3AC1B7D648D003A4AB7 /* CafeOrderWSDelegate.m */; };
+		2406B3AF1B7DA395003A4AB7 /* robo_cafe_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2406B3AE1B7DA395003A4AB7 /* robo_cafe_background.png */; };
+		2406B3B21B7DA56F003A4AB7 /* robo_cafe_background_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 2406B3B01B7DA56F003A4AB7 /* robo_cafe_background_bottom.png */; };
+		2406B3B31B7DA56F003A4AB7 /* robo_cafe_background_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 2406B3B11B7DA56F003A4AB7 /* robo_cafe_background_top.png */; };
 		244264701B7C0FEA00C7A954 /* ViewControllerCafeSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2442646F1B7C0FEA00C7A954 /* ViewControllerCafeSettings.m */; };
 		244264781B7C43A700C7A954 /* ALPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244264771B7C43A700C7A954 /* ALPS.framework */; };
 		2442647A1B7C43D600C7A954 /* ALPS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 244264771B7C43A700C7A954 /* ALPS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -58,6 +61,9 @@
 /* Begin PBXFileReference section */
 		2406B3AB1B7D648D003A4AB7 /* CafeOrderWSDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CafeOrderWSDelegate.h; sourceTree = "<group>"; };
 		2406B3AC1B7D648D003A4AB7 /* CafeOrderWSDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafeOrderWSDelegate.m; sourceTree = "<group>"; };
+		2406B3AE1B7DA395003A4AB7 /* robo_cafe_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robo_cafe_background.png; sourceTree = "<group>"; };
+		2406B3B01B7DA56F003A4AB7 /* robo_cafe_background_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robo_cafe_background_bottom.png; sourceTree = "<group>"; };
+		2406B3B11B7DA56F003A4AB7 /* robo_cafe_background_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robo_cafe_background_top.png; sourceTree = "<group>"; };
 		2442646E1B7C0FEA00C7A954 /* ViewControllerCafeSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerCafeSettings.h; sourceTree = "<group>"; };
 		2442646F1B7C0FEA00C7A954 /* ViewControllerCafeSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerCafeSettings.m; sourceTree = "<group>"; };
 		244264771B7C43A700C7A954 /* ALPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALPS.framework; sourceTree = "<group>"; };
@@ -164,6 +170,9 @@
 		AB7EE1241B77102A008CFE34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2406B3AE1B7DA395003A4AB7 /* robo_cafe_background.png */,
+				2406B3B01B7DA56F003A4AB7 /* robo_cafe_background_bottom.png */,
+				2406B3B11B7DA56F003A4AB7 /* robo_cafe_background_top.png */,
 				AB7EE1251B77102A008CFE34 /* Info.plist */,
 				AB7EE1261B77102A008CFE34 /* main.mm */,
 			);
@@ -297,7 +306,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB7EE1301B77102A008CFE34 /* Main.storyboard in Resources */,
+				2406B3B21B7DA56F003A4AB7 /* robo_cafe_background_bottom.png in Resources */,
+				2406B3B31B7DA56F003A4AB7 /* robo_cafe_background_top.png in Resources */,
 				AB7EE1351B77102A008CFE34 /* LaunchScreen.xib in Resources */,
+				2406B3AF1B7DA395003A4AB7 /* robo_cafe_background.png in Resources */,
 				AB7EE1321B77102A008CFE34 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

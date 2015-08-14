@@ -92,7 +92,7 @@
         [appDelegate.cafeOrderWS close];
     }
     appDelegate.cafeOrderWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_cafeWSEntry.text]]];
-    appDelegate.cafeOrderWS.delegate = appDelegate;
+    appDelegate.cafeOrderWS.delegate = appDelegate.cafeOrderWSDelegate;
     [appDelegate.cafeOrderWS open];
 }
 
@@ -101,7 +101,7 @@
         [appDelegate.cafeOrderWS close];
     } else {
         appDelegate.cafeOrderWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_cafeWSEntry.text]]];
-        appDelegate.cafeOrderWS.delegate = appDelegate;
+        appDelegate.cafeOrderWS.delegate = appDelegate.cafeOrderWSDelegate;
         [appDelegate.cafeOrderWS open];
     }
 }
