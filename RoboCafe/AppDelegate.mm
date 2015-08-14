@@ -32,7 +32,7 @@
     _cafeOrderWSDelegate = [[CafeOrderWSDelegate alloc] init];
     [self setValue:[NSNumber numberWithBool:NO] forKey:@"cafeOrderWSConnected"];
     _cafeOrderWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DEFAULT_CAFE_WEBSOCKET]]];
-    _cafeOrderWS.delegate = self;
+    _cafeOrderWS.delegate = _cafeOrderWSDelegate;
     [_cafeOrderWS open];
     
     // Location result reporting websocket
