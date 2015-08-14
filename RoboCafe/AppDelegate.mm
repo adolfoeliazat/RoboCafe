@@ -112,7 +112,7 @@
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket;
 {
-    NSLog(@"Websocket Connected");
+    NSLog(@"ALPS Websocket Connected");
     _wSConnected = YES;
     [[_vCSettings solverConnectionStatusLabel] setText:@"Connected"];
     [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor greenColor]];
@@ -120,7 +120,7 @@
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
 {
-    NSLog(@":( Websocket Failed With Error %@", error);
+    NSLog(@"ALPS Websocket Failed With Error %@", error);
     _wSConnected = NO;
     _wS = nil;
     [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
@@ -134,7 +134,7 @@
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
 {
-    NSLog(@"WebSocket closed");
+    NSLog(@"ALPS WebSocket closed");
     _wSConnected = NO;
     _wS = nil;
     [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
