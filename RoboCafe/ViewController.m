@@ -29,12 +29,44 @@ AppDelegate *appDelegate;
     _cancelTwixButton.hidden = YES;
     _cancelBouncyBallButton.hidden = YES;
     _cancelSquirtGunButton.hidden = YES;
+    
+    _roboCafeStatusLabel.textAlignment = NSTextAlignmentCenter;
+    UIFontDescriptor* fontItalic = [_roboCafeStatusLabel.font.fontDescriptor fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitItalic];
+    _roboCafeStatusLabel.font = [UIFont fontWithDescriptor:fontItalic size:0];
+    [_roboCafeStatusLabel setTextColor:[UIColor redColor]];
+
+    [appDelegate addObserver:self forKeyPath:@"wSConnected" options:NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
+    [appDelegate addObserver:self forKeyPath:@"cafeOrderWSState" options:NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
+    [appDelegate addObserver:self forKeyPath:@"locationAnnounceWSState" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+
+    if (context == &_roboCafeStatusLabel) {
+        [self.orderTwixButton setEnabled:NO];
+        [self.orderSquirtGunButton setEnabled:NO];
+        [self.orderBouncyBallButton setEnabled:NO];
+        
+        if (!appDelegate.wSConnected) {
+            [self.roboCafeStatusLabel setText:@"No connection to ALPS"];
+        } else if (appDelegate.cafeOrderWSState != WebsocketStateConnected) {
+            [self.roboCafeStatusLabel setText:@"No connection to RoboCafé server"];
+        } else if (appDelegate.locationAnnounceWSState != WebsocketStateConnected) {
+            [self.roboCafeStatusLabel setText:@"No connection to location server"];
+        } else {
+            [self.orderTwixButton setEnabled:YES];
+            [self.orderSquirtGunButton setEnabled:YES];
+            [self.orderBouncyBallButton setEnabled:YES];
+            [self.roboCafeStatusLabel setText:@""];
+        }
+    }
+}
+
 
 /* {
  "phone_id": "string",

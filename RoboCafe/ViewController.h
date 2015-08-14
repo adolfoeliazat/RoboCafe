@@ -30,6 +30,7 @@
 - (IBAction)orderBouncyBallTouch:(id)sender;
 - (IBAction)cancelBouncyBallTouch:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *roboCafeStatusLabel;
 
 @end
 

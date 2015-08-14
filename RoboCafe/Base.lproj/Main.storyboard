@@ -102,6 +102,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="roboCafeStatusLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhz-Rm-a3I">
+                                <rect key="frame" x="16" y="460" width="288" height="21"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -118,13 +127,16 @@
                             <constraint firstAttribute="trailingMargin" secondItem="3hM-SO-JVa" secondAttribute="trailing" constant="-16" id="ZZ2-Hk-NGp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JaI-cP-age" secondAttribute="trailing" constant="-16" id="ai0-EF-pqP"/>
                             <constraint firstItem="JaI-cP-age" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="c9y-cG-vP0"/>
+                            <constraint firstItem="lhz-Rm-a3I" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cff-yv-Bef"/>
                             <constraint firstItem="Ad5-Qy-Vic" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="dyZ-BH-4pq"/>
+                            <constraint firstItem="lhz-Rm-a3I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="e3S-JT-KrW"/>
                             <constraint firstItem="3hM-SO-JVa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="e8D-yv-1ah"/>
                             <constraint firstItem="Ad5-Qy-Vic" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gIz-4v-74A"/>
                             <constraint firstAttribute="centerX" secondItem="3hM-SO-JVa" secondAttribute="centerX" id="i0S-jF-eiP"/>
                             <constraint firstItem="nzN-Ha-4ne" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="iI9-xU-Mvo"/>
                             <constraint firstItem="Ad5-Qy-Vic" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pmH-Ml-1cw"/>
                             <constraint firstItem="nzN-Ha-4ne" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="quH-7T-JXb"/>
+                            <constraint firstItem="JaI-cP-age" firstAttribute="top" secondItem="lhz-Rm-a3I" secondAttribute="bottom" constant="8" id="t6d-qB-PjP"/>
                             <constraint firstItem="Gz4-m9-L61" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xXL-aq-o56"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JaI-cP-age" secondAttribute="bottom" id="zFv-Nn-nnD"/>
                         </constraints>
@@ -139,6 +151,7 @@
                         <outlet property="orderBouncyBallButton" destination="Gz4-m9-L61" id="nCZ-9m-Ljt"/>
                         <outlet property="orderSquirtGunButton" destination="ErZ-Bv-ioe" id="wmm-gk-WYV"/>
                         <outlet property="orderTwixButton" destination="PRT-CL-PLD" id="n8R-Uy-xf0"/>
+                        <outlet property="roboCafeStatusLabel" destination="lhz-Rm-a3I" id="hxn-jl-WEN"/>
                         <outlet property="squirtGunStatus" destination="Ad5-Qy-Vic" id="vwL-hA-dCs"/>
                         <outlet property="twixStatus" destination="jKT-27-Kmf" id="bW4-bx-fEr"/>
                     </connections>
