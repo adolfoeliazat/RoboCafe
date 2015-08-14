@@ -97,7 +97,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Order" id="cgh-zC-XHk"/>
+                    <tabBarItem key="tabBarItem" title="Order" image="ShoppingCart" id="cgh-zC-XHk"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="bouncyBallStatus" destination="nzN-Ha-4ne" id="JQ4-Jv-JjJ"/>
@@ -202,7 +202,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ALPS Settings" id="bkc-Ix-T69"/>
+                    <tabBarItem key="tabBarItem" title="ALPS Settings" image="SpeakerFilled" id="bkc-Ix-T69"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="positionField" destination="lBn-pV-ia1" id="AQk-Oz-zkX"/>
@@ -303,7 +303,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Café Settings" id="Tbt-4z-YpL"/>
+                    <tabBarItem key="tabBarItem" title="Café Settings" image="Settings" id="Tbt-4z-YpL"/>
                     <connections>
                         <outlet property="cafeStatusLabel" destination="gwU-GK-1K3" id="jW7-Kz-BAA"/>
                         <outlet property="cafeWSConnectButton" destination="cTd-sU-HOy" id="IQL-wU-8lx"/>
@@ -340,6 +340,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Settings" width="25" height="25"/>
+        <image name="ShoppingCart" width="25" height="25"/>
+        <image name="SpeakerFilled" width="25" height="25"/>
         <image name="robo_cafe_background_bottom.png" width="1292" height="120"/>
         <image name="robo_cafe_background_top.png" width="1292" height="450"/>
     </resources>
