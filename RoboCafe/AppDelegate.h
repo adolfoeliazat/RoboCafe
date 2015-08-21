@@ -22,15 +22,15 @@ typedef NS_ENUM(NSInteger, WebsocketState) {
     WebsocketStateConnected
 };
 
-#define DEFAULT_ALPS_WEBSOCKET  @"ws://pfet-v2.eecs.umich.edu:30005"
+//#define DEFAULT_ALPS_WEBSOCKET  @"ws://pfet-v2.eecs.umich.edu:30005"
 //#define DEFAULT_ALPS_WEBSOCKET  @"ws://solver.bitten-byte.com:30005"
-//#define DEFAULT_ALPS_WEBSOCKET  @"ws://141.212.11.218:30005"
+#define DEFAULT_ALPS_WEBSOCKET  @"ws://192.168.11.108:30005"
 
-#define DEFAULT_CAFE_WEBSOCKET  @"ws://pfet-v2.eecs.umich.edu:8000"
-//#define DEFAULT_CAFE_WEBSOCKET    @"ws://141.212.11.234:8081"
+//#define DEFAULT_CAFE_WEBSOCKET  @"ws://pfet-v2.eecs.umich.edu:8000"
+#define DEFAULT_CAFE_WEBSOCKET    @"ws://192.168.11.108:8081"
 
-#define DEFAULT_LOC_ANNOUNCE_WEBSOCKET @"ws://pfet-v2.eecs.umich.edu:8001"
-//#define DEFAULT_LOC_ANNOUNCE_WEBSOCKET  @"ws://141.212.11.234:8082"
+//#define DEFAULT_LOC_ANNOUNCE_WEBSOCKET @"ws://pfet-v2.eecs.umich.edu:8001"
+#define DEFAULT_LOC_ANNOUNCE_WEBSOCKET  @"ws://192.168.11.108:8082"
 
 @class ALPSCore, ViewController, ViewControllerSettings, ViewControllerCafeSettings;
 
