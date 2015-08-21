@@ -35,6 +35,8 @@
     self.locationAnnounceWSAddress = DEFAULT_LOC_ANNOUNCE_WEBSOCKET;
     self.locationAnnounceWSDelegate = [[LocationAnnounceWSDelegate alloc] init];
     [self locationAnnounceWSConnect];
+    
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 
     return YES;
 }
