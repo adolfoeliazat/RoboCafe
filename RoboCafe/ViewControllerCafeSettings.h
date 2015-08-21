@@ -34,4 +34,6 @@
 - (IBAction)locationWSConnectClick:(id)sender;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *vendorIDLabel;
+
 @end

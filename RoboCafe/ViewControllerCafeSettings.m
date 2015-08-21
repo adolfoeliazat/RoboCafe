@@ -20,6 +20,9 @@
     
     self.locationStatusLabel.textAlignment = NSTextAlignmentRight;
     [appDelegate addObserver:self forKeyPath:@"locationAnnounceWSState" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
+    
+    self.vendorIDLabel.textAlignment = NSTextAlignmentCenter;
+    self.vendorIDLabel.text = [[UIDevice currentDevice] identifierForVendor].UUIDString;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
