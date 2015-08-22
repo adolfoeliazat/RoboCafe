@@ -55,7 +55,7 @@
         [_cafeStatusLabel setTextColor:[UIColor greenColor]];
     } else if (appDelegate.cafeOrderWSState == WebsocketStateConnecting) {
         [_cafeStatusLabel setText:@"Connected"];
-        [_cafeStatusLabel setTextColor:[UIColor yellowColor]];
+        [_cafeStatusLabel setTextColor:[UIColor orangeColor]];
     } else {
         [_cafeStatusLabel setText:@"Disconnected"];
         [_cafeStatusLabel setTextColor:[UIColor redColor]];
@@ -75,7 +75,7 @@
         urlString = [appDelegate.locationAnnounceWS.url absoluteString];
         
         [self.locationStatusLabel setText:@"Connecting"];
-        [self.locationStatusLabel setTextColor:[UIColor yellowColor]];
+        [self.locationStatusLabel setTextColor:[UIColor orangeColor]];
     } else {
         urlString = appDelegate.locationAnnounceWSAddress;
         

@@ -39,7 +39,7 @@
         [_solverConnectionStatusLabel setTextColor:[UIColor greenColor]];
     } else if (appDelegate.alpsWSState == WebsocketStateConnecting) {
         [_solverConnectionStatusLabel setText:@"Connecting..."];
-        [_solverConnectionStatusLabel setTextColor:[UIColor yellowColor]];
+        [_solverConnectionStatusLabel setTextColor:[UIColor orangeColor]];
     } else {
         [_solverConnectionStatusLabel setText:@"Disconnected"];
         [_solverConnectionStatusLabel setTextColor:[UIColor redColor]];

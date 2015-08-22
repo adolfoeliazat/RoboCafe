@@ -165,7 +165,7 @@
 
 - (void)alpsWSConnect {
     [[_vCSettings solverConnectionStatusLabel] setText:@"Reconnecting..."];
-    [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor yellowColor]];
+    [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor orangeColor]];
     
     self.alpsWSState = WebsocketStateConnecting;
 
