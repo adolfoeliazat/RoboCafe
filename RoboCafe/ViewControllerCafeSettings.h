@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *cafeStatusLabel;
 @property (weak, nonatomic) IBOutlet UITextField *cafeWSEntry;
 - (IBAction)cafeWSChanged:(id)sender;
+- (IBAction)cafeWSClear:(id)sender;
 
 
 - (IBAction)cafeWSConnectClick:(id)sender;
@@ -30,6 +31,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *locationWSEntry;
 - (IBAction)locationWSChanged:(id)sender;
+- (IBAction)locationWSClear:(id)sender;
 
 - (IBAction)locationWSConnectClick:(id)sender;
 

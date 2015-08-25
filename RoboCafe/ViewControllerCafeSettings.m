@@ -94,6 +94,13 @@
     appDelegate.cafeOrderWSAddress = self.cafeWSEntry.text;
     [appDelegate cafeOrderWSConnect];
 }
+
+- (IBAction)cafeWSClear:(id)sender {
+    self.cafeWSEntry.text = DEFAULT_CAFE_WEBSOCKET;
+    [self cafeWSChanged:self];
+}
+
+
 - (IBAction)cafeWSConnectClick:(id)sender {
     if (appDelegate.cafeOrderWSState != WebsocketStateDisconnected) {
         [appDelegate.cafeOrderWS close];
@@ -109,6 +116,12 @@
     appDelegate.locationAnnounceWSAddress = self.locationWSEntry.text;
     [appDelegate locationAnnounceWSConnect];
 }
+
+- (IBAction)locationWSClear:(id)sender {
+    self.locationWSEntry.text = DEFAULT_LOC_ANNOUNCE_WEBSOCKET;
+    [self locationWSChanged:self];
+}
+
 - (IBAction)locationWSConnectClick:(id)sender {
     if (appDelegate.locationAnnounceWSState != WebsocketStateDisconnected) {
         [appDelegate.locationAnnounceWS close];
