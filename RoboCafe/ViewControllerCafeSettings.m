@@ -90,6 +90,7 @@
     if (appDelegate.cafeOrderWSState != WebsocketStateDisconnected) {
         [appDelegate.cafeOrderWS close];
     }
+    [[NSUserDefaults standardUserDefaults] setObject:self.cafeWSEntry.text forKey:@"cafe_ws_address"];
     appDelegate.cafeOrderWSAddress = self.cafeWSEntry.text;
     [appDelegate cafeOrderWSConnect];
 }
@@ -104,6 +105,7 @@
     if (appDelegate.locationAnnounceWSState != WebsocketStateDisconnected) {
         [appDelegate.locationAnnounceWS close];
     }
+    [[NSUserDefaults standardUserDefaults] setObject:self.locationWSEntry.text forKey:@"loc_announce_ws_address"];
     appDelegate.locationAnnounceWSAddress = self.locationWSEntry.text;
     [appDelegate locationAnnounceWSConnect];
 }

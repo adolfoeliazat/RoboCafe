@@ -99,6 +99,7 @@
     if (appDelegate.alpsWSState != WebsocketStateDisconnected) {
         [appDelegate.alpsWS close];
     }
+    [[NSUserDefaults standardUserDefaults] setObject:self.alpsWSEntry.text forKey:@"alps_ws_address"];
     appDelegate.alpsWSAddress = self.alpsWSEntry.text;
     [appDelegate alpsWSConnect];
 }

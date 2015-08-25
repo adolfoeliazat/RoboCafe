@@ -22,6 +22,9 @@ typedef NS_ENUM(NSInteger, WebsocketState) {
     WebsocketStateConnected
 };
 
+#define DEFAULT_ALPS_THRESHOLD_DIVISOR 5.0f
+#define DEFAULT_ALPS_THRESHOLD_MULTIPLIER 30.0f
+
 //#define DEFAULT_ALPS_WEBSOCKET  @"ws://pfet-v2.eecs.umich.edu:30005"
 //#define DEFAULT_ALPS_WEBSOCKET  @"ws://solver.bitten-byte.com:30005"
 #define DEFAULT_ALPS_WEBSOCKET  @"ws://192.168.11.108:30005"

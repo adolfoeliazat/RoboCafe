@@ -17,8 +17,11 @@
     
     // Set up default parameter values
     NSDictionary* userDefaultsDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
-                                          [NSNumber numberWithFloat:5.0f], @"alps_thresholdDivisor",
-                                          [NSNumber numberWithFloat:30.0f], @"alps_thresholdMultiplier",
+                                          [NSNumber numberWithFloat:DEFAULT_ALPS_THRESHOLD_DIVISOR], @"alps_thresholdDivisor",
+                                          [NSNumber numberWithFloat:DEFAULT_ALPS_THRESHOLD_MULTIPLIER], @"alps_thresholdMultiplier",
+                                          DEFAULT_ALPS_WEBSOCKET, @"alps_ws_address",
+                                          DEFAULT_CAFE_WEBSOCKET, @"cafe_ws_address",
+                                          DEFAULT_LOC_ANNOUNCE_WEBSOCKET, @"loc_announce_ws_address",
                                           nil];
     [[NSUserDefaults standardUserDefaults] registerDefaults:userDefaultsDefaults];
     
@@ -30,16 +33,16 @@
     [_ALPS start];
     
     // ALPS websocket
-    self.alpsWSAddress = DEFAULT_ALPS_WEBSOCKET;
+    self.alpsWSAddress = [[NSUserDefaults standardUserDefaults] stringForKey:@"alps_ws_address"];
     [self alpsWSConnect];
     
     // Café reporting websocket
-    self.cafeOrderWSAddress = DEFAULT_CAFE_WEBSOCKET;
+    self.cafeOrderWSAddress = [[NSUserDefaults standardUserDefaults] stringForKey:@"cafe_ws_address"];
     self.cafeOrderWSDelegate = [[CafeOrderWSDelegate alloc] init];
     [self cafeOrderWSConnect];
     
     // Location result reporting websocket
-    self.locationAnnounceWSAddress = DEFAULT_LOC_ANNOUNCE_WEBSOCKET;
+    self.locationAnnounceWSAddress = [[NSUserDefaults standardUserDefaults] stringForKey:@"loc_announce_ws_address"];
     self.locationAnnounceWSDelegate = [[LocationAnnounceWSDelegate alloc] init];
     [self locationAnnounceWSConnect];
     
