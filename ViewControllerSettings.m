@@ -72,11 +72,17 @@
 */
 
 - (IBAction)thresholdDivisorAction:(id)sender {
+    float val = _thresholdDivisorSlider.value;
+    val = roundf(val*2) / 2.0;
+    _thresholdDivisorSlider.value = val;
     [alps setThresholdDivisor:_thresholdDivisorSlider.value];
     _thresholdDivisorLabel.text = [[NSNumber numberWithFloat:_thresholdDivisorSlider.value] stringValue];
 }
 
 - (IBAction)thresholdMultiplierAction:(id)sender {
+    float val = _thresholdMultiplierSlider.value;
+    val = roundf(val);
+    _thresholdMultiplierSlider.value = val;
     [alps setThresholdMultiplier:_thresholdMultiplierSlider.value];
     _thresholdMultiplierLabel.text = [[NSNumber numberWithFloat:_thresholdMultiplierSlider.value] stringValue];
 }
