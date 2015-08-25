@@ -22,19 +22,25 @@
     [appDelegate setVCSettings:self];
     alps = [appDelegate ALPS];
     
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    
     _alpsWSEntry.text = DEFAULT_ALPS_WEBSOCKET;
     
+    float thresholdDivisorValue = [defaults floatForKey:@"alps_thresholdDivisor"];
+    [alps setThresholdDivisor:thresholdDivisorValue];
     _thresholdDivisorSlider.minimumValue = 1;
     _thresholdDivisorSlider.maximumValue = 10;
     _thresholdDivisorSlider.continuous = NO;
-    _thresholdDivisorSlider.value = [alps thresholdDivisor];
-    _thresholdDivisorLabel.text = [[NSNumber numberWithFloat:[alps thresholdDivisor]] stringValue];
+    _thresholdDivisorSlider.value = thresholdDivisorValue;
+    _thresholdDivisorLabel.text = [[NSNumber numberWithFloat:thresholdDivisorValue] stringValue];
     
+    float thresholdMultiplierValue = [defaults floatForKey:@"alps_thresholdMultiplier"];
+    [alps setThresholdMultiplier:thresholdMultiplierValue];
     _thresholdMultiplierSlider.minimumValue = 1;
     _thresholdMultiplierSlider.maximumValue = 100;
     _thresholdMultiplierSlider.continuous = NO;
-    _thresholdMultiplierSlider.value = [alps thresholdMultiplier];
-    _thresholdMultiplierLabel.text = [[NSNumber numberWithFloat:[alps thresholdMultiplier]] stringValue];
+    _thresholdMultiplierSlider.value = thresholdMultiplierValue;
+    _thresholdMultiplierLabel.text = [[NSNumber numberWithFloat:thresholdMultiplierValue] stringValue];
     
     if (appDelegate.alpsWSState == WebsocketStateConnected){
         [_solverConnectionStatusLabel setText:@"Connected"];
@@ -75,6 +81,7 @@
     float val = _thresholdDivisorSlider.value;
     val = roundf(val*2) / 2.0;
     _thresholdDivisorSlider.value = val;
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:val] forKey:@"alps_thresholdDivisor"];
     [alps setThresholdDivisor:_thresholdDivisorSlider.value];
     _thresholdDivisorLabel.text = [[NSNumber numberWithFloat:_thresholdDivisorSlider.value] stringValue];
 }
@@ -83,6 +90,7 @@
     float val = _thresholdMultiplierSlider.value;
     val = roundf(val);
     _thresholdMultiplierSlider.value = val;
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:val] forKey:@"alps_thresholdMultiplier"];
     [alps setThresholdMultiplier:_thresholdMultiplierSlider.value];
     _thresholdMultiplierLabel.text = [[NSNumber numberWithFloat:_thresholdMultiplierSlider.value] stringValue];
 }

@@ -15,6 +15,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // Set up default parameter values
+    NSDictionary* userDefaultsDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
+                                          [NSNumber numberWithFloat:5.0f], @"alps_thresholdDivisor",
+                                          [NSNumber numberWithFloat:30.0f], @"alps_thresholdMultiplier",
+                                          nil];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:userDefaultsDefaults];
+    
     _position = nil;
     
     // Set up ALPS
