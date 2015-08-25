@@ -196,7 +196,7 @@
                                 </constraints>
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vAQ-dM-ySb">
-                                <rect key="frame" x="20" y="220" width="249" height="31"/>
+                                <rect key="frame" x="47" y="220" width="222" height="31"/>
                                 <connections>
                                     <action selector="thresholdDivisorAction:" destination="g4r-ea-AZF" eventType="valueChanged" id="xXX-5n-3kQ"/>
                                 </connections>
@@ -217,7 +217,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="XhT-Z4-Z5t">
-                                <rect key="frame" x="20" y="283" width="249" height="31"/>
+                                <rect key="frame" x="47" y="283" width="222" height="31"/>
                                 <connections>
                                     <action selector="thresholdMultiplierAction:" destination="g4r-ea-AZF" eventType="valueChanged" id="FRx-HJ-fg4"/>
                                 </connections>
@@ -274,7 +274,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gfc-ZW-YbB">
-                                <rect key="frame" x="15" y="157" width="207" height="30"/>
+                                <rect key="frame" x="49" y="157" width="173" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -293,6 +293,15 @@
                                     <action selector="alpsWSReconnect:" destination="g4r-ea-AZF" eventType="touchUpInside" id="Slw-c4-xUN"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clear" translatesAutoresizingMaskIntoConstraints="NO" id="LTk-hR-42Z">
+                                <rect key="frame" x="16" y="222" width="25" height="25"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clear" translatesAutoresizingMaskIntoConstraints="NO" id="dWi-dw-HBQ">
+                                <rect key="frame" x="15" y="285" width="25" height="25"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clear" translatesAutoresizingMaskIntoConstraints="NO" id="Exa-uC-RCN">
+                                <rect key="frame" x="15" y="159" width="25" height="25"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -302,6 +311,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="KzQ-ZW-TwZ" secondAttribute="trailing" constant="-16" id="4Os-3u-R4r"/>
                             <constraint firstItem="zrG-0R-84c" firstAttribute="top" secondItem="f3b-UR-kD3" secondAttribute="bottom" constant="8" id="68g-mP-VOv"/>
                             <constraint firstItem="OVB-nj-cAP" firstAttribute="leading" secondItem="wdA-a2-KSV" secondAttribute="leadingMargin" id="6Ah-ai-bNX"/>
+                            <constraint firstItem="Gfc-ZW-YbB" firstAttribute="leading" secondItem="Exa-uC-RCN" secondAttribute="trailing" constant="9" id="6HU-8H-6BP"/>
+                            <constraint firstItem="Exa-uC-RCN" firstAttribute="leading" secondItem="wdA-a2-KSV" secondAttribute="leadingMargin" constant="-1" id="6u2-Fe-jro"/>
+                            <constraint firstItem="LTk-hR-42Z" firstAttribute="centerY" secondItem="vAQ-dM-ySb" secondAttribute="centerY" constant="-0.5" id="8A4-Ht-ae5"/>
                             <constraint firstItem="SMY-Pd-lLp" firstAttribute="trailing" secondItem="wdA-a2-KSV" secondAttribute="trailingMargin" id="8CX-hb-88A"/>
                             <constraint firstItem="XhT-Z4-Z5t" firstAttribute="centerY" secondItem="SMY-Pd-lLp" secondAttribute="centerY" constant="-3.5" id="8KJ-d3-e5J"/>
                             <constraint firstItem="lbr-hf-dbY" firstAttribute="trailing" secondItem="wdA-a2-KSV" secondAttribute="trailingMargin" id="8NN-3V-Dgn"/>
@@ -311,11 +323,10 @@
                             <constraint firstItem="zrG-0R-84c" firstAttribute="leading" secondItem="wdA-a2-KSV" secondAttribute="leadingMargin" id="Bgq-lf-eMJ"/>
                             <constraint firstItem="f3b-UR-kD3" firstAttribute="leading" secondItem="wdA-a2-KSV" secondAttribute="leadingMargin" id="CsV-hJ-DqJ"/>
                             <constraint firstItem="Qr9-Zx-YBO" firstAttribute="top" secondItem="3vq-ll-UYE" secondAttribute="bottom" constant="-8" id="Ebz-Q0-cep"/>
-                            <constraint firstItem="vAQ-dM-ySb" firstAttribute="leading" secondItem="wdA-a2-KSV" secondAttribute="leadingMargin" constant="6" id="GGb-JB-Mo4"/>
                             <constraint firstItem="YHe-Vv-R4f" firstAttribute="leading" secondItem="wdA-a2-KSV" secondAttribute="leadingMargin" id="HP9-IY-nAH"/>
                             <constraint firstItem="KzQ-ZW-TwZ" firstAttribute="top" secondItem="zrG-0R-84c" secondAttribute="bottom" constant="8" id="Hd3-4j-OeN"/>
+                            <constraint firstItem="vAQ-dM-ySb" firstAttribute="leading" secondItem="LTk-hR-42Z" secondAttribute="trailing" constant="8" id="J3p-08-adp"/>
                             <constraint firstItem="lBn-pV-ia1" firstAttribute="leading" secondItem="OVB-nj-cAP" secondAttribute="trailing" constant="8" id="JfV-Gk-1GH"/>
-                            <constraint firstItem="Gfc-ZW-YbB" firstAttribute="leading" secondItem="wdA-a2-KSV" secondAttribute="leadingMargin" constant="-1" id="Juy-Pb-gU1"/>
                             <constraint firstItem="ISp-0i-Xmy" firstAttribute="trailing" secondItem="wdA-a2-KSV" secondAttribute="trailingMargin" id="Jxx-hV-Rh6"/>
                             <constraint firstItem="zPH-vF-eFn" firstAttribute="leading" secondItem="wdA-a2-KSV" secondAttribute="leadingMargin" id="PZw-JD-xfE"/>
                             <constraint firstItem="ZfA-ga-vh4" firstAttribute="trailing" secondItem="wdA-a2-KSV" secondAttribute="trailingMargin" id="SDt-Q9-kcP"/>
@@ -324,31 +335,38 @@
                             <constraint firstItem="SMY-Pd-lLp" firstAttribute="leading" secondItem="XhT-Z4-Z5t" secondAttribute="trailing" constant="13" id="V9p-kk-b19"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3vq-ll-UYE" secondAttribute="trailing" constant="-16" id="ZOk-2H-fPW"/>
                             <constraint firstItem="3vq-ll-UYE" firstAttribute="top" secondItem="V3T-lV-NDZ" secondAttribute="bottom" constant="8" id="Zq6-Ki-Zdr"/>
+                            <constraint firstItem="dWi-dw-HBQ" firstAttribute="leading" secondItem="wdA-a2-KSV" secondAttribute="leadingMargin" constant="-1" id="a7t-WT-YuQ"/>
                             <constraint firstItem="Gfc-ZW-YbB" firstAttribute="top" secondItem="Qr9-Zx-YBO" secondAttribute="bottom" constant="8" id="bML-5v-K0q"/>
                             <constraint firstItem="Qr9-Zx-YBO" firstAttribute="leading" secondItem="wdA-a2-KSV" secondAttribute="leadingMargin" id="bOQ-wH-wyt"/>
                             <constraint firstItem="lbr-hf-dbY" firstAttribute="leading" secondItem="Gfc-ZW-YbB" secondAttribute="trailing" constant="8" id="ds9-9J-78U"/>
                             <constraint firstItem="zPH-vF-eFn" firstAttribute="top" secondItem="vAQ-dM-ySb" secondAttribute="bottom" constant="8" id="flN-W1-Bci"/>
                             <constraint firstItem="3vq-ll-UYE" firstAttribute="leading" secondItem="wdA-a2-KSV" secondAttribute="leadingMargin" constant="-16" id="gb9-jl-ecj"/>
                             <constraint firstItem="lBn-pV-ia1" firstAttribute="centerY" secondItem="OVB-nj-cAP" secondAttribute="centerY" constant="-3" id="hnZ-K2-QHe"/>
+                            <constraint firstItem="XhT-Z4-Z5t" firstAttribute="leading" secondItem="dWi-dw-HBQ" secondAttribute="trailing" constant="9" id="huC-YJ-yUf"/>
                             <constraint firstItem="vAQ-dM-ySb" firstAttribute="top" secondItem="YHe-Vv-R4f" secondAttribute="bottom" constant="8" id="ijS-w1-vfo"/>
+                            <constraint firstItem="Gfc-ZW-YbB" firstAttribute="centerY" secondItem="Exa-uC-RCN" secondAttribute="centerY" constant="0.5" id="kAq-sp-Bje"/>
                             <constraint firstItem="f3b-UR-kD3" firstAttribute="top" secondItem="OVB-nj-cAP" secondAttribute="bottom" constant="13" id="lNV-cD-BOd"/>
                             <constraint firstItem="KzQ-ZW-TwZ" firstAttribute="leading" secondItem="wdA-a2-KSV" secondAttribute="leadingMargin" constant="-16" id="o9R-XO-J7F"/>
+                            <constraint firstItem="dWi-dw-HBQ" firstAttribute="centerY" secondItem="XhT-Z4-Z5t" secondAttribute="centerY" constant="-0.5" id="rOj-Ig-ocv"/>
                             <constraint firstItem="lBn-pV-ia1" firstAttribute="trailing" secondItem="wdA-a2-KSV" secondAttribute="trailingMargin" id="s01-3w-fxO"/>
                             <constraint firstItem="ISp-0i-Xmy" firstAttribute="centerY" secondItem="Qr9-Zx-YBO" secondAttribute="centerY" constant="2" id="t2S-4z-LPL"/>
-                            <constraint firstItem="XhT-Z4-Z5t" firstAttribute="leading" secondItem="wdA-a2-KSV" secondAttribute="leadingMargin" constant="6" id="vHT-ZH-Xc3"/>
                             <constraint firstItem="vAQ-dM-ySb" firstAttribute="centerY" secondItem="ZfA-ga-vh4" secondAttribute="centerY" constant="0.5" id="vTj-iY-kJi"/>
                             <constraint firstItem="OVB-nj-cAP" firstAttribute="top" secondItem="XhT-Z4-Z5t" secondAttribute="bottom" constant="16" id="xq0-Rs-EpH"/>
+                            <constraint firstItem="LTk-hR-42Z" firstAttribute="leading" secondItem="wdA-a2-KSV" secondAttribute="leadingMargin" id="znp-tT-AX4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="ALPS Settings" image="SpeakerFilled" id="bkc-Ix-T69"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="alpsWSClear" destination="Exa-uC-RCN" id="7BG-hL-nnW"/>
                         <outlet property="alpsWSEntry" destination="Gfc-ZW-YbB" id="MW5-Qb-ByA"/>
                         <outlet property="positionField" destination="lBn-pV-ia1" id="AQk-Oz-zkX"/>
                         <outlet property="solverConnectionStatusLabel" destination="ISp-0i-Xmy" id="6yO-8Y-Xak"/>
                         <outlet property="tdoaDataField" destination="zrG-0R-84c" id="fIh-Wl-iir"/>
+                        <outlet property="thresholdDivisorClear" destination="LTk-hR-42Z" id="Ecz-UM-ieD"/>
                         <outlet property="thresholdDivisorLabel" destination="ZfA-ga-vh4" id="QBa-ZD-ZHT"/>
                         <outlet property="thresholdDivisorSlider" destination="vAQ-dM-ySb" id="1ou-ou-nWu"/>
+                        <outlet property="thresholdMultiplierClear" destination="dWi-dw-HBQ" id="YhX-1T-DNt"/>
                         <outlet property="thresholdMultiplierLabel" destination="SMY-Pd-lLp" id="otA-Ft-LlA"/>
                         <outlet property="thresholdMultiplierSlider" destination="XhT-Z4-Z5t" id="v7a-sz-NIM"/>
                     </connections>
@@ -531,6 +549,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Clear" width="25" height="25"/>
         <image name="Settings" width="25" height="25"/>
         <image name="ShoppingCart" width="25" height="25"/>
         <image name="SpeakerFilled" width="25" height="25"/>

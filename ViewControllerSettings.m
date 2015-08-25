@@ -26,6 +26,24 @@
     
     _alpsWSEntry.text = DEFAULT_ALPS_WEBSOCKET;
     
+    UITapGestureRecognizer* alpsWSClearTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(alpsWSClearTapped:)];
+    alpsWSClearTapRecognizer.numberOfTapsRequired = 1;
+    alpsWSClearTapRecognizer.numberOfTouchesRequired = 1;
+    [_alpsWSClear addGestureRecognizer:alpsWSClearTapRecognizer];
+    [_alpsWSClear setUserInteractionEnabled:YES];
+    
+    UITapGestureRecognizer* thresholdDivisorClearRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(thresholdDivisorClearTapped:)];
+    thresholdDivisorClearRecognizer.numberOfTapsRequired = 1;
+    thresholdDivisorClearRecognizer.numberOfTouchesRequired = 1;
+    [_thresholdDivisorClear addGestureRecognizer:thresholdDivisorClearRecognizer];
+    [_thresholdDivisorClear setUserInteractionEnabled:YES];
+    
+    UITapGestureRecognizer* thresholdMultiplierClearRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(thresholdMultiplierClearTapped:)];
+    thresholdMultiplierClearRecognizer.numberOfTapsRequired = 1;
+    thresholdMultiplierClearRecognizer.numberOfTouchesRequired = 1;
+    [_thresholdMultiplierClear addGestureRecognizer:thresholdMultiplierClearRecognizer];
+    [_thresholdMultiplierClear setUserInteractionEnabled:YES];
+    
     float thresholdDivisorValue = [defaults floatForKey:@"alps_thresholdDivisor"];
     [alps setThresholdDivisor:thresholdDivisorValue];
     _thresholdDivisorSlider.minimumValue = 1;
@@ -77,8 +95,23 @@
 }
 */
 
+- (void)alpsWSClearTapped:(UIGestureRecognizer*)gestureRecognizer {
+    self.alpsWSEntry.text = DEFAULT_ALPS_WEBSOCKET;
+    [self alpsWSChanged:self];
+}
+
+- (void)thresholdDivisorClearTapped:(UIGestureRecognizer*)gestureRecognizer {
+    self.thresholdDivisorSlider.value = DEFAULT_ALPS_THRESHOLD_DIVISOR;
+    [self thresholdDivisorAction:self];
+}
+
+- (void)thresholdMultiplierClearTapped:(UIGestureRecognizer*)gestureRecognizer {
+    self.thresholdMultiplierSlider.value = DEFAULT_ALPS_THRESHOLD_MULTIPLIER;
+    [self thresholdMultiplierAction:self];
+}
+
 - (IBAction)thresholdDivisorAction:(id)sender {
-    float val = _thresholdDivisorSlider.value;
+    float val = self.thresholdDivisorSlider.value;
     val = roundf(val*2) / 2.0;
     _thresholdDivisorSlider.value = val;
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:val] forKey:@"alps_thresholdDivisor"];
@@ -87,7 +120,7 @@
 }
 
 - (IBAction)thresholdMultiplierAction:(id)sender {
-    float val = _thresholdMultiplierSlider.value;
+    float val = self.thresholdMultiplierSlider.value;
     val = roundf(val);
     _thresholdMultiplierSlider.value = val;
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:val] forKey:@"alps_thresholdMultiplier"];
