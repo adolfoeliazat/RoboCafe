@@ -22,6 +22,8 @@
     [appDelegate setVCSettings:self];
     alps = [appDelegate ALPS];
     
+    _alpsWSEntry.text = DEFAULT_ALPS_WEBSOCKET;
+    
     _thresholdDivisorSlider.minimumValue = 1;
     _thresholdDivisorSlider.maximumValue = 10;
     _thresholdDivisorSlider.continuous = NO;
@@ -78,5 +80,21 @@
     [alps setThresholdMultiplier:_thresholdMultiplierSlider.value];
     _thresholdMultiplierLabel.text = [[NSNumber numberWithFloat:_thresholdMultiplierSlider.value] stringValue];
 }
+
+- (IBAction)alpsWSChanged:(id)sender {
+    if (appDelegate.alpsWSState != WebsocketStateDisconnected) {
+        [appDelegate.alpsWS close];
+    }
+    appDelegate.alpsWSAddress = self.alpsWSEntry.text;
+    [appDelegate alpsWSConnect];
+}
+
+- (IBAction)alpsWSReconnect:(id)sender {
+    if (appDelegate.alpsWSState != WebsocketStateDisconnected) {
+        [appDelegate.alpsWS close];
+    }
+    [appDelegate alpsWSConnect];
+}
+
 
 @end

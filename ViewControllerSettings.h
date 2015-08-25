@@ -16,6 +16,12 @@
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *solverConnectionStatusLabel;
+
+@property (weak, nonatomic) IBOutlet UITextField *alpsWSEntry;
+- (IBAction)alpsWSChanged:(id)sender;
+- (IBAction)alpsWSReconnect:(id)sender;
+
+
 @property (weak, nonatomic) IBOutlet UISlider *thresholdDivisorSlider;
 @property (weak, nonatomic) IBOutlet UISlider *thresholdMultiplierSlider;
 @property (weak, nonatomic) IBOutlet UILabel *thresholdDivisorLabel;
