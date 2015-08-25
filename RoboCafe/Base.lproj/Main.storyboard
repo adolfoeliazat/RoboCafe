@@ -274,19 +274,19 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gfc-ZW-YbB">
-                                <rect key="frame" x="49" y="157" width="173" height="30"/>
+                                <rect key="frame" x="49" y="157" width="222" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="alpsWSChanged:" destination="g4r-ea-AZF" eventType="valueChanged" id="cok-B7-mCC"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbr-hf-dbY">
-                                <rect key="frame" x="230" y="157" width="74" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbr-hf-dbY">
+                                <rect key="frame" x="279" y="159" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="74" id="zZ6-A0-Yv9"/>
+                                    <constraint firstAttribute="width" constant="25" id="zZ6-A0-Yv9"/>
                                 </constraints>
-                                <state key="normal" title="Reconnect">
+                                <state key="normal" title="Reconnect" image="Refresh-Blue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -403,7 +403,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="URg-kv-Cg3">
-                                <rect key="frame" x="16" y="177" width="206" height="30"/>
+                                <rect key="frame" x="16" y="177" width="255" height="30"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" link="YES"/>
                                 </accessibility>
@@ -413,12 +413,12 @@
                                     <action selector="cafeWSChanged:" destination="Xxp-nS-Mo4" eventType="valueChanged" id="hL9-p2-dls"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTd-sU-HOy">
-                                <rect key="frame" x="230" y="177" width="74" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTd-sU-HOy">
+                                <rect key="frame" x="279" y="179" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="74" id="A8u-ny-ekv"/>
+                                    <constraint firstAttribute="width" constant="25" id="A8u-ny-ekv"/>
                                 </constraints>
-                                <state key="normal" title="Reconnect">
+                                <state key="normal" title="Reconnect" image="Refresh-Blue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -459,7 +459,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mZ5-G6-zfR">
-                                <rect key="frame" x="16" y="244" width="205" height="30"/>
+                                <rect key="frame" x="16" y="244" width="254" height="30"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" link="YES"/>
                                 </accessibility>
@@ -469,12 +469,12 @@
                                     <action selector="locationWSChanged:" destination="Xxp-nS-Mo4" eventType="valueChanged" id="7rE-FX-S8Y"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7B-TX-t2s">
-                                <rect key="frame" x="230" y="244" width="74" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7B-TX-t2s">
+                                <rect key="frame" x="279" y="246" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="74" id="HAn-7O-11f"/>
+                                    <constraint firstAttribute="width" constant="25" id="HAn-7O-11f"/>
                                 </constraints>
-                                <state key="normal" title="Reconnect">
+                                <state key="normal" title="Reconnect" image="Refresh-Blue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -550,6 +550,7 @@
     </scenes>
     <resources>
         <image name="Clear" width="25" height="25"/>
+        <image name="Refresh-Blue" width="25" height="25"/>
         <image name="Settings" width="25" height="25"/>
         <image name="ShoppingCart" width="25" height="25"/>
         <image name="SpeakerFilled" width="25" height="25"/>
