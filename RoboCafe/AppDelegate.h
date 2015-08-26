@@ -12,9 +12,10 @@
 #import "CafeOrderWSDelegate.h"
 #import "LocationAnnounceWSDelegate.h"
 
-#define RECORD_LENGTH 168960 //Needs to be divisible by 1024
+#define RECORD_LENGTH 211200 //Needs to be divisible by 1024
 #define TDMA_SLOTS 6
 #define WEBSOCKET_RECONNECT_TIMEOUT 3 // Websocket reconnect timeout in seconds
+#define LOCAITON_REPEAT_TIME 0.5f //seconds
 
 typedef NS_ENUM(NSInteger, WebsocketState) {
     WebsocketStateDisconnected,
@@ -49,6 +50,9 @@ typedef NS_ENUM(NSInteger, WebsocketState) {
 @property (nonatomic) ALPSCore *ALPS;
 @property (nonatomic) WebsocketState alpsWSState;
 @property NSDictionary *position;
+@property (nonatomic) NSDictionary *locationMsg;
+@property (nonatomic) NSTimer *locationResendTimer;
+
 - (void) alpsWSConnect;
 
 @property (nonatomic) NSString* cafeOrderWSAddress;

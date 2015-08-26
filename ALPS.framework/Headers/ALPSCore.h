@@ -14,7 +14,7 @@
 #define kInputBus 1
 #define ALPS_OK 0
 #define ALPS_ERROR -1
-#define MAX_CYLCES_PER_BUFFER 3
+#define MAX_CYLCES_PER_BUFFER 4
 
 @class iBeaconManager;
 

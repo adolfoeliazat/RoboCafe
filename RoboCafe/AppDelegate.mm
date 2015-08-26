@@ -129,7 +129,19 @@
                          [NSNumber numberWithFloat: 0.0], @"Z",
                          nil];
     
+    [_locationResendTimer invalidate];
+    [self setLocationMsg:msg];
     [self sendToLocationAnnounceWS:msg];
+    _locationResendTimer = [NSTimer scheduledTimerWithTimeInterval:LOCAITON_REPEAT_TIME
+                                     target:self
+                                   selector:@selector(repeatLocation:)
+                                   userInfo:[self locationMsg]
+                                    repeats:YES];
+}
+
+- (void)repeatLocation:(NSTimer *)timer {
+    NSLog(@"Resending location");
+    [self sendToLocationAnnounceWS:[self locationMsg]];
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket;

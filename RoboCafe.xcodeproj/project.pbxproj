@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		2406B3AD1B7D648D003A4AB7 /* CafeOrderWSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2406B3AC1B7D648D003A4AB7 /* CafeOrderWSDelegate.m */; };
 		244264701B7C0FEA00C7A954 /* ViewControllerCafeSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2442646F1B7C0FEA00C7A954 /* ViewControllerCafeSettings.m */; };
-		244264781B7C43A700C7A954 /* ALPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244264771B7C43A700C7A954 /* ALPS.framework */; };
-		2442647A1B7C43D600C7A954 /* ALPS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 244264771B7C43A700C7A954 /* ALPS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		246288221B7D3DC200D7F1E8 /* LocationAnnounceWSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 246288211B7D3DC200D7F1E8 /* LocationAnnounceWSDelegate.m */; };
 		24C1822E1B8D3CDF00AD1A42 /* TabBarControllerAllowUpsideDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C1822D1B8D3CDF00AD1A42 /* TabBarControllerAllowUpsideDown.m */; };
 		24DEFB4F1B7DCE3100F4F5E2 /* robo_cafe_background_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 24DEFB4D1B7DCE3100F4F5E2 /* robo_cafe_background_bottom.png */; };
@@ -21,7 +19,6 @@
 		AB7EE1301B77102A008CFE34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB7EE12E1B77102A008CFE34 /* Main.storyboard */; };
 		AB7EE1321B77102A008CFE34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB7EE1311B77102A008CFE34 /* Images.xcassets */; };
 		AB7EE1351B77102A008CFE34 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7EE1331B77102A008CFE34 /* LaunchScreen.xib */; };
-		AB7EE1411B77102A008CFE34 /* RoboCafeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7EE1401B77102A008CFE34 /* RoboCafeTests.m */; };
 		AB7EE1581B7710A6008CFE34 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7EE1571B7710A6008CFE34 /* AudioToolbox.framework */; };
 		AB7EE15A1B7710AB008CFE34 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7EE1591B7710AB008CFE34 /* AVFoundation.framework */; };
 		AB7EE15C1B7710B1008CFE34 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7EE15B1B7710B1008CFE34 /* CoreAudio.framework */; };
@@ -32,26 +29,19 @@
 		AB7EE17E1B79CA7B008CFE34 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7EE17D1B79CA7B008CFE34 /* CFNetwork.framework */; };
 		AB7EE1801B79CA83008CFE34 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7EE17F1B79CA83008CFE34 /* Security.framework */; };
 		AB7EE1A81B79EE0C008CFE34 /* ViewControllerSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7EE1A71B79EE0C008CFE34 /* ViewControllerSettings.m */; };
+		AB9594981B8D494300C19CED /* ALPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9594971B8D494300C19CED /* ALPS.framework */; };
+		AB95949A1B8D49FA00C19CED /* ALPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9594971B8D494300C19CED /* ALPS.framework */; };
+		AB95949B1B8D49FA00C19CED /* ALPS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB9594971B8D494300C19CED /* ALPS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		AB7EE13B1B77102A008CFE34 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AB7EE1191B77102A008CFE34 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AB7EE1201B77102A008CFE34;
-			remoteInfo = RoboCafe;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		244264761B7C42D300C7A954 /* Embed Frameworks */ = {
+		AB95949C1B8D49FB00C19CED /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2442647A1B7C43D600C7A954 /* ALPS.framework in Embed Frameworks */,
+				AB95949B1B8D49FA00C19CED /* ALPS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,7 +53,6 @@
 		2406B3AC1B7D648D003A4AB7 /* CafeOrderWSDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafeOrderWSDelegate.m; sourceTree = "<group>"; };
 		2442646E1B7C0FEA00C7A954 /* ViewControllerCafeSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerCafeSettings.h; sourceTree = "<group>"; };
 		2442646F1B7C0FEA00C7A954 /* ViewControllerCafeSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerCafeSettings.m; sourceTree = "<group>"; };
-		244264771B7C43A700C7A954 /* ALPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALPS.framework; sourceTree = "<group>"; };
 		246288201B7D3DC200D7F1E8 /* LocationAnnounceWSDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAnnounceWSDelegate.h; sourceTree = "<group>"; };
 		246288211B7D3DC200D7F1E8 /* LocationAnnounceWSDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAnnounceWSDelegate.m; sourceTree = "<group>"; };
 		24C1822C1B8D3CDF00AD1A42 /* TabBarControllerAllowUpsideDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarControllerAllowUpsideDown.h; sourceTree = "<group>"; };
@@ -80,7 +69,6 @@
 		AB7EE12F1B77102A008CFE34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB7EE1311B77102A008CFE34 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AB7EE1341B77102A008CFE34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		AB7EE13A1B77102A008CFE34 /* RoboCafeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoboCafeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7EE13F1B77102A008CFE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB7EE1401B77102A008CFE34 /* RoboCafeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoboCafeTests.m; sourceTree = "<group>"; };
 		AB7EE1571B7710A6008CFE34 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -96,6 +84,7 @@
 		AB7EE17F1B79CA83008CFE34 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AB7EE1A61B79EE0C008CFE34 /* ViewControllerSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerSettings.h; path = ../ViewControllerSettings.h; sourceTree = "<group>"; };
 		AB7EE1A71B79EE0C008CFE34 /* ViewControllerSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerSettings.m; path = ../ViewControllerSettings.m; sourceTree = "<group>"; };
+		AB9594971B8D494300C19CED /* ALPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALPS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				244264781B7C43A700C7A954 /* ALPS.framework in Frameworks */,
+				AB9594981B8D494300C19CED /* ALPS.framework in Frameworks */,
 				AB7EE1801B79CA83008CFE34 /* Security.framework in Frameworks */,
 				AB7EE17E1B79CA7B008CFE34 /* CFNetwork.framework in Frameworks */,
 				AB7EE17C1B79CA76008CFE34 /* libicucore.dylib in Frameworks */,
@@ -111,14 +100,8 @@
 				AB7EE1631B783E7E008CFE34 /* CoreLocation.framework in Frameworks */,
 				AB7EE15C1B7710B1008CFE34 /* CoreAudio.framework in Frameworks */,
 				AB7EE15A1B7710AB008CFE34 /* AVFoundation.framework in Frameworks */,
+				AB95949A1B8D49FA00C19CED /* ALPS.framework in Frameworks */,
 				AB7EE1581B7710A6008CFE34 /* AudioToolbox.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB7EE1371B77102A008CFE34 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				AB7EE1211B77102A008CFE34 /* RoboCafe.app */,
-				AB7EE13A1B77102A008CFE34 /* RoboCafeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,10 +183,10 @@
 		AB7EE15D1B7710B8008CFE34 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				244264771B7C43A700C7A954 /* ALPS.framework */,
 				AB7EE17F1B79CA83008CFE34 /* Security.framework */,
 				AB7EE17D1B79CA7B008CFE34 /* CFNetwork.framework */,
 				AB7EE17B1B79CA76008CFE34 /* libicucore.dylib */,
+				AB9594971B8D494300C19CED /* ALPS.framework */,
 				AB7EE1641B783E83008CFE34 /* CoreBluetooth.framework */,
 				AB7EE1621B783E7E008CFE34 /* CoreLocation.framework */,
 				AB7EE15B1B7710B1008CFE34 /* CoreAudio.framework */,
@@ -235,7 +217,7 @@
 				AB7EE11D1B77102A008CFE34 /* Sources */,
 				AB7EE11E1B77102A008CFE34 /* Frameworks */,
 				AB7EE11F1B77102A008CFE34 /* Resources */,
-				244264761B7C42D300C7A954 /* Embed Frameworks */,
+				AB95949C1B8D49FB00C19CED /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -245,24 +227,6 @@
 			productName = RoboCafe;
 			productReference = AB7EE1211B77102A008CFE34 /* RoboCafe.app */;
 			productType = "com.apple.product-type.application";
-		};
-		AB7EE1391B77102A008CFE34 /* RoboCafeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AB7EE1471B77102A008CFE34 /* Build configuration list for PBXNativeTarget "RoboCafeTests" */;
-			buildPhases = (
-				AB7EE1361B77102A008CFE34 /* Sources */,
-				AB7EE1371B77102A008CFE34 /* Frameworks */,
-				AB7EE1381B77102A008CFE34 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AB7EE13C1B77102A008CFE34 /* PBXTargetDependency */,
-			);
-			name = RoboCafeTests;
-			productName = RoboCafeTests;
-			productReference = AB7EE13A1B77102A008CFE34 /* RoboCafeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -275,11 +239,7 @@
 				TargetAttributes = {
 					AB7EE1201B77102A008CFE34 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = CS3F72T8LF;
-					};
-					AB7EE1391B77102A008CFE34 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = AB7EE1201B77102A008CFE34;
+						DevelopmentTeam = 3MGN9YP3AM;
 					};
 				};
 			};
@@ -297,7 +257,6 @@
 			projectRoot = "";
 			targets = (
 				AB7EE1201B77102A008CFE34 /* RoboCafe */,
-				AB7EE1391B77102A008CFE34 /* RoboCafeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -312,13 +271,6 @@
 				24DEFB4F1B7DCE3100F4F5E2 /* robo_cafe_background_bottom.png in Resources */,
 				AB7EE1351B77102A008CFE34 /* LaunchScreen.xib in Resources */,
 				AB7EE1321B77102A008CFE34 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB7EE1381B77102A008CFE34 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,23 +293,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB7EE1361B77102A008CFE34 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB7EE1411B77102A008CFE34 /* RoboCafeTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AB7EE13C1B77102A008CFE34 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AB7EE1201B77102A008CFE34 /* RoboCafe */;
-			targetProxy = AB7EE13B1B77102A008CFE34 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AB7EE12E1B77102A008CFE34 /* Main.storyboard */ = {
@@ -497,40 +433,6 @@
 			};
 			name = Release;
 		};
-		AB7EE1481B77102A008CFE34 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = RoboCafeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoboCafe.app/RoboCafe";
-			};
-			name = Debug;
-		};
-		AB7EE1491B77102A008CFE34 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = RoboCafeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoboCafe.app/RoboCafe";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -548,15 +450,6 @@
 			buildConfigurations = (
 				AB7EE1451B77102A008CFE34 /* Debug */,
 				AB7EE1461B77102A008CFE34 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AB7EE1471B77102A008CFE34 /* Build configuration list for PBXNativeTarget "RoboCafeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AB7EE1481B77102A008CFE34 /* Debug */,
-				AB7EE1491B77102A008CFE34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
