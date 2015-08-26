@@ -25,6 +25,14 @@
     self.vendorIDLabel.text = [[UIDevice currentDevice] identifierForVendor].UUIDString;
 }
 
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown;
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"cafeOrderWSState"]) {
         [self updateCafeOrderWSText];

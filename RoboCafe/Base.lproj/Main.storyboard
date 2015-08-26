@@ -554,10 +554,10 @@
             </objects>
             <point key="canvasLocation" x="754" y="1059"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Controller Allow Upside Down-->
         <scene sceneID="hK8-fi-rh8">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="YFl-DW-Sck" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="YFl-DW-Sck" customClass="TabBarControllerAllowUpsideDown" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
