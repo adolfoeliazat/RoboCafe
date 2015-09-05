@@ -8,11 +8,191 @@
 
 #import "CafeOrderWSDelegate.h"
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "ViewControllerCafeSettings.h"
 
 @implementation CafeOrderWSDelegate
 
+/*
+ var STATE_IDLE = 'IDLE';         // Robot is currently just sitting there.
+ var STATE_SERVING = 'SERVING';   // Robot has been requested and is going to a person.
+ var STATE_SPINNING = 'SPINNING'; // Applause was detected and the robot is interrupted to spin.
+
+ {
+   "robots": [
+     {"state":"SERVING","servicing":"Alan"},
+     {"state":"SERVING","servicing":"Kate"},
+     {"state":"SERVING","servicing":"Kate"},
+     {"state":"SERVING","servicing":"Kent"}
+   ],
+   "items": {
+     "Twix": {
+       "robots":[0,3],
+       "queue":["Bear","Seal"]
+     },
+     "SquirtGun": {
+       "robots":[1],
+       "queue":[]
+     },
+     "BouncyBalls": {
+       "robots":[2],
+       "queue":["Kate"]
+     }
+   }
+ }
+ */
+
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
     NSLog(@"CafeOrderWS received message: %@", message);
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [appDelegate.vCCafeSettings.statusJSONBox setText:message];
+    });
+    
+    NSError *error = nil;
+    NSData* messageAsData = [message dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray* status = [NSJSONSerialization JSONObjectWithData:messageAsData options:kNilOptions error:&error];
+    
+    if (error != nil) {
+        NSLog(@"Error parsing JSON >>>%@<<<. Error: %@", message, error);
+        return;
+    }
+
+    NSArray* robots = [status valueForKey:@"robots"];
+    if (robots == nil) {
+        NSLog(@"Missing required key 'robots'");
+        return;
+    }
+    if ([robots count] != 4) {
+        NSLog(@"Expected 4 robots, got %lu", (unsigned long)[robots count]);
+        return;
+    }
+    
+    NSDictionary* items = [status valueForKey:@"items"];
+    if (items == nil) {
+        NSLog(@"Missing required key 'items'");
+        return;
+    }
+    if ([items count] != 3) {
+        NSLog(@"Expected 3 items, got %lu", (unsigned long)[items count]);
+        return;
+    }
+    
+    NSDictionary* twix = [items valueForKey:@"Twix"];
+    if (twix == nil) {
+        NSLog(@"No 'Twix' in items");
+        return;
+    }
+    NSArray* twixRobots = [twix valueForKey:@"robots"];
+    if (twixRobots == nil) {
+        NSLog(@"No 'robots' in twix");
+        return;
+    }
+    NSArray* twixQueue = [twix valueForKey:@"queue"];
+    if (twixQueue == nil) {
+        NSLog(@"No 'queue' in twix");
+        return;
+    }
+    
+    NSDictionary* squirtGun = [items valueForKey:@"SquirtGun"];
+    if (squirtGun == nil) {
+        NSLog(@"No 'SquirtGun' in items");
+        return;
+    }
+    NSArray* squirtGunRobots = [squirtGun valueForKey:@"robots"];
+    if (squirtGunRobots == nil) {
+        NSLog(@"No 'robots' in squirtGun");
+        return;
+    }
+    NSArray* squirtGunQueue = [squirtGun valueForKey:@"queue"];
+    if (squirtGunQueue == nil) {
+        NSLog(@"No 'queue' in squirtGun");
+        return;
+    }
+    
+    NSDictionary* bouncyBalls = [items valueForKey:@"BouncyBalls"];
+    if (bouncyBalls == nil) {
+        NSLog(@"No 'BouncyBalls' in items");
+        return;
+    }
+    NSArray* bouncyBallsRobots = [bouncyBalls valueForKey:@"robots"];
+    if (bouncyBallsRobots == nil) {
+        NSLog(@"No 'robots' in bouncyBalls");
+        return;
+    }
+    NSArray* bouncyBallsQueue = [bouncyBalls valueForKey:@"queue"];
+    if (bouncyBallsQueue == nil) {
+        NSLog(@"No 'queue' in bouncyBalls");
+        return;
+    }
+    
+    NSString* twixStatus = [self generateStatusTextForItem:@"candy" forItemQueue:twixQueue forItemRobotList:twixRobots forRobots:robots];
+    NSString* squirtGunStatus = [self generateStatusTextForItem:@"mints" forItemQueue:squirtGunQueue forItemRobotList:squirtGunRobots forRobots:robots];
+    NSString* bouncyBallsStatus = [self generateStatusTextForItem:@"granola" forItemQueue:bouncyBallsQueue forItemRobotList:bouncyBallsRobots forRobots:robots];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [appDelegate.vC.twixStatus setText:twixStatus];
+        [appDelegate.vC.squirtGunStatus setText:squirtGunStatus];
+        [appDelegate.vC.bouncyBallStatus setText:bouncyBallsStatus];
+    });
+}
+
+- (NSString*)generateStatusTextForItem:(NSString*)itemType forItemQueue:(NSArray*)queue forItemRobotList:(NSArray*)itemRobotList forRobots:(NSArray*) robots {
+    NSString* currentBestStatus = @"";
+    unsigned i;
+    BOOL isSpinning = false;
+    
+    for (i=0; i < [itemRobotList count]; i++) {
+        NSNumber* index = [itemRobotList objectAtIndex:i];
+        unsigned idx = [index unsignedIntValue];
+        NSDictionary* robot = [robots objectAtIndex:idx];
+        if (robot != nil) {
+            NSString* state = [robot objectForKey:@"state"];
+            if (state != nil) {
+                if ([state isEqualToString:@"IDLE"]) {
+                    if ([currentBestStatus isEqualToString:@""]) {
+                        currentBestStatus = [NSString stringWithFormat:@"All %@ robots are idle.", itemType];
+                    }
+                } else if ([state isEqualToString:@"SERVING"]) {
+                    NSString* servicing = [robot objectForKey:@"servicing"];
+                    if (servicing != nil) {
+                        if ([servicing isEqualToString:[[UIDevice currentDevice] identifierForVendor].UUIDString])  {
+                            return [NSString stringWithFormat:@"Robot %u is on its way!", idx];
+                        } else {
+                            currentBestStatus = [NSString stringWithFormat:@"Robot %u is making is last delivery.", idx];
+                        }
+                    }
+                } else if ([state isEqualToString:@"SPINNING"]) {
+                    currentBestStatus = [NSString stringWithFormat:@"A %@ robot is spinning.", itemType];
+                    isSpinning = true;
+                }
+            }
+        }
+    }
+    
+    if ([itemRobotList count] == 0) {
+        currentBestStatus = @"No robots are currently assigned to this item.";
+    }
+    
+    if ([queue count]) {
+        for (i = 0; i < [queue count]; i++) {
+            if ([queue[i] isEqualToString:[[UIDevice currentDevice] identifierForVendor].UUIDString]) {
+                break;
+            }
+        }
+        if (i < [queue count]) {
+            if (isSpinning) {
+                return [NSString stringWithFormat:@"Robot stopped to spin! (%u/%lu in queue)", i+1, (unsigned long)[queue count]];
+            }
+            return [NSString stringWithFormat:@"Finishing last delivery. You are %u/%lu in the queue.", i+1, (unsigned long)[queue count]];
+        } else {
+            if (!isSpinning) {
+                currentBestStatus = [NSString stringWithFormat:@"Current queue length: %lu", (unsigned long)[queue count]];
+            }
+        }
+    }
+    
+    return currentBestStatus;
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket {

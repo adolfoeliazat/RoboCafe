@@ -31,23 +31,17 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Um-2s-jez">
-                                <rect key="frame" x="222" y="148" width="82" height="30"/>
-                                <state key="normal" title="Cancel Twix">
+                                <rect key="frame" x="256" y="148" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="cancelTwixTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rk7-qf-FdH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Twix events." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKT-27-Kmf">
-                                <rect key="frame" x="16" y="186" width="288" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErZ-Bv-ioe">
-                                <rect key="frame" x="16" y="227" width="117" height="30"/>
-                                <state key="normal" title="Order Squirt Gun">
+                                <rect key="frame" x="16" y="227" width="81" height="30"/>
+                                <state key="normal" title="Order mints">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -55,23 +49,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH0-jH-iMT">
-                                <rect key="frame" x="178" y="227" width="126" height="30"/>
-                                <state key="normal" title="Cancel Squirt Gun">
+                                <rect key="frame" x="256" y="227" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="cancelSquirtGunTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uHt-ct-j2I"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Squirt Gun Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad5-Qy-Vic">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No connection to cafe server." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad5-Qy-Vic">
                                 <rect key="frame" x="16" y="265" width="288" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz4-m9-L61">
-                                <rect key="frame" x="16" y="306" width="126" height="30"/>
-                                <state key="normal" title="Order Bouncy Ball">
+                                <rect key="frame" x="16" y="306" width="95" height="30"/>
+                                <state key="normal" title="Order granola">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -79,22 +73,22 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4k-rM-Ho4">
-                                <rect key="frame" x="170" y="306" width="134" height="30"/>
-                                <state key="normal" title="Cancel Bouncy Ball">
+                                <rect key="frame" x="256" y="306" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="cancelBouncyBallTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RXz-eM-oCj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bouncy Ball Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzN-Ha-4ne">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No connection to cafe server." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzN-Ha-4ne">
                                 <rect key="frame" x="16" y="344" width="288" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="roboCafeStatusLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhz-Rm-a3I">
-                                <rect key="frame" x="16" y="458.5" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="458" width="288" height="20.5"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
@@ -103,14 +97,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRT-CL-PLD">
-                                <rect key="frame" x="16" y="148" width="74" height="30"/>
-                                <state key="normal" title="Order Twix">
+                                <rect key="frame" x="16" y="148" width="85" height="30"/>
+                                <state key="normal" title="Order candy">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="orderTwixTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ldp-Se-bkn"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No connection to cafe server." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKT-27-Kmf">
+                                <rect key="frame" x="16" y="186" width="288" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -407,6 +407,9 @@
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" link="YES"/>
                                 </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="uDv-QB-Cze"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -439,6 +442,9 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Reporting:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2u-w9-Ucm">
                                 <rect key="frame" x="16" y="215" width="127.5" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="cXw-r6-9xX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -457,6 +463,9 @@
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" link="YES"/>
                                 </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="55p-P6-edf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -477,6 +486,9 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfX-nO-tM2">
                                 <rect key="frame" x="16" y="462" width="288" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="h7b-QY-fxn"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -505,6 +517,16 @@
                                     <action selector="locationWSClear:" destination="Xxp-nS-Mo4" eventType="touchUpInside" id="KWj-aM-9Ok"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raw JSON status from cafe server will appear in this box." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMe-PD-U7f">
+                                <rect key="frame" x="16" y="282" width="288" height="172"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -512,13 +534,18 @@
                             <constraint firstItem="Wtg-ji-WFO" firstAttribute="leading" secondItem="KIx-JN-ULJ" secondAttribute="leadingMargin" id="11h-u6-ZNM"/>
                             <constraint firstItem="mZ5-G6-zfR" firstAttribute="centerY" secondItem="A7B-TX-t2s" secondAttribute="centerY" id="29Z-pZ-oF5"/>
                             <constraint firstItem="HFH-0q-7J3" firstAttribute="leading" secondItem="KIx-JN-ULJ" secondAttribute="leadingMargin" id="2v4-lo-lpk"/>
+                            <constraint firstItem="sfX-nO-tM2" firstAttribute="top" secondItem="KMe-PD-U7f" secondAttribute="bottom" constant="8" id="3Dr-Zj-Ths"/>
                             <constraint firstItem="URg-kv-Cg3" firstAttribute="centerY" secondItem="HFH-0q-7J3" secondAttribute="centerY" constant="0.5" id="4Vr-mM-OvR"/>
                             <constraint firstItem="Q41-so-HFt" firstAttribute="centerY" secondItem="mZ5-G6-zfR" secondAttribute="centerY" constant="-0.5" id="5CC-gb-s4E"/>
                             <constraint firstAttribute="trailingMargin" secondItem="crA-LT-7BX" secondAttribute="trailing" constant="-16" id="65W-F0-YiH"/>
+                            <constraint firstItem="KMe-PD-U7f" firstAttribute="top" secondItem="mZ5-G6-zfR" secondAttribute="bottom" constant="8" id="7jh-oc-bMl"/>
+                            <constraint firstItem="KMe-PD-U7f" firstAttribute="trailing" secondItem="KIx-JN-ULJ" secondAttribute="trailingMargin" id="8A9-id-315"/>
                             <constraint firstItem="y4h-er-JIj" firstAttribute="centerY" secondItem="w2u-w9-Ucm" secondAttribute="centerY" id="9kY-tf-fu7"/>
                             <constraint firstItem="RrY-th-yd8" firstAttribute="top" secondItem="sfX-nO-tM2" secondAttribute="bottom" constant="8" id="Bk8-uY-ixc"/>
                             <constraint firstItem="cTd-sU-HOy" firstAttribute="leading" secondItem="URg-kv-Cg3" secondAttribute="trailing" constant="8" id="CYI-EE-8Xh"/>
+                            <constraint firstItem="KMe-PD-U7f" firstAttribute="leading" secondItem="KIx-JN-ULJ" secondAttribute="leadingMargin" id="E5q-Vp-dcw"/>
                             <constraint firstItem="crA-LT-7BX" firstAttribute="leading" secondItem="KIx-JN-ULJ" secondAttribute="leadingMargin" constant="-16" id="EbP-Ns-Tnh"/>
+                            <constraint firstItem="HFH-0q-7J3" firstAttribute="top" secondItem="Wtg-ji-WFO" secondAttribute="bottom" constant="14" id="Nq4-1G-961"/>
                             <constraint firstItem="gwU-GK-1K3" firstAttribute="trailing" secondItem="KIx-JN-ULJ" secondAttribute="trailingMargin" id="QxX-fW-6Eh"/>
                             <constraint firstItem="mZ5-G6-zfR" firstAttribute="leading" secondItem="Q41-so-HFt" secondAttribute="trailing" constant="8" id="R16-sU-YgX"/>
                             <constraint firstItem="Wtg-ji-WFO" firstAttribute="centerY" secondItem="gwU-GK-1K3" secondAttribute="centerY" id="S0N-7B-X8K"/>
@@ -547,6 +574,7 @@
                         <outlet property="cafeWSEntry" destination="URg-kv-Cg3" id="qb6-gW-PEc"/>
                         <outlet property="locationStatusLabel" destination="y4h-er-JIj" id="YjG-hD-4jU"/>
                         <outlet property="locationWSEntry" destination="mZ5-G6-zfR" id="atV-AG-IZJ"/>
+                        <outlet property="statusJSONBox" destination="KMe-PD-U7f" id="Zc7-7U-roo"/>
                         <outlet property="vendorIDLabel" destination="sfX-nO-tM2" id="XKE-X8-DwU"/>
                     </connections>
                 </viewController>

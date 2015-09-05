@@ -35,6 +35,7 @@
 
 - (IBAction)locationWSConnectClick:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *statusJSONBox;
 
 @property (weak, nonatomic) IBOutlet UILabel *vendorIDLabel;
 

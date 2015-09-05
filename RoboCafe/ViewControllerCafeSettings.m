@@ -9,11 +9,13 @@
 #import "ViewControllerCafeSettings.h"
 #import "AppDelegate.h"
 
+
 @implementation ViewControllerCafeSettings
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate setVCCafeSettings:self];
     
     self.cafeStatusLabel.textAlignment = NSTextAlignmentRight;
     [appDelegate addObserver:self forKeyPath:@"cafeOrderWSState" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
