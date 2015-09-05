@@ -31,9 +31,11 @@ typedef NS_ENUM(NSInteger, WebsocketState) {
 #define DEFAULT_ALPS_WEBSOCKET  @"ws://192.168.11.108:30005"
 
 //#define DEFAULT_CAFE_WEBSOCKET  @"ws://pfet-v2.eecs.umich.edu:8000"
+//#define DEFAULT_CAFE_WEBSOCKET    @"ws://35.2.70.92:8081"
 #define DEFAULT_CAFE_WEBSOCKET    @"ws://192.168.11.108:8081"
 
 //#define DEFAULT_LOC_ANNOUNCE_WEBSOCKET @"ws://pfet-v2.eecs.umich.edu:8001"
+//#define DEFAULT_LOC_ANNOUNCE_WEBSOCKET  @"ws://35.2.70.92:8082"
 #define DEFAULT_LOC_ANNOUNCE_WEBSOCKET  @"ws://192.168.11.108:8082"
 
 @class ALPSCore, ViewController, ViewControllerSettings, ViewControllerCafeSettings;

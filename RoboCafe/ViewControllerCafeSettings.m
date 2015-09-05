@@ -47,15 +47,11 @@
         (appDelegate.cafeOrderWSState == WebsocketStateConnected) ||
         (appDelegate.cafeOrderWSState == WebsocketStateConnecting)
        ) {
-        NSLog(@"cafeOrderWSState: %ld", (long)appDelegate.cafeOrderWSState);
         urlString = [appDelegate.cafeOrderWS.url absoluteString];
     } else {
-        NSLog(@"No worries, not connected bro");
         urlString = appDelegate.cafeOrderWSAddress;
     }
     
-    //[_cafeWSEntry setText:urlString];
-    NSLog(@"Setting to: %@", urlString);
     _cafeWSEntry.text = urlString;
 
     if (appDelegate.cafeOrderWSState == WebsocketStateConnected) {

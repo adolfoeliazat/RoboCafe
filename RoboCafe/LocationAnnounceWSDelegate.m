@@ -24,7 +24,7 @@
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
 {
-    NSLog(@"LocationAnnounceWS failed with error: %@", error);
+    //NSLog(@"LocationAnnounceWS failed with error: %@", error);
     
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.locationAnnounceWSState = WebsocketStateDisconnected;
@@ -54,7 +54,7 @@
 
 - (void)reconnectWebSocket:(NSTimer *)timer {
     if (appDelegate.locationAnnounceWSState == WebsocketStateDisconnected) {
-        NSLog(@"Attempting to reconnect CafeOrderWS");
+        //NSLog(@"Attempting to reconnect CafeOrderWS");
         [appDelegate locationAnnounceWSConnect];
     }
 }

@@ -154,7 +154,7 @@
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
 {
-    NSLog(@"ALPS Websocket Failed With Error %@", error);
+    //NSLog(@"ALPS Websocket Failed With Error %@", error);
     self.alpsWSState = WebsocketStateDisconnected;
     self.alpsWS = nil;
     [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
@@ -181,7 +181,7 @@
 }
 
 - (void)reconnectWebSocket:(NSTimer *)timer {
-    NSLog(@"Attempting to reconnect ALPS websocket");
+    //NSLog(@"Attempting to reconnect ALPS websocket");
     [self alpsWSConnect];
 }
 

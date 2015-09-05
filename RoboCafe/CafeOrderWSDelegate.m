@@ -25,7 +25,7 @@
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
 {
-    NSLog(@"CafeOrderWS failed with error: %@", error);
+    //NSLog(@"CafeOrderWS failed with error: %@", error);
     
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     //[appDelegate setValue:[NSNumber numberWithBool:NO] forKey:@"cafeOrderWSState"];
@@ -57,7 +57,7 @@
 
 - (void)reconnectWebSocket:(NSTimer *)timer {
     if (appDelegate.cafeOrderWSState == WebsocketStateDisconnected) {
-        NSLog(@"Attempting to reconnect CafeOrderWS");
+        //NSLog(@"Attempting to reconnect CafeOrderWS");
         [appDelegate cafeOrderWSConnect];
     }
 }
