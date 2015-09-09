@@ -45,18 +45,28 @@
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
     NSLog(@"CafeOrderWS received message: %@", message);
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [appDelegate.vCCafeSettings.statusJSONBox setText:message];
-    });
-    
     NSError *error = nil;
-    NSData* messageAsData = [message dataUsingEncoding:NSUTF8StringEncoding];
+    NSData* messageAsData;
+    @try {
+        messageAsData = [message dataUsingEncoding:NSUTF8StringEncoding];
+    }
+    @catch (NSException *exception) {
+        // FIXME: This is a hack. Ilge found some case that would cause this to throw an exception. I don't
+        // know what it is and can't debug it now.
+        NSLog(@"Error: Unhandled exception. Bad packet? Exc: %@", exception);
+        return;
+    }
+    
     NSArray* status = [NSJSONSerialization JSONObjectWithData:messageAsData options:kNilOptions error:&error];
     
     if (error != nil) {
         NSLog(@"Error parsing JSON >>>%@<<<. Error: %@", message, error);
         return;
     }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [appDelegate.vCCafeSettings.statusJSONBox setText:message];
+    });
 
     NSArray* robots = [status valueForKey:@"robots"];
     if (robots == nil) {
