@@ -81,12 +81,6 @@
                                     <action selector="cancelBouncyBallTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RXz-eM-oCj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No connection to cafe server." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzN-Ha-4ne">
-                                <rect key="frame" x="16" y="344" width="288" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="roboCafeStatusLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhz-Rm-a3I">
                                 <rect key="frame" x="16" y="458" width="288" height="20.5"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -111,6 +105,48 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q15-YW-88h">
+                                <rect key="frame" x="16" y="369" width="70" height="30"/>
+                                <state key="normal" title="Go To Top">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToTop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4s8-e7-8BJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPE-A3-mXg">
+                                <rect key="frame" x="16" y="407" width="71" height="30"/>
+                                <state key="normal" title="Go To Left">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Avu-JE-kme"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Mg-bu-3p8">
+                                <rect key="frame" x="223" y="407" width="81" height="30"/>
+                                <state key="normal" title="Go To Right">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vzc-qj-Rlw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g65-eD-DxR">
+                                <rect key="frame" x="208" y="369" width="96" height="30"/>
+                                <state key="normal" title="Go To Bottom">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToBottom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8CQ-e1-G0d"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No connection to cafe server." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzN-Ha-4ne">
+                                <rect key="frame" x="16" y="344" width="288" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -119,12 +155,16 @@
                             <constraint firstItem="VH0-jH-iMT" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8El-vy-ipV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JaI-cP-age" secondAttribute="bottom" id="8bl-6o-twp"/>
                             <constraint firstItem="jKT-27-Kmf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="AaM-J7-QBb"/>
+                            <constraint firstItem="Q15-YW-88h" firstAttribute="top" secondItem="nzN-Ha-4ne" secondAttribute="bottom" constant="8" id="BlY-4i-gWX"/>
                             <constraint firstItem="5Um-2s-jez" firstAttribute="top" secondItem="3hM-SO-JVa" secondAttribute="bottom" constant="8" id="FYf-5I-Mgd"/>
                             <constraint firstItem="t4k-rM-Ho4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GAe-o0-JrS"/>
                             <constraint firstItem="3hM-SO-JVa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Hsc-RS-KXE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JaI-cP-age" secondAttribute="bottom" id="JBU-Og-kgN"/>
                             <constraint firstItem="jKT-27-Kmf" firstAttribute="top" secondItem="5Um-2s-jez" secondAttribute="bottom" constant="8" id="JxX-NF-390"/>
+                            <constraint firstItem="Q15-YW-88h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Kaf-Or-G34"/>
+                            <constraint firstItem="MPE-A3-mXg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MZI-bJ-AlY"/>
                             <constraint firstItem="PRT-CL-PLD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Mgs-3Q-uIt"/>
+                            <constraint firstItem="MPE-A3-mXg" firstAttribute="top" secondItem="Q15-YW-88h" secondAttribute="bottom" constant="8" id="N2D-8N-s8e"/>
                             <constraint firstItem="nzN-Ha-4ne" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QuD-HU-60S"/>
                             <constraint firstItem="nzN-Ha-4ne" firstAttribute="top" secondItem="t4k-rM-Ho4" secondAttribute="bottom" constant="8" id="RJT-th-6vk"/>
                             <constraint firstItem="jKT-27-Kmf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Slg-ta-2RO"/>
@@ -141,9 +181,13 @@
                             <constraint firstItem="lhz-Rm-a3I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="e3S-JT-KrW"/>
                             <constraint firstItem="3hM-SO-JVa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="e8D-yv-1ah"/>
                             <constraint firstItem="Ad5-Qy-Vic" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gIz-4v-74A"/>
+                            <constraint firstItem="6Mg-bu-3p8" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="hE2-a9-sQg"/>
+                            <constraint firstItem="g65-eD-DxR" firstAttribute="top" secondItem="nzN-Ha-4ne" secondAttribute="bottom" constant="8" id="hwD-jZ-W1c"/>
                             <constraint firstAttribute="centerX" secondItem="3hM-SO-JVa" secondAttribute="centerX" id="i0S-jF-eiP"/>
                             <constraint firstItem="nzN-Ha-4ne" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="iI9-xU-Mvo"/>
                             <constraint firstItem="t4k-rM-Ho4" firstAttribute="top" secondItem="Ad5-Qy-Vic" secondAttribute="bottom" constant="24" id="iUZ-iP-oym"/>
+                            <constraint firstItem="g65-eD-DxR" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kPC-ey-mPj"/>
+                            <constraint firstItem="6Mg-bu-3p8" firstAttribute="top" secondItem="g65-eD-DxR" secondAttribute="bottom" constant="8" id="nRr-aR-qoo"/>
                             <constraint firstItem="Ad5-Qy-Vic" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pmH-Ml-1cw"/>
                             <constraint firstItem="nzN-Ha-4ne" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="quH-7T-JXb"/>
                             <constraint firstItem="Ad5-Qy-Vic" firstAttribute="top" secondItem="VH0-jH-iMT" secondAttribute="bottom" constant="8" id="tXN-34-AoF"/>

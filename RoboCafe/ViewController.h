@@ -30,6 +30,12 @@
 - (IBAction)orderBouncyBallTouch:(id)sender;
 - (IBAction)cancelBouncyBallTouch:(id)sender;
 
+- (IBAction)goToTop:(id)sender;
+- (IBAction)goToLeft:(id)sender;
+- (IBAction)goToBottom:(id)sender;
+- (IBAction)goToRight:(id)sender;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *roboCafeStatusLabel;
 
 @end
