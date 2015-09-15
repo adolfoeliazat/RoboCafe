@@ -24,7 +24,7 @@
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     
-    _alpsWSEntry.text = DEFAULT_ALPS_WEBSOCKET;
+    _alpsWSEntry.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"alps_ws_address"];
     _alpsWSEntry.delegate = self;
     
     UITapGestureRecognizer* alpsWSClearTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(alpsWSClearTapped:)];
