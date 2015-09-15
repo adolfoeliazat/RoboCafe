@@ -25,6 +25,7 @@
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     
     _alpsWSEntry.text = DEFAULT_ALPS_WEBSOCKET;
+    _alpsWSEntry.delegate = self;
     
     UITapGestureRecognizer* alpsWSClearTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(alpsWSClearTapped:)];
     alpsWSClearTapRecognizer.numberOfTapsRequired = 1;
@@ -103,9 +104,15 @@
 }
 */
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 - (void)alpsWSClearTapped:(UIGestureRecognizer*)gestureRecognizer {
     self.alpsWSEntry.text = DEFAULT_ALPS_WEBSOCKET;
-    [self alpsWSChanged:self];
+    [self alpsWSEditingEnd:self];
 }
 
 - (void)thresholdDivisorClearTapped:(UIGestureRecognizer*)gestureRecognizer {
@@ -136,7 +143,8 @@
     _thresholdMultiplierLabel.text = [[NSNumber numberWithFloat:_thresholdMultiplierSlider.value] stringValue];
 }
 
-- (IBAction)alpsWSChanged:(id)sender {
+
+- (IBAction)alpsWSEditingEnd:(id)sender {
     if (appDelegate.alpsWSState != WebsocketStateDisconnected) {
         [appDelegate.alpsWS close];
     }

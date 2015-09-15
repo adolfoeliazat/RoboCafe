@@ -10,7 +10,7 @@
 
 @class AppDelegate, ALPSCore;
 
-@interface ViewControllerSettings : UIViewController{
+@interface ViewControllerSettings : UIViewController <UITextFieldDelegate> {
     AppDelegate *appDelegate;
     ALPSCore *alps;
 }
@@ -19,7 +19,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UITextField *alpsWSEntry;
-- (IBAction)alpsWSChanged:(id)sender;
+- (IBAction)alpsWSEditingEnd:(id)sender;
 - (IBAction)alpsWSReconnect:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIImageView *alpsWSClear;
@@ -32,10 +32,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *thresholdMultiplierLabel;
 
 
-@property (weak, nonatomic) IBOutlet UITextView *tdoaDataField;
+@property (weak, nonatomic) IBOutlet UILabel *tdoaDataField;
 - (IBAction)thresholdDivisorAction:(id)sender;
 - (IBAction)thresholdMultiplierAction:(id)sender;
-@property (weak, nonatomic) IBOutlet UITextView *positionField;
+@property (weak, nonatomic) IBOutlet UILabel *positionField;
 
 
 @end
