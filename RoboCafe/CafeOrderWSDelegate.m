@@ -43,17 +43,24 @@
  */
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
-    NSLog(@"CafeOrderWS received message: %@", message);
+    //NSLog(@"CafeOrderWS received message: %@", message);
     
     NSError *error = nil;
     NSData* messageAsData;
-    @try {
-        messageAsData = [message dataUsingEncoding:NSUTF8StringEncoding];
-    }
-    @catch (NSException *exception) {
-        // FIXME: This is a hack. Ilge found some case that would cause this to throw an exception. I don't
-        // know what it is and can't debug it now.
-        NSLog(@"Error: Unhandled exception. Bad packet? Exc: %@", exception);
+    
+    if ([message isKindOfClass:[NSString class]]) {
+        @try {
+            messageAsData = [message dataUsingEncoding:NSUTF8StringEncoding];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Error: Unhandled exception. Bad packet? Exc: %@", exception);
+            return;
+        }
+    } else if ([message isKindOfClass:[NSData class]]) {
+        messageAsData = message;
+        message = [[NSString alloc] initWithData:messageAsData encoding:NSUTF8StringEncoding];
+    } else {
+        NSLog(@"Unknown object type from CafeOrderWS");
         return;
     }
     
