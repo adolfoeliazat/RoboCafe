@@ -10,7 +10,7 @@
 
 @class AppDelegate;
 
-@interface ViewControllerCafeSettings : UIViewController {
+@interface ViewControllerCafeSettings : UIViewController <UITextFieldDelegate> {
     AppDelegate *appDelegate;
 }
 
@@ -20,8 +20,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *cafeStatusLabel;
 @property (weak, nonatomic) IBOutlet UITextField *cafeWSEntry;
-- (IBAction)cafeWSChanged:(id)sender;
 - (IBAction)cafeWSClear:(id)sender;
+- (IBAction)cafeWSEditingEnd:(id)sender;
 
 
 - (IBAction)cafeWSConnectClick:(id)sender;
@@ -30,8 +30,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationStatusLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *locationWSEntry;
-- (IBAction)locationWSChanged:(id)sender;
 - (IBAction)locationWSClear:(id)sender;
+- (IBAction)locationWSEditingEnd:(id)sender;
 
 - (IBAction)locationWSConnectClick:(id)sender;
 

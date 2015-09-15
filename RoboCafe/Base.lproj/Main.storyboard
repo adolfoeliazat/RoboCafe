@@ -466,9 +466,9 @@
                                     <constraint firstAttribute="height" constant="30" id="uDv-QB-Cze"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done"/>
                                 <connections>
-                                    <action selector="cafeWSChanged:" destination="Xxp-nS-Mo4" eventType="valueChanged" id="hL9-p2-dls"/>
+                                    <action selector="cafeWSEditingEnd:" destination="Xxp-nS-Mo4" eventType="editingDidEnd" id="D1c-zg-dfw"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTd-sU-HOy">
@@ -522,9 +522,9 @@
                                     <constraint firstAttribute="height" constant="30" id="55p-P6-edf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done"/>
                                 <connections>
-                                    <action selector="locationWSChanged:" destination="Xxp-nS-Mo4" eventType="valueChanged" id="7rE-FX-S8Y"/>
+                                    <action selector="locationWSEditingEnd:" destination="Xxp-nS-Mo4" eventType="editingDidEnd" id="ptm-hB-cnQ"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7B-TX-t2s">

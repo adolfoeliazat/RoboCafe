@@ -17,6 +17,9 @@
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate setVCCafeSettings:self];
     
+    self.cafeWSEntry.delegate = self;
+    self.locationWSEntry.delegate = self;
+    
     self.cafeStatusLabel.textAlignment = NSTextAlignmentRight;
     [appDelegate addObserver:self forKeyPath:@"cafeOrderWSState" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
     
@@ -41,6 +44,12 @@
     } else if ([keyPath isEqualToString:@"locationAnnounceWSState"]) {
         [self updateLocationAnnounceWSText];
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)updateCafeOrderWSText {
@@ -92,7 +101,7 @@
     _locationWSEntry.text = urlString;
 }
 
-- (IBAction)cafeWSChanged:(id)sender {
+- (IBAction)cafeWSEditingEnd:(id)sender {
     if (appDelegate.cafeOrderWSState != WebsocketStateDisconnected) {
         [appDelegate.cafeOrderWS close];
     }
@@ -103,7 +112,7 @@
 
 - (IBAction)cafeWSClear:(id)sender {
     self.cafeWSEntry.text = DEFAULT_CAFE_WEBSOCKET;
-    [self cafeWSChanged:self];
+    [self cafeWSEditingEnd:self];
 }
 
 
@@ -114,7 +123,7 @@
     [appDelegate cafeOrderWSConnect];
 }
 
-- (IBAction)locationWSChanged:(id)sender {
+- (IBAction)locationWSEditingEnd:(id)sender {
     if (appDelegate.locationAnnounceWSState != WebsocketStateDisconnected) {
         [appDelegate.locationAnnounceWS close];
     }
@@ -125,7 +134,7 @@
 
 - (IBAction)locationWSClear:(id)sender {
     self.locationWSEntry.text = DEFAULT_LOC_ANNOUNCE_WEBSOCKET;
-    [self locationWSChanged:self];
+    [self locationWSEditingEnd:self];
 }
 
 - (IBAction)locationWSConnectClick:(id)sender {
