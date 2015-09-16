@@ -539,7 +539,7 @@
                                     <action selector="locationWSConnectClick:" destination="Xxp-nS-Mo4" eventType="touchUpInside" id="fkc-Ig-Flt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendor ID Label" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfX-nO-tM2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendor ID Label" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfX-nO-tM2">
                                 <rect key="frame" x="16" y="462" width="288" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="h7b-QY-fxn"/>
