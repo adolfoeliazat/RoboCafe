@@ -48,6 +48,9 @@
     self.locationAnnounceWSDelegate = [[LocationAnnounceWSDelegate alloc] init];
     [self locationAnnounceWSConnect];
     
+    // Debugging support options
+    _debugForceEnableAllButtons = [[NSNumber alloc] initWithBool:NO];
+    
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 
     return YES;

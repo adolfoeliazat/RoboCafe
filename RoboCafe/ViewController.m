@@ -37,7 +37,9 @@ AppDelegate *appDelegate;
 
     [appDelegate addObserver:self forKeyPath:@"alpsWSState" options:NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
     [appDelegate addObserver:self forKeyPath:@"cafeOrderWSState" options:NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
-    [appDelegate addObserver:self forKeyPath:@"locationAnnounceWSState" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
+    [appDelegate addObserver:self forKeyPath:@"locationAnnounceWSState" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
+    
+    [appDelegate addObserver:self forKeyPath:@"debugForceEnableAllButtons" options:NSKeyValueObservingOptionInitial context:&_roboCafeStatusLabel];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +58,13 @@ AppDelegate *appDelegate;
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 
     if (context == &_roboCafeStatusLabel) {
+        if ([appDelegate.debugForceEnableAllButtons boolValue] == YES) {
+            [self.orderTwixButton setEnabled:YES];
+            [self.orderSquirtGunButton setEnabled:YES];
+            [self.orderBouncyBallButton setEnabled:YES];
+            return;
+        }
+        
         [self.orderTwixButton setEnabled:NO];
         [self.orderSquirtGunButton setEnabled:NO];
         [self.orderBouncyBallButton setEnabled:NO];

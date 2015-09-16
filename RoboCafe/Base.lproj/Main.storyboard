@@ -405,7 +405,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwU-GK-1K3">
-                                <rect key="frame" x="268.5" y="148" width="35.5" height="17"/>
+                                <rect key="frame" x="268" y="148" width="35.5" height="17"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
@@ -461,7 +461,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4h-er-JIj">
-                                <rect key="frame" x="268.5" y="215" width="35.5" height="17"/>
+                                <rect key="frame" x="268" y="215" width="35.5" height="17"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
@@ -544,8 +544,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable All Buttons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejg-kY-HaW">
-                                <rect key="frame" x="16" y="334" width="118.5" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forcibly Enable All Buttons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejg-kY-HaW">
+                                <rect key="frame" x="16" y="334" width="174" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -597,7 +597,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ull-Zl-UQc">
-                                <rect key="frame" x="276" y="369.5" width="30" height="25"/>
+                                <rect key="frame" x="276" y="369" width="30" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="Q7I-bb-lE0"/>
                                 </constraints>
@@ -669,6 +669,7 @@
                     <connections>
                         <outlet property="cafeStatusLabel" destination="gwU-GK-1K3" id="jW7-Kz-BAA"/>
                         <outlet property="cafeWSEntry" destination="URg-kv-Cg3" id="qb6-gW-PEc"/>
+                        <outlet property="enableAllButtonsSwitch" destination="TNU-fu-EF1" id="oyd-Fx-4Q2"/>
                         <outlet property="locationStatusLabel" destination="y4h-er-JIj" id="YjG-hD-4jU"/>
                         <outlet property="locationWSEntry" destination="mZ5-G6-zfR" id="atV-AG-IZJ"/>
                         <outlet property="postLocationXTextField" destination="eVM-RI-oyS" id="igj-We-ic8"/>

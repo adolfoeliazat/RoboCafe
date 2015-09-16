@@ -160,6 +160,7 @@
 /*** DEBUGGING SUPPORT *******************************************************/
 
 - (IBAction)enableAllButtonsSwitchValueChanged:(id)sender {
+    appDelegate.debugForceEnableAllButtons = [[NSNumber alloc] initWithBool:self.enableAllButtonsSwitch.on];
 }
 
 - (IBAction)postLocationXEditingEnd:(id)sender {

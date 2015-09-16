@@ -37,6 +37,7 @@
 
 /*** DEBUGGING FEATURES *************************************************/
 
+@property (weak, nonatomic) IBOutlet UISwitch *enableAllButtonsSwitch;
 - (IBAction)enableAllButtonsSwitchValueChanged:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *postLocationXTextField;
 - (IBAction)postLocationXEditingEnd:(id)sender;

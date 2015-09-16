@@ -73,5 +73,7 @@ typedef NS_ENUM(NSInteger, WebsocketState) {
 - (void)sendToCafeOrderWS:(NSDictionary*)data;
 - (void)sendToLocationAnnounceWS :(NSDictionary*) data;
 
+@property (nonatomic) NSNumber* debugForceEnableAllButtons;
+
 @end
 
