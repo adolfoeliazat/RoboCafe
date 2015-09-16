@@ -26,6 +26,13 @@
     self.locationStatusLabel.textAlignment = NSTextAlignmentRight;
     [appDelegate addObserver:self forKeyPath:@"locationAnnounceWSState" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
     
+    // Debugging UI stuff below here
+    self.postLocationXTextField.delegate = self;
+    self.postLocationXTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"debug_post_location_x"];
+    
+    self.postLocationYTextField.delegate = self;
+    self.postLocationYTextField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"debug_post_location_y"];
+    
     self.vendorIDLabel.text = [[UIDevice currentDevice] identifierForVendor].UUIDString;
 }
 
@@ -47,8 +54,14 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [textField resignFirstResponder];
-    return YES;
+    if (textField.tag == 1) {
+        // textField is postLocationXTextField
+        UIResponder* nextResponser = [textField.superview viewWithTag:2]; // Tag 2 is postLocationYTextField
+        [nextResponser becomeFirstResponder];
+    } else {
+        [textField resignFirstResponder];
+    }
+    return NO;
 }
 
 - (void)updateCafeOrderWSText {
@@ -143,4 +156,34 @@
     [appDelegate locationAnnounceWSConnect];
 }
 
+
+/*** DEBUGGING SUPPORT *******************************************************/
+
+- (IBAction)enableAllButtonsSwitchValueChanged:(id)sender {
+}
+
+- (IBAction)postLocationXEditingEnd:(id)sender {
+    NSNumber *coerce = [NSNumber numberWithFloat:[self.postLocationXTextField.text floatValue]];
+    self.postLocationXTextField.text = [coerce stringValue];
+    [[NSUserDefaults standardUserDefaults] setObject:self.postLocationXTextField.text forKey:@"debug_post_location_x"];
+}
+
+- (IBAction)postLocationYEditingEnd:(id)sender {
+    NSNumber *coerce = [NSNumber numberWithFloat:[self.postLocationYTextField.text floatValue]];
+    self.postLocationYTextField.text = [coerce stringValue];
+    [[NSUserDefaults standardUserDefaults] setObject:self.postLocationYTextField.text forKey:@"debug_post_location_y"];
+}
+
+- (IBAction)postLocationButtonTouched:(id)sender {
+    NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
+                         [[UIDevice currentDevice] identifierForVendor].UUIDString, @"id",
+                         @"ALPS", @"type",
+                         [NSNumber numberWithFloat:[self.postLocationXTextField.text floatValue]], @"X",
+                         [NSNumber numberWithFloat:[self.postLocationYTextField.text floatValue]], @"Y",
+                         [NSNumber numberWithFloat:0.0], @"Z",
+                         nil];
+    
+    [appDelegate.locationResendTimer invalidate];
+    [appDelegate sendToLocationAnnounceWS:msg];
+}
 @end

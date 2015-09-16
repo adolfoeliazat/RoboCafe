@@ -35,6 +35,15 @@
 
 - (IBAction)locationWSConnectClick:(id)sender;
 
+/*** DEBUGGING FEATURES *************************************************/
+
+- (IBAction)enableAllButtonsSwitchValueChanged:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *postLocationXTextField;
+- (IBAction)postLocationXEditingEnd:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *postLocationYTextField;
+- (IBAction)postLocationYEditingEnd:(id)sender;
+- (IBAction)postLocationButtonTouched:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UILabel *vendorIDLabel;
 
 @end

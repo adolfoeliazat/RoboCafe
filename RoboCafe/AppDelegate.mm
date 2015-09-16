@@ -22,6 +22,8 @@
                                           DEFAULT_ALPS_WEBSOCKET, @"alps_ws_address",
                                           DEFAULT_CAFE_WEBSOCKET, @"cafe_ws_address",
                                           DEFAULT_LOC_ANNOUNCE_WEBSOCKET, @"loc_announce_ws_address",
+                                          [NSNumber numberWithInt:1], @"debug_post_location_x",
+                                          [NSNumber numberWithInt:2], @"debug_post_location_y",
                                           nil];
     [[NSUserDefaults standardUserDefaults] registerDefaults:userDefaultsDefaults];
     

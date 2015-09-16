@@ -201,57 +201,5 @@ AppDelegate *appDelegate;
     [_bouncyBallStatus setText:@"Cancelled granola order"];
 }
 
-- (IBAction)goToTop:(id)sender {
-    NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
-                         [[UIDevice currentDevice] identifierForVendor].UUIDString, @"id",
-                         @"ALPS", @"type",
-                         [NSNumber numberWithFloat:2.0], @"X",
-                         [NSNumber numberWithFloat:8.0], @"Y",
-                         [NSNumber numberWithFloat: 0.0], @"Z",
-                         nil];
-    
-    [appDelegate.locationResendTimer invalidate];
-    [appDelegate sendToLocationAnnounceWS:msg];
-}
-
-- (IBAction)goToLeft:(id)sender {
-    NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
-                         [[UIDevice currentDevice] identifierForVendor].UUIDString, @"id",
-                         @"ALPS", @"type",
-                         [NSNumber numberWithFloat:1.0], @"X",
-                         [NSNumber numberWithFloat:3.0], @"Y",
-                         [NSNumber numberWithFloat: 0.0], @"Z",
-                         nil];
-    
-    [appDelegate.locationResendTimer invalidate];
-    [appDelegate sendToLocationAnnounceWS:msg];
-}
-
-- (IBAction)goToBottom:(id)sender {
-    NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
-                         [[UIDevice currentDevice] identifierForVendor].UUIDString, @"id",
-                         @"ALPS", @"type",
-                         [NSNumber numberWithFloat:3.0], @"X",
-                         [NSNumber numberWithFloat:2.0], @"Y",
-                         [NSNumber numberWithFloat: 0.0], @"Z",
-                         nil];
-    
-    [appDelegate.locationResendTimer invalidate];
-    [appDelegate sendToLocationAnnounceWS:msg];
-}
-
-- (IBAction)goToRight:(id)sender {
-    NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
-                         [[UIDevice currentDevice] identifierForVendor].UUIDString, @"id",
-                         @"ALPS", @"type",
-                         [NSNumber numberWithFloat:11.0], @"X",
-                         [NSNumber numberWithFloat:3.5], @"Y",
-                         [NSNumber numberWithFloat: 0.0], @"Z",
-                         nil];
-    
-    [appDelegate.locationResendTimer invalidate];
-    [appDelegate sendToLocationAnnounceWS:msg];
-}
-
 @end
 
