@@ -70,10 +70,6 @@
         NSLog(@"Error parsing JSON >>>%@<<<. Error: %@", message, error);
         return;
     }
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [appDelegate.vCCafeSettings.statusJSONBox setText:message];
-    });
 
     NSArray* robots = [status valueForKey:@"robots"];
     if (robots == nil) {

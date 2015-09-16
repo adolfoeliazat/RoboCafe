@@ -572,16 +572,6 @@
                                     <action selector="locationWSClear:" destination="Xxp-nS-Mo4" eventType="touchUpInside" id="KWj-aM-9Ok"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raw JSON status from cafe server will appear in this box." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMe-PD-U7f">
-                                <rect key="frame" x="16" y="282" width="288" height="172"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -589,16 +579,12 @@
                             <constraint firstItem="Wtg-ji-WFO" firstAttribute="leading" secondItem="KIx-JN-ULJ" secondAttribute="leadingMargin" id="11h-u6-ZNM"/>
                             <constraint firstItem="mZ5-G6-zfR" firstAttribute="centerY" secondItem="A7B-TX-t2s" secondAttribute="centerY" id="29Z-pZ-oF5"/>
                             <constraint firstItem="HFH-0q-7J3" firstAttribute="leading" secondItem="KIx-JN-ULJ" secondAttribute="leadingMargin" id="2v4-lo-lpk"/>
-                            <constraint firstItem="sfX-nO-tM2" firstAttribute="top" secondItem="KMe-PD-U7f" secondAttribute="bottom" constant="8" id="3Dr-Zj-Ths"/>
                             <constraint firstItem="URg-kv-Cg3" firstAttribute="centerY" secondItem="HFH-0q-7J3" secondAttribute="centerY" constant="0.5" id="4Vr-mM-OvR"/>
                             <constraint firstItem="Q41-so-HFt" firstAttribute="centerY" secondItem="mZ5-G6-zfR" secondAttribute="centerY" constant="-0.5" id="5CC-gb-s4E"/>
                             <constraint firstAttribute="trailingMargin" secondItem="crA-LT-7BX" secondAttribute="trailing" constant="-16" id="65W-F0-YiH"/>
-                            <constraint firstItem="KMe-PD-U7f" firstAttribute="top" secondItem="mZ5-G6-zfR" secondAttribute="bottom" constant="8" id="7jh-oc-bMl"/>
-                            <constraint firstItem="KMe-PD-U7f" firstAttribute="trailing" secondItem="KIx-JN-ULJ" secondAttribute="trailingMargin" id="8A9-id-315"/>
                             <constraint firstItem="y4h-er-JIj" firstAttribute="centerY" secondItem="w2u-w9-Ucm" secondAttribute="centerY" id="9kY-tf-fu7"/>
                             <constraint firstItem="RrY-th-yd8" firstAttribute="top" secondItem="sfX-nO-tM2" secondAttribute="bottom" constant="8" id="Bk8-uY-ixc"/>
                             <constraint firstItem="cTd-sU-HOy" firstAttribute="leading" secondItem="URg-kv-Cg3" secondAttribute="trailing" constant="8" id="CYI-EE-8Xh"/>
-                            <constraint firstItem="KMe-PD-U7f" firstAttribute="leading" secondItem="KIx-JN-ULJ" secondAttribute="leadingMargin" id="E5q-Vp-dcw"/>
                             <constraint firstItem="crA-LT-7BX" firstAttribute="leading" secondItem="KIx-JN-ULJ" secondAttribute="leadingMargin" constant="-16" id="EbP-Ns-Tnh"/>
                             <constraint firstItem="HFH-0q-7J3" firstAttribute="top" secondItem="Wtg-ji-WFO" secondAttribute="bottom" constant="14" id="Nq4-1G-961"/>
                             <constraint firstItem="gwU-GK-1K3" firstAttribute="trailing" secondItem="KIx-JN-ULJ" secondAttribute="trailingMargin" id="QxX-fW-6Eh"/>
@@ -629,7 +615,6 @@
                         <outlet property="cafeWSEntry" destination="URg-kv-Cg3" id="qb6-gW-PEc"/>
                         <outlet property="locationStatusLabel" destination="y4h-er-JIj" id="YjG-hD-4jU"/>
                         <outlet property="locationWSEntry" destination="mZ5-G6-zfR" id="atV-AG-IZJ"/>
-                        <outlet property="statusJSONBox" destination="KMe-PD-U7f" id="Zc7-7U-roo"/>
                         <outlet property="vendorIDLabel" destination="sfX-nO-tM2" id="XKE-X8-DwU"/>
                     </connections>
                 </viewController>
