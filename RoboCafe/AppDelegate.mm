@@ -22,6 +22,7 @@
                                           DEFAULT_ALPS_WEBSOCKET, @"alps_ws_address",
                                           DEFAULT_CAFE_WEBSOCKET, @"cafe_ws_address",
                                           DEFAULT_LOC_ANNOUNCE_WEBSOCKET, @"loc_announce_ws_address",
+                                          DEFAULT_APP_CONFIG_WEBSOCKET, @"app_config_ws_address",
                                           @"Item #1", @"item1",
                                           @"Item #2", @"item2",
                                           @"Item #3", @"item3",
@@ -51,6 +52,11 @@
     self.locationAnnounceWSDelegate = [[LocationAnnounceWSDelegate alloc] init];
     [self locationAnnounceWSConnect];
     
+    // App configuration websocket
+    self.appConfigWSAddress = [[NSUserDefaults standardUserDefaults] stringForKey:@"app_config_ws_address"];
+    self.appConfigWSDelegate = [[AppConfigWSDelegate alloc] init];
+    [self appConfigWSConnect];
+    
     // Debugging support options
     _debugForceEnableAllButtons = [[NSNumber alloc] initWithBool:NO];
     
@@ -73,6 +79,13 @@
     [self.locationAnnounceWS open];
 }
 
+- (void)appConfigWSConnect {
+    self.appConfigWSState = WebsocketStateConnecting;
+    self.appConfigWS = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.appConfigWSAddress]]];
+    self.appConfigWS.delegate = self.appConfigWSDelegate;
+    [self.appConfigWS open];
+}
+
 - (void)sendToWS: (NSDictionary *)data :(SRWebSocket*) WS{
     NSError *error = nil;
     NSData *json = [NSJSONSerialization dataWithJSONObject:data options:NSJSONWritingPrettyPrinted error:&error];
@@ -93,6 +106,12 @@
 - (void)sendToLocationAnnounceWS :(NSDictionary*) data {
     if (self.locationAnnounceWSState == WebsocketStateConnected) {
         [self sendToWS :data :_locationAnnounceWS];
+    }
+}
+
+- (void)sendToAppConfigWS:(NSDictionary*) data {
+    if (self.appConfigWSState == WebsocketStateConnected) {
+        [self sendToWS:data :_appConfigWS];
     }
 }
 

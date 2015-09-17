@@ -22,18 +22,21 @@
 @property (weak, nonatomic) IBOutlet UITextField *cafeWSEntry;
 - (IBAction)cafeWSClear:(id)sender;
 - (IBAction)cafeWSEditingEnd:(id)sender;
-
-
 - (IBAction)cafeWSConnectClick:(id)sender;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *locationStatusLabel;
-
 @property (weak, nonatomic) IBOutlet UITextField *locationWSEntry;
 - (IBAction)locationWSClear:(id)sender;
 - (IBAction)locationWSEditingEnd:(id)sender;
-
 - (IBAction)locationWSConnectClick:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *appConfigStatusLabel;
+@property (weak, nonatomic) IBOutlet UITextField *appConfigWSEntry;
+- (IBAction)appConfigWSClear:(id)sender;
+- (IBAction)appConfigEditingEnd:(id)sender;
+- (IBAction)appConfigWSConnectClick:(id)sender;
+
 
 /*** DEBUGGING FEATURES *************************************************/
 
