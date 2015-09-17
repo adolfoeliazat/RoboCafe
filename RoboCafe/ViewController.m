@@ -74,13 +74,19 @@ AppDelegate *appDelegate;
 
     if (context == &_roboCafeStatusLabel) {
         if (canEnableButtons) {
-            [self.orderTwixButton setEnabled:YES];
-            [self.orderSquirtGunButton setEnabled:YES];
-            [self.orderBouncyBallButton setEnabled:YES];
+            self.orderTwixButton.enabled = YES;
+            self.orderSquirtGunButton.enabled = YES;
+            self.orderBouncyBallButton.enabled = YES;
+            self.cancelTwixButton.enabled = YES;
+            self.cancelSquirtGunButton.enabled = YES;
+            self.cancelBouncyBallButton.enabled = YES;
         } else {
-            [self.orderTwixButton setEnabled:NO];
-            [self.orderSquirtGunButton setEnabled:NO];
-            [self.orderBouncyBallButton setEnabled:NO];
+            self.orderTwixButton.enabled = NO;
+            self.orderSquirtGunButton.enabled = NO;
+            self.orderBouncyBallButton.enabled = NO;
+            self.cancelTwixButton.enabled = NO;
+            self.cancelSquirtGunButton.enabled = NO;
+            self.cancelBouncyBallButton.enabled = NO;
         }
     } else if (context == &_orderTwixButton) {
         NSString* item1 = [[NSUserDefaults standardUserDefaults] stringForKey:@"item1"];
