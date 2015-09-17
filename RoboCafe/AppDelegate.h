@@ -47,6 +47,10 @@ typedef NS_ENUM(NSInteger, WebsocketState) {
 @property (nonatomic) ViewControllerSettings *vCSettings;
 @property (nonatomic) ViewControllerCafeSettings *vCCafeSettings;
 
+@property (nonatomic) NSNumber *item1ordered;
+@property (nonatomic) NSNumber *item2ordered;
+@property (nonatomic) NSNumber *item3ordered;
+
 @property (nonatomic) NSString* alpsWSAddress;
 @property (nonatomic) SRWebSocket *alpsWS;
 @property (nonatomic) ALPSCore *ALPS;

@@ -143,11 +143,46 @@
     NSString* squirtGunStatus = [self generateStatusTextForItem:@"mints" forItemQueue:squirtGunQueue forItemRobotList:squirtGunRobots forRobots:robots];
     NSString* bouncyBallsStatus = [self generateStatusTextForItem:@"granola" forItemQueue:bouncyBallsQueue forItemRobotList:bouncyBallsRobots forRobots:robots];
     
+    appDelegate.item1ordered = [[NSNumber alloc] initWithBool:[self hasUserOrderedForItemQueue:twixQueue forItemRobotList:twixRobots forRobots:robots]];
+    appDelegate.item2ordered = [[NSNumber alloc] initWithBool:[self hasUserOrderedForItemQueue:squirtGunQueue forItemRobotList:squirtGunRobots forRobots:robots]];
+    appDelegate.item3ordered = [[NSNumber alloc] initWithBool:[self hasUserOrderedForItemQueue:bouncyBallsQueue forItemRobotList:bouncyBallsRobots forRobots:robots]];
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [appDelegate.vC.twixStatus setText:twixStatus];
         [appDelegate.vC.squirtGunStatus setText:squirtGunStatus];
         [appDelegate.vC.bouncyBallStatus setText:bouncyBallsStatus];
     });
+}
+
+- (BOOL)hasUserOrderedForItemQueue:(NSArray*)queue forItemRobotList:(NSArray*)itemRobotList forRobots:robots {
+    unsigned i;
+
+    for (i=0; i < [itemRobotList count]; i++ ) {
+        NSNumber* index = [itemRobotList objectAtIndex:i];
+        unsigned idx = [index unsignedIntValue];
+        NSDictionary* robot = [robots objectAtIndex:idx];
+        if (robot != nil) {
+            NSString* state = [robot objectForKey:@"state"];
+            if (state != nil) {
+                if ([state isEqualToString:@"SERVING"]) {
+                    NSString* servicing = [robot objectForKey:@"servicing"];
+                    if (servicing != nil) {
+                        if ([servicing isEqualToString:[[UIDevice currentDevice] identifierForVendor].UUIDString]) {
+                            return YES;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    for (i=0; i < [queue count]; i++) {
+        if ([queue[i] isEqualToString:[[UIDevice currentDevice] identifierForVendor].UUIDString]) {
+            return YES;
+        }
+    }
+    
+    return NO;
 }
 
 - (NSString*)generateStatusTextForItem:(NSString*)itemType forItemQueue:(NSArray*)queue forItemRobotList:(NSArray*)itemRobotList forRobots:(NSArray*) robots {

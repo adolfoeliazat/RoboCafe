@@ -10,8 +10,6 @@
 
 @interface ViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextView *textField;
-
 - (IBAction)orderTwixTouch:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *cancelTwixButton;
 @property (weak, nonatomic) IBOutlet UIButton *orderTwixButton;

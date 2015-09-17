@@ -30,7 +30,6 @@ AppDelegate *appDelegate;
     _cancelBouncyBallButton.hidden = YES;
     _cancelSquirtGunButton.hidden = YES;
     
-    _roboCafeStatusLabel.textAlignment = NSTextAlignmentCenter;
     UIFontDescriptor* fontItalic = [_roboCafeStatusLabel.font.fontDescriptor fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitItalic];
     _roboCafeStatusLabel.font = [UIFont fontWithDescriptor:fontItalic size:0];
     [_roboCafeStatusLabel setTextColor:[UIColor redColor]];
@@ -40,6 +39,10 @@ AppDelegate *appDelegate;
     [appDelegate addObserver:self forKeyPath:@"locationAnnounceWSState" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
     
     [appDelegate addObserver:self forKeyPath:@"debugForceEnableAllButtons" options:NSKeyValueObservingOptionInitial context:&_roboCafeStatusLabel];
+    
+    [appDelegate addObserver:self forKeyPath:@"item1ordered" options:NSKeyValueObservingOptionInitial context:&_orderTwixButton];
+    [appDelegate addObserver:self forKeyPath:@"item2ordered" options:NSKeyValueObservingOptionInitial context:&_orderSquirtGunButton];
+    [appDelegate addObserver:self forKeyPath:@"item3ordered" options:NSKeyValueObservingOptionInitial context:&_orderBouncyBallButton];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,31 +59,52 @@ AppDelegate *appDelegate;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    BOOL canEnableButtons = [appDelegate.debugForceEnableAllButtons boolValue];
+    
+    if (appDelegate.alpsWSState != WebsocketStateConnected) {
+        [self.roboCafeStatusLabel setText:@"No connection to ALPS"];
+    } else if (appDelegate.cafeOrderWSState != WebsocketStateConnected) {
+        [self.roboCafeStatusLabel setText:@"No connection to RoboCafé server"];
+    } else if (appDelegate.locationAnnounceWSState != WebsocketStateConnected) {
+        [self.roboCafeStatusLabel setText:@"No connection to location server"];
+    } else {
+        [self.roboCafeStatusLabel setText:@""];
+        canEnableButtons = YES;
+    }
 
     if (context == &_roboCafeStatusLabel) {
-        if ([appDelegate.debugForceEnableAllButtons boolValue] == YES) {
+        if (canEnableButtons) {
             [self.orderTwixButton setEnabled:YES];
             [self.orderSquirtGunButton setEnabled:YES];
             [self.orderBouncyBallButton setEnabled:YES];
-            return;
-        }
-        
-        [self.orderTwixButton setEnabled:NO];
-        [self.orderSquirtGunButton setEnabled:NO];
-        [self.orderBouncyBallButton setEnabled:NO];
-        
-        if (appDelegate.alpsWSState != WebsocketStateConnected) {
-            [self.roboCafeStatusLabel setText:@"No connection to ALPS"];
-        } else if (appDelegate.cafeOrderWSState != WebsocketStateConnected) {
-            [self.roboCafeStatusLabel setText:@"No connection to RoboCafé server"];
-        } else if (appDelegate.locationAnnounceWSState != WebsocketStateConnected) {
-            [self.roboCafeStatusLabel setText:@"No connection to location server"];
         } else {
-            [self.orderTwixButton setEnabled:YES];
-            [self.orderSquirtGunButton setEnabled:YES];
-            [self.orderBouncyBallButton setEnabled:YES];
-            [self.roboCafeStatusLabel setText:@""];
+            [self.orderTwixButton setEnabled:NO];
+            [self.orderSquirtGunButton setEnabled:NO];
+            [self.orderBouncyBallButton setEnabled:NO];
         }
+    } else if (context == &_orderTwixButton) {
+        NSString* item1 = [[NSUserDefaults standardUserDefaults] stringForKey:@"item1"];
+        BOOL ordered = [appDelegate.item1ordered boolValue];
+        [self genericObserveForItem:item1 isOrdered:ordered forOrderButton:self.orderTwixButton forCancelButton:self.cancelTwixButton canEnableButtons:canEnableButtons];
+    } else if (context == &_orderSquirtGunButton) {
+        NSString* item2 = [[NSUserDefaults standardUserDefaults] stringForKey:@"item2"];
+        BOOL ordered = [appDelegate.item2ordered boolValue];
+        [self genericObserveForItem:item2 isOrdered:ordered forOrderButton:self.orderSquirtGunButton forCancelButton:self.cancelSquirtGunButton canEnableButtons:canEnableButtons];
+    } else if (context == &_orderBouncyBallButton) {
+        NSString* item3 = [[NSUserDefaults standardUserDefaults] stringForKey:@"item3"];
+        BOOL ordered = [appDelegate.item3ordered boolValue];
+        [self genericObserveForItem:item3 isOrdered:ordered forOrderButton:self.orderBouncyBallButton forCancelButton:self.cancelBouncyBallButton canEnableButtons:canEnableButtons];
+    }
+}
+
+- (void)genericObserveForItem:(NSString*)item isOrdered:(BOOL)ordered forOrderButton:(UIButton*)order forCancelButton:(UIButton*)cancel canEnableButtons:(BOOL)canEnableButtons {
+    if (canEnableButtons) order.enabled = YES;
+    if (ordered == YES) {
+        [order setTitle:[NSString stringWithFormat:@"Got %@", item] forState:UIControlStateNormal];
+        cancel.hidden = NO;
+    } else {
+        [order setTitle:[NSString stringWithFormat:@"Order %@", item] forState:UIControlStateNormal];
+        cancel.hidden = YES;
     }
 }
 
@@ -95,119 +119,77 @@ AppDelegate *appDelegate;
  "type": "finished"
  }*/
 
-- (IBAction)orderTwixTouch:(id)sender {
-    if ([_orderTwixButton.currentTitle isEqual: @"Order candy"]) {
-        [_orderTwixButton setTitle:@"Got candy" forState:UIControlStateNormal];
-        _cancelTwixButton.hidden = NO;
+- (void)genericOrderForItem:(NSString*)item isOrdered:(BOOL)ordered forOrderButton:(UIButton*)order forCancelButton:(UIButton*)cancel forPtolemySelection:(NSString*)ptolemySelection {
+    BOOL canDisableButtons = ![appDelegate.debugForceEnableAllButtons boolValue];
+    if (ordered == NO) {
+        // Touched "Order <item>"
+        [order setTitle:[NSString stringWithFormat:@"Ordering %@...", item] forState:UIControlStateNormal];
+        if (canDisableButtons) order.enabled = NO;
+        cancel.hidden = NO;
         
         NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
                              [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
                              @"selection", @"type",
-                             @"Twix", @"selection",
+                             ptolemySelection, @"selection",
                              nil];
         [appDelegate sendToCafeOrderWS:msg];
-        
-        [_twixStatus setText:@"Ordered candy"];
     } else {
-        [_orderTwixButton setTitle:@"Order candy" forState:UIControlStateNormal];
-        _cancelTwixButton.hidden = YES;
+        // Touched "Got <item>"
+        [order setTitle:@"Acknowledging..." forState:UIControlStateNormal];
+        if (canDisableButtons) order.enabled = NO;
+        cancel.hidden = YES;
         
         NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
                              [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
                              @"finished", @"type",
-                             @"Twix", @"selection",
+                             ptolemySelection, @"selection",
                              nil];
         [appDelegate sendToCafeOrderWS:msg];
-        
-        [_twixStatus setText:@""];
     }
+}
+
+- (void)genericCancelForItem:(NSString*)item forOrderButton:(UIButton*)order forCancelButton:(UIButton*)cancel forPtolemySelection:(NSString*) ptolemySelection {
+    BOOL canDisableButtons = ![appDelegate.debugForceEnableAllButtons boolValue];
+    [order setTitle:@"Cancelling..." forState:UIControlStateNormal];
+    if (canDisableButtons) order.enabled = NO;
+    cancel.hidden = YES;
+    
+    NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
+                         [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
+                         @"cancelled", @"type",
+                         ptolemySelection, @"selection",
+                         nil];
+    [appDelegate sendToCafeOrderWS:msg];
+}
+
+- (IBAction)orderTwixTouch:(id)sender {
+    NSString* item1 = [[NSUserDefaults standardUserDefaults] stringForKey:@"item1"];
+    BOOL ordered = [appDelegate.item1ordered boolValue];
+    [self genericOrderForItem:item1 isOrdered:ordered forOrderButton:self.orderTwixButton forCancelButton:self.cancelTwixButton forPtolemySelection:@"Twix"];
 }
 - (IBAction)cancelTwixTouch:(id)sender {
-    [_orderTwixButton setTitle:@"Order candy" forState:UIControlStateNormal];
-    _cancelTwixButton.hidden = YES;
-    
-    NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
-                         [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
-                         @"cancelled", @"type",
-                         @"Twix", @"selection",
-                         nil];
-    [appDelegate sendToCafeOrderWS:msg];
-    
-    [_twixStatus setText:@"Cancelled candy order"];
+    NSString* item1 = [[NSUserDefaults standardUserDefaults] stringForKey:@"item1"];
+    [self genericCancelForItem:item1 forOrderButton:self.orderTwixButton forCancelButton:self.cancelTwixButton forPtolemySelection:@"Twix"];
 }
+
 - (IBAction)orderSquirtGunTouch:(id)sender {
-    if ([_orderSquirtGunButton.currentTitle isEqual: @"Order mints"]) {
-        [_orderSquirtGunButton setTitle:@"Got mints" forState:UIControlStateNormal];
-        _cancelSquirtGunButton.hidden = NO;
-        NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
-                             [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
-                             @"selection", @"type",
-                             @"SquirtGun", @"selection",
-                             nil];
-        [appDelegate sendToCafeOrderWS:msg];
-        
-        [_squirtGunStatus setText:@"Ordered mints"];
-    } else {
-        [_orderSquirtGunButton setTitle:@"Order mints" forState:UIControlStateNormal];
-        _cancelSquirtGunButton.hidden = YES;
-        NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
-                             [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
-                             @"finished", @"type",
-                             @"SquirtGun", @"selection",
-                             nil];
-        [appDelegate sendToCafeOrderWS:msg];
-        [_squirtGunStatus setText:@""];
-    }
+    NSString* item2 = [[NSUserDefaults standardUserDefaults] stringForKey:@"item2"];
+    BOOL ordered = [appDelegate.item2ordered boolValue];
+    [self genericOrderForItem:item2 isOrdered:ordered forOrderButton:self.orderSquirtGunButton forCancelButton:self.cancelSquirtGunButton forPtolemySelection:@"SquirtGun"];
 }
-
 - (IBAction)cancelSquirtGunTouch:(id)sender {
-    [_orderSquirtGunButton setTitle:@"Order mints" forState:UIControlStateNormal];
-    _cancelSquirtGunButton.hidden = YES;
-    NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
-                         [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
-                         @"cancelled", @"type",
-                         @"SquirtGun", @"selection",
-                         nil];
-    [appDelegate sendToCafeOrderWS:msg];
-    [_squirtGunStatus setText:@"Cancelled mints order"];
-}
-- (IBAction)orderBouncyBallTouch:(id)sender {
-    if ([_orderBouncyBallButton.currentTitle isEqual: @"Order granola"]) {
-        [_orderBouncyBallButton setTitle:@"Got granola" forState:UIControlStateNormal];
-        _cancelBouncyBallButton.hidden = NO;
-        
-        NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
-                             [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
-                             @"selection", @"type",
-                             @"BouncyBalls", @"selection",
-                             nil];
-        [appDelegate sendToCafeOrderWS:msg];
-        
-        [_bouncyBallStatus setText:@"Ordered granola"];
-    } else {
-        [_orderBouncyBallButton setTitle:@"Order granola" forState:UIControlStateNormal];
-        _cancelBouncyBallButton.hidden = YES;
-        
-        NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
-                             [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
-                             @"finished", @"type",
-                             @"BouncyBalls", @"selection",
-                             nil];
-        [appDelegate sendToCafeOrderWS:msg];
-        [_bouncyBallStatus setText:@""];
-    }
+    NSString* item2 = [[NSUserDefaults standardUserDefaults] stringForKey:@"item2"];
+    [self genericCancelForItem:item2 forOrderButton:self.orderSquirtGunButton forCancelButton:self.cancelSquirtGunButton forPtolemySelection:@"SquirtGun"];
 }
 
+- (IBAction)orderBouncyBallTouch:(id)sender {
+    NSString* item3 = [[NSUserDefaults standardUserDefaults] stringForKey:@"item3"];
+    BOOL ordered = [appDelegate.item3ordered boolValue];
+    [self genericOrderForItem:item3 isOrdered:ordered forOrderButton:self.orderBouncyBallButton forCancelButton:self.cancelBouncyBallButton forPtolemySelection:@"BouncyBalls"];
+}
 - (IBAction)cancelBouncyBallTouch:(id)sender {
-    [_orderBouncyBallButton setTitle:@"Order granola" forState:UIControlStateNormal];
-    _cancelBouncyBallButton.hidden = YES;
-    NSDictionary *msg = [NSDictionary dictionaryWithObjectsAndKeys:
-                         [[UIDevice currentDevice] identifierForVendor].UUIDString, @"phone_id",
-                         @"cancelled", @"type",
-                         @"BouncyBalls", @"selection",
-                         nil];
-    [appDelegate sendToCafeOrderWS:msg];
-    [_bouncyBallStatus setText:@"Cancelled granola order"];
+    NSString* item3 = [[NSUserDefaults standardUserDefaults] stringForKey:@"item3"];
+    [self genericCancelForItem:item3 forOrderButton:self.orderBouncyBallButton forCancelButton:self.cancelBouncyBallButton forPtolemySelection:@"BouncyBalls"];
 }
 
 @end
