@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class AppDelegate, ALPSCore;
+@class AppDelegate, ALPS;
 
 @interface ViewControllerSettings : UIViewController <UITextFieldDelegate> {
     AppDelegate *appDelegate;
-    ALPSCore *alps;
+    ALPS *alps;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *solverConnectionStatusLabel;

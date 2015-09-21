@@ -34,7 +34,7 @@
     _position = nil;
     
     // Set up ALPS
-    _ALPS = [[ALPSCore alloc] initWithOptions:RECORD_LENGTH :TDMA_SLOTS];
+    _ALPS = [[ALPS alloc] initWithOptions:RECORD_LENGTH :TDMA_SLOTS];
     _ALPS.delegate = self;
     [_ALPS start];
     

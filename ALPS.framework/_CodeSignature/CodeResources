@@ -6,15 +6,11 @@
 	<dict>
 		<key>Headers/ALPS.h</key>
 		<data>
-		c9BdH0cUpjLr4mZXw6khRQ0cM7c=
-		</data>
-		<key>Headers/ALPSCore.h</key>
-		<data>
-		lsmK4hMeAIuRKEtSTXmVNAyrurE=
+		wj9E2Jfty9l9nNlwMI0pR42AnOM=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		hvPg4q3Y2My23oMKUbhO93N8g1A=
+		Ricvvs67jtQYQ3LTSE5Z/iSO0fc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -25,11 +21,7 @@
 	<dict>
 		<key>Headers/ALPS.h</key>
 		<data>
-		c9BdH0cUpjLr4mZXw6khRQ0cM7c=
-		</data>
-		<key>Headers/ALPSCore.h</key>
-		<data>
-		lsmK4hMeAIuRKEtSTXmVNAyrurE=
+		wj9E2Jfty9l9nNlwMI0pR42AnOM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>

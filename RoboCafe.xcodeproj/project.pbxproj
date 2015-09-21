@@ -31,8 +31,8 @@
 		AB7EE1801B79CA83008CFE34 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7EE17F1B79CA83008CFE34 /* Security.framework */; };
 		AB7EE1A81B79EE0C008CFE34 /* ViewControllerSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7EE1A71B79EE0C008CFE34 /* ViewControllerSettings.m */; };
 		AB9594981B8D494300C19CED /* ALPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9594971B8D494300C19CED /* ALPS.framework */; };
-		AB95949A1B8D49FA00C19CED /* ALPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9594971B8D494300C19CED /* ALPS.framework */; };
-		AB95949B1B8D49FA00C19CED /* ALPS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB9594971B8D494300C19CED /* ALPS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AB98CEEF1BAF62280027FDB8 /* ALPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB98CEEE1BAF62280027FDB8 /* ALPS.framework */; settings = {ASSET_TAGS = (); }; };
+		AB98CEF01BAF63800027FDB8 /* ALPS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB98CEEE1BAF62280027FDB8 /* ALPS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,7 +42,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AB95949B1B8D49FA00C19CED /* ALPS.framework in Embed Frameworks */,
+				AB98CEF01BAF63800027FDB8 /* ALPS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,7 +87,8 @@
 		AB7EE17F1B79CA83008CFE34 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AB7EE1A61B79EE0C008CFE34 /* ViewControllerSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerSettings.h; path = ../ViewControllerSettings.h; sourceTree = "<group>"; };
 		AB7EE1A71B79EE0C008CFE34 /* ViewControllerSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerSettings.m; path = ../ViewControllerSettings.m; sourceTree = "<group>"; };
-		AB9594971B8D494300C19CED /* ALPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALPS.framework; sourceTree = "<group>"; };
+		AB9594971B8D494300C19CED /* ALPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ALPS.framework; path = /Users/dermeister/Documents/Dev/RoboCafe2/ALPS.framework; sourceTree = "<absolute>"; };
+		AB98CEEE1BAF62280027FDB8 /* ALPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALPS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +104,7 @@
 				AB7EE1631B783E7E008CFE34 /* CoreLocation.framework in Frameworks */,
 				AB7EE15C1B7710B1008CFE34 /* CoreAudio.framework in Frameworks */,
 				AB7EE15A1B7710AB008CFE34 /* AVFoundation.framework in Frameworks */,
-				AB95949A1B8D49FA00C19CED /* ALPS.framework in Frameworks */,
+				AB98CEEF1BAF62280027FDB8 /* ALPS.framework in Frameworks */,
 				AB7EE1581B7710A6008CFE34 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,7 +192,7 @@
 				AB7EE17F1B79CA83008CFE34 /* Security.framework */,
 				AB7EE17D1B79CA7B008CFE34 /* CFNetwork.framework */,
 				AB7EE17B1B79CA76008CFE34 /* libicucore.dylib */,
-				AB9594971B8D494300C19CED /* ALPS.framework */,
+				AB98CEEE1BAF62280027FDB8 /* ALPS.framework */,
 				AB7EE1641B783E83008CFE34 /* CoreBluetooth.framework */,
 				AB7EE1621B783E7E008CFE34 /* CoreLocation.framework */,
 				AB7EE15B1B7710B1008CFE34 /* CoreAudio.framework */,
@@ -244,7 +245,7 @@
 				TargetAttributes = {
 					AB7EE1201B77102A008CFE34 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = CS3F72T8LF;
+						DevelopmentTeam = QXW5L5XKS9;
 					};
 				};
 			};
@@ -416,6 +417,7 @@
 				INFOPLIST_FILE = RoboCafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cmu.RoboCafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -434,6 +436,7 @@
 				INFOPLIST_FILE = RoboCafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cmu.RoboCafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

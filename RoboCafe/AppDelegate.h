@@ -56,7 +56,7 @@ typedef NS_ENUM(NSInteger, WebsocketState) {
 
 @property (nonatomic) NSString* alpsWSAddress;
 @property (nonatomic) SRWebSocket *alpsWS;
-@property (nonatomic) ALPSCore *ALPS;
+@property (nonatomic) ALPS *ALPS;
 @property (nonatomic) WebsocketState alpsWSState;
 @property NSDictionary *position;
 @property (nonatomic) NSDictionary *locationMsg;
