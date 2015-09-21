@@ -11,6 +11,7 @@
 #import "SRWebSocket.h"
 #import "CafeOrderWSDelegate.h"
 #import "LocationAnnounceWSDelegate.h"
+#import "AppConfigWSDelegate.h"
 
 #define RECORD_LENGTH 211200 //Needs to be divisible by 1024
 #define TDMA_SLOTS 6
@@ -37,6 +38,8 @@ typedef NS_ENUM(NSInteger, WebsocketState) {
 //#define DEFAULT_LOC_ANNOUNCE_WEBSOCKET @"ws://pfet-v2.eecs.umich.edu:8001"
 //#define DEFAULT_LOC_ANNOUNCE_WEBSOCKET  @"ws://35.2.70.92:8082"
 #define DEFAULT_LOC_ANNOUNCE_WEBSOCKET  @"ws://192.168.11.108:8082"
+
+#define DEFAULT_APP_CONFIG_WEBSOCKET @"ws://pfet-v2.eecs.umich.edu:8008"
 
 @class ALPSCore, ViewController, ViewControllerSettings, ViewControllerCafeSettings;
 
@@ -72,6 +75,12 @@ typedef NS_ENUM(NSInteger, WebsocketState) {
 @property (nonatomic) WebsocketState locationAnnounceWSState;
 @property (nonatomic) SRWebSocket* locationAnnounceWS;
 - (void) locationAnnounceWSConnect;
+
+@property (nonatomic) NSString* appConfigWSAddress;
+@property (nonatomic) AppConfigWSDelegate* appConfigWSDelegate;
+@property (nonatomic) WebsocketState appConfigWSState;
+@property (nonatomic) SRWebSocket* appConfigWS;
+- (void) appConfigWSConnect;
 
 - (void)sendToWS :(NSDictionary*)data :(SRWebSocket*) WS;
 - (void)sendToCafeOrderWS:(NSDictionary*)data;

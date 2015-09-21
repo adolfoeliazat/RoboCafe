@@ -19,12 +19,13 @@
     
     self.cafeWSEntry.delegate = self;
     self.locationWSEntry.delegate = self;
+    self.appConfigWSEntry.delegate = self;
     
-    self.cafeStatusLabel.textAlignment = NSTextAlignmentRight;
     [appDelegate addObserver:self forKeyPath:@"cafeOrderWSState" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
     
-    self.locationStatusLabel.textAlignment = NSTextAlignmentRight;
     [appDelegate addObserver:self forKeyPath:@"locationAnnounceWSState" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
+
+    [appDelegate addObserver:self forKeyPath:@"appConfigWSState" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
     
     // Debugging UI stuff below here
     self.postLocationXTextField.delegate = self;
@@ -40,7 +41,7 @@
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown;
 }
 
@@ -49,6 +50,8 @@
         [self updateCafeOrderWSText];
     } else if ([keyPath isEqualToString:@"locationAnnounceWSState"]) {
         [self updateLocationAnnounceWSText];
+    } else if ([keyPath isEqualToString:@"appConfigWSState"]) {
+        [self updateAppConfigWSText];
     }
 }
 
@@ -90,8 +93,6 @@
 }
 
 - (void)updateLocationAnnounceWSText {
-    if (appDelegate == nil) return;
-    
     NSString* urlString;
     if (appDelegate.locationAnnounceWSState == WebsocketStateConnected) {
         urlString = [appDelegate.locationAnnounceWS.url absoluteString];
@@ -111,6 +112,26 @@
     }
     
     _locationWSEntry.text = urlString;
+}
+
+- (void)updateAppConfigWSText {
+    NSString* urlString;
+    if (appDelegate.appConfigWSState == WebsocketStateConnected) {
+        urlString = [appDelegate.appConfigWS.url absoluteString];
+        
+        self.appConfigStatusLabel.text = @"Connected";
+        self.appConfigStatusLabel.textColor = [UIColor greenColor];
+    } else if (appDelegate.appConfigWSState == WebsocketStateConnecting) {
+        urlString = [appDelegate.appConfigWS.url absoluteString];
+        
+        self.appConfigStatusLabel.text = @"Connecting";
+        self.appConfigStatusLabel.textColor = [UIColor orangeColor];
+    } else {
+        urlString = appDelegate.appConfigWSAddress;
+        
+        self.appConfigStatusLabel.text = @"Disconnected";
+        self.appConfigStatusLabel.textColor = [UIColor redColor];
+    }
 }
 
 - (IBAction)cafeWSEditingEnd:(id)sender {
@@ -157,6 +178,27 @@
 }
 
 
+- (IBAction)appConfigEditingEnd:(id)sender {
+    if (appDelegate.appConfigWSState != WebsocketStateDisconnected) {
+        [appDelegate.appConfigWS close];
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:self.appConfigWSEntry.text forKey:@"app_config_ws_address"];
+    appDelegate.appConfigWSAddress = self.appConfigWSEntry.text;
+    [appDelegate appConfigWSConnect];
+}
+
+- (IBAction)appConfigWSClear:(id)sender {
+    self.appConfigWSEntry.text = DEFAULT_APP_CONFIG_WEBSOCKET;
+    [self appConfigEditingEnd:sender];
+}
+
+- (IBAction)appConfigWSConnectClick:(id)sender {
+    if (appDelegate.appConfigWSState != WebsocketStateDisconnected) {
+        [appDelegate.appConfigWS close];
+    }
+    [appDelegate appConfigWSConnect];
+}
+
 /*** DEBUGGING SUPPORT *******************************************************/
 
 - (IBAction)enableAllButtonsSwitchValueChanged:(id)sender {
@@ -187,4 +229,5 @@
     [appDelegate.locationResendTimer invalidate];
     [appDelegate sendToLocationAnnounceWS:msg];
 }
+
 @end
