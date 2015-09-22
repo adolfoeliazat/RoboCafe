@@ -14,7 +14,33 @@
 @implementation AppConfigWSDelegate
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
-    NSLog(@"AppConfigWS received message: %@", message);
+    //NSLog(@"AppConfigWS received message: %@", message);
+    
+    NSError *error = nil;
+    NSData* messageAsData;
+    
+    if ([message isKindOfClass:[NSString class]]) {
+        @try {
+            messageAsData = [message dataUsingEncoding:NSUTF8StringEncoding];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Error: Unhandled exception. Bad packet? Exc: %@", exception);
+            return;
+        }
+    } else if ([message isKindOfClass:[NSData class]]) {
+        messageAsData = message;
+        message = [[NSString alloc] initWithData:messageAsData encoding:NSUTF8StringEncoding];
+    } else {
+        NSLog(@"Unknown object type from CafeOrderWS");
+        return;
+    }
+    
+    NSArray* command = [NSJSONSerialization JSONObjectWithData:messageAsData options:kNilOptions error:&error];
+    
+    if (error != nil) {
+        NSLog(@"Error parsing JSON >>>%@<<<. Error: %@", message, error);
+        return;
+    }
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket {
@@ -29,7 +55,7 @@
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.appConfigWSState = WebsocketStateDisconnected;
     
-    [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
+    self.reconnectTimer = [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
                                      target:self
                                    selector:@selector(reconnectWebSocket:)
                                    userInfo:nil
@@ -44,7 +70,7 @@
     appDelegate.appConfigWSState = WebsocketStateDisconnected;
     
     if (!wasClean) {
-        [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
+        self.reconnectTimer = [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
                                          target:self
                                        selector:@selector(reconnectWebSocket:)
                                        userInfo:nil

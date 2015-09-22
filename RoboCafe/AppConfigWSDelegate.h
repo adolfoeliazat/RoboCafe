@@ -13,4 +13,7 @@
 @interface AppConfigWSDelegate : NSObject <SRWebSocketDelegate> {
     AppDelegate *appDelegate;
 }
+
+@property (nonatomic) NSTimer* reconnectTimer;
+
 @end

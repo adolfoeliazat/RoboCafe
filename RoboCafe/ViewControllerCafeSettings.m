@@ -136,6 +136,11 @@
     self.appConfigWSEntry.text = urlString;
 }
 
+
+- (IBAction)cafeWSEditingBegin:(id)sender {
+    [appDelegate.cafeOrderWSDelegate.reconnectTimer invalidate];
+}
+
 - (IBAction)cafeWSEditingEnd:(id)sender {
     if (appDelegate.cafeOrderWSState != WebsocketStateDisconnected) {
         [appDelegate.cafeOrderWS close];
@@ -156,6 +161,10 @@
         [appDelegate.cafeOrderWS close];
     }
     [appDelegate cafeOrderWSConnect];
+}
+
+- (IBAction)locationWSEditingBegin:(id)sender {
+    [appDelegate.locationAnnounceWSDelegate.reconnectTimer invalidate];
 }
 
 - (IBAction)locationWSEditingEnd:(id)sender {
@@ -180,6 +189,11 @@
 }
 
 
+
+- (IBAction)appConfigEditingBegin:(id)sender {
+    [appDelegate.appConfigWSDelegate.reconnectTimer invalidate];
+}
+
 - (IBAction)appConfigEditingEnd:(id)sender {
     if (appDelegate.appConfigWSState != WebsocketStateDisconnected) {
         [appDelegate.appConfigWS close];
@@ -200,6 +214,7 @@
     }
     [appDelegate appConfigWSConnect];
 }
+
 
 /*** DEBUGGING SUPPORT *******************************************************/
 

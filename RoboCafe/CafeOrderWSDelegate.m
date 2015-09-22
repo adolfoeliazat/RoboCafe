@@ -259,7 +259,7 @@
     //[appDelegate setValue:[NSNumber numberWithBool:NO] forKey:@"cafeOrderWSState"];
     appDelegate.cafeOrderWSState = WebsocketStateDisconnected;
     
-    [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
+    self.reconnectTimer = [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
                                      target:self
                                    selector:@selector(reconnectWebSocket:)
                                    userInfo:nil
@@ -275,7 +275,7 @@
     appDelegate.cafeOrderWSState = WebsocketStateDisconnected;
     
     if (!wasClean) {
-        [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
+        self.reconnectTimer = [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
                                          target:self
                                        selector:@selector(reconnectWebSocket:)
                                        userInfo:nil

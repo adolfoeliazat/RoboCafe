@@ -14,4 +14,6 @@
     AppDelegate *appDelegate;
 }
 
+@property (nonatomic) NSTimer* reconnectTimer;
+
 @end

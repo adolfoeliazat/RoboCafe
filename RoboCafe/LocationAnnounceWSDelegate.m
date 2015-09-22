@@ -29,7 +29,7 @@
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.locationAnnounceWSState = WebsocketStateDisconnected;
     
-    [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
+    self.reconnectTimer = [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
                                      target:self
                                    selector:@selector(reconnectWebSocket:)
                                    userInfo:nil
@@ -44,7 +44,7 @@
     appDelegate.locationAnnounceWSState = WebsocketStateDisconnected;
     
     if (!wasClean) {
-        [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
+        self.reconnectTimer = [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
                                          target:self
                                        selector:@selector(reconnectWebSocket:)
                                        userInfo:nil
