@@ -132,6 +132,8 @@
         self.appConfigStatusLabel.text = @"Disconnected";
         self.appConfigStatusLabel.textColor = [UIColor redColor];
     }
+    
+    self.appConfigWSEntry.text = urlString;
 }
 
 - (IBAction)cafeWSEditingEnd:(id)sender {
