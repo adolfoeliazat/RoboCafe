@@ -281,7 +281,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gfc-ZW-YbB">
                                 <rect key="frame" x="49" y="157" width="222" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <action selector="alpsWSEditingEnd:" destination="g4r-ea-AZF" eventType="editingDidEnd" id="SIF-AF-Xta"/>
                                 </connections>
@@ -434,7 +434,7 @@
                                     <constraint firstAttribute="height" constant="30" id="uDv-QB-Cze"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                 <connections>
                                     <action selector="cafeWSEditingEnd:" destination="Xxp-nS-Mo4" eventType="editingDidEnd" id="D1c-zg-dfw"/>
                                 </connections>
@@ -490,7 +490,7 @@
                                     <constraint firstAttribute="height" constant="30" id="55p-P6-edf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                 <connections>
                                     <action selector="locationWSEditingEnd:" destination="Xxp-nS-Mo4" eventType="editingDidEnd" id="ptm-hB-cnQ"/>
                                 </connections>
@@ -648,7 +648,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E0e-9A-DcA">
                                 <rect key="frame" x="49" y="295" width="221" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
                                     <action selector="appConfigEditingEnd:" destination="Xxp-nS-Mo4" eventType="editingDidEnd" id="dOz-ac-Go7"/>
                                 </connections>
