@@ -256,7 +256,6 @@
     //NSLog(@"CafeOrderWS failed with error: %@", error);
     
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    //[appDelegate setValue:[NSNumber numberWithBool:NO] forKey:@"cafeOrderWSState"];
     appDelegate.cafeOrderWSState = WebsocketStateDisconnected;
     
     self.reconnectTimer = [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
@@ -271,7 +270,6 @@
     NSLog(@"CafeOrderWS closed (code %ld, wasClean %d)", (long)code, wasClean);
     
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    //[appDelegate setValue:[NSNumber numberWithBool:NO] forKey:@"cafeOrderWSState"];
     appDelegate.cafeOrderWSState = WebsocketStateDisconnected;
     
     if (!wasClean) {

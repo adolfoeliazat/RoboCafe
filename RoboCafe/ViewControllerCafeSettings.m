@@ -69,27 +69,24 @@
 
 - (void)updateCafeOrderWSText {
     NSString* urlString;
-    if (
-        (appDelegate.cafeOrderWSState == WebsocketStateConnected) ||
-        (appDelegate.cafeOrderWSState == WebsocketStateConnecting)
-       ) {
+    if (appDelegate.cafeOrderWSState == WebsocketStateConnected) {
         urlString = [appDelegate.cafeOrderWS.url absoluteString];
+        
+        self.cafeStatusLabel.text = @"Connected";
+        self.cafeStatusLabel.textColor = [UIColor greenColor];
+    } else if (appDelegate.cafeOrderWSState == WebsocketStateConnecting) {
+        urlString = [appDelegate.cafeOrderWS.url absoluteString];
+        
+        self.cafeStatusLabel.text = @"Connecting";
+        self.cafeStatusLabel.textColor = [UIColor orangeColor];
     } else {
         urlString = appDelegate.cafeOrderWSAddress;
+        
+        self.cafeStatusLabel.text = @"Disconnected";
+        self.cafeStatusLabel.textColor = [UIColor redColor];
     }
     
-    _cafeWSEntry.text = urlString;
-
-    if (appDelegate.cafeOrderWSState == WebsocketStateConnected) {
-        [_cafeStatusLabel setText:@"Connected"];
-        [_cafeStatusLabel setTextColor:[UIColor greenColor]];
-    } else if (appDelegate.cafeOrderWSState == WebsocketStateConnecting) {
-        [_cafeStatusLabel setText:@"Connected"];
-        [_cafeStatusLabel setTextColor:[UIColor orangeColor]];
-    } else {
-        [_cafeStatusLabel setText:@"Disconnected"];
-        [_cafeStatusLabel setTextColor:[UIColor redColor]];
-    }
+    self.cafeWSEntry.text = urlString;
 }
 
 - (void)updateLocationAnnounceWSText {
@@ -111,7 +108,7 @@
         [_locationStatusLabel setTextColor:[UIColor redColor]];
     }
     
-    _locationWSEntry.text = urlString;
+    self.locationWSEntry.text = urlString;
 }
 
 - (void)updateAppConfigWSText {
