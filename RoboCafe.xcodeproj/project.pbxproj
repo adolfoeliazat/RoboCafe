@@ -84,8 +84,8 @@
 		AB7EE17B1B79CA76008CFE34 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		AB7EE17D1B79CA7B008CFE34 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		AB7EE17F1B79CA83008CFE34 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		AB7EE1A61B79EE0C008CFE34 /* ViewControllerSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerSettings.h; path = ../ViewControllerSettings.h; sourceTree = "<group>"; };
-		AB7EE1A71B79EE0C008CFE34 /* ViewControllerSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerSettings.m; path = ../ViewControllerSettings.m; sourceTree = "<group>"; };
+		AB7EE1A61B79EE0C008CFE34 /* ViewControllerSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerSettings.h; sourceTree = "<group>"; };
+		AB7EE1A71B79EE0C008CFE34 /* ViewControllerSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerSettings.m; sourceTree = "<group>"; };
 		AB98CF0A1BAFC7AF0027FDB8 /* ALPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ALPS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
