@@ -92,6 +92,9 @@ exports.initialize = function () {
   // Periodically send out the application status for any new devices
   // that connect
   setInterval(publish_state, 1000);
+
+  // Periodically print the state for debugging purposes
+  setInterval(print_state, 10000);
 }
 
 
@@ -120,6 +123,10 @@ function update_status (robot_index, state) {
 // Tell all listeners what's going on in the controller.
 function publish_state () {
   send('AppState', {robots: robots, items: ITEMS});
+}
+
+function print_state () {
+  console.log({robots: robots, items: ITEMS});
 }
 
 function process_queue () {
@@ -324,6 +331,4 @@ var ALPS_in = function () {
 
   var now = Date.now();
   alps_updates_times[a.id] = now;
-
-  console.log('setting ' + a.id + ' to ' + now);
 }

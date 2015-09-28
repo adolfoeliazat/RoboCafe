@@ -43,6 +43,13 @@ exports.initialize = function () {
 
   addInputHandler('Select', Select_in);
   addInputHandler('Input', Input_in);
+
+  // Periodically print the connection matrix
+  setInterval(print_matrix, 10000);
+}
+
+function print_matrix () {
+  console.log(matrix);
 }
 
 var Select_in = function () {
