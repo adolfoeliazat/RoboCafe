@@ -64,7 +64,7 @@ var Select_in = function () {
     if (index > -1) {
         destarr.splice(index, 1);
     }
-  
+
   } else if (t == 'add') {
 
     // Make sure this output isn't connected already
@@ -76,7 +76,7 @@ var Select_in = function () {
             matrix[input].splice(j, 1);
             break;
           }
-        }      
+        }
       }
     }
 
@@ -89,8 +89,7 @@ var Select_in = function () {
     }
   }
 
-  console.log(matrix);
-  
+  // console.log(matrix);
 }
 
 var Input_in = function () {

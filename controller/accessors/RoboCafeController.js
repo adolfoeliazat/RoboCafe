@@ -14,6 +14,8 @@ var STATE_IDLE = 'IDLE';         // Robot is currently just sitting there.
 var STATE_SERVING = 'SERVING';   // Robot has been requested and is going to a person.
 var STATE_SPINNING = 'SPINNING'; // Applause was detected and the robot is interrupted to spin.
 
+var TIMEOUT_MS = 30000; // 30 seconds
+
 // MAPPING OF ITEM TO ROBOTS and the queue for that item
 var ITEMS = {
   Twix:        {
@@ -33,6 +35,9 @@ var ITEMS = {
 // Array of robot structs with state on each one.
 var robots = [];
 
+// Keep track of last known timestamp from alps for phone ids
+var alps_updates_times = {};
+
 
 /** Define inputs and outputs. */
 exports.setup = function () {
@@ -41,6 +46,7 @@ exports.setup = function () {
   //
   input('UserChoice');
   input('Applause');
+  input('ALPS');
 
   output('SelectPhoneRobot');
   output('RobotStatus');
@@ -76,6 +82,7 @@ exports.initialize = function () {
 
   addInputHandler('UserChoice', Choice_in);
   addInputHandler('Applause', Applause_in);
+  addInputHandler('ALPS', ALPS_in);
 
   // In case more than one request is received before a 'spin','cancelled' or
   // 'finished' event, the second request ends up in the queue until the next
@@ -132,6 +139,19 @@ function process_queue () {
         // Robot is busy, leave it alone
         console.log('Robot ' + rbt_idx + ' is busy. Queue len: ' + item_obj.queue.length);
 
+        // However, we want to boot users who are no longer providing updates
+        var now = Date.now();
+        if (!(rbt.servicing in alps_updates_times)) {
+          // We have not gotten an ALPS update for this node.
+          // Use the current timestamp as an approximation
+          alps_updates_times[rbt.servicing] = now;
+        }
+        if (now - alps_updates_times[rbt.servicing] > TIMEOUT_MS) {
+          // This node has timed out. Force cancel it.
+          console.log('Phone ' + rbt.servicing + ' timed out and was dropped from item ' + item);
+          cancel_delivery(rbt.servicing, item);
+        }
+
       } else {
         // Robot is idle.
         if (item_obj.queue.length > 0) {
@@ -156,6 +176,35 @@ function process_queue () {
         }
       }
     }
+  }
+}
+
+function cancel_delivery (phone_id, selection) {
+  // Get the list of robots that may have been navigating to the user
+  var robot_indexes = ITEMS[selection].robots;
+
+  // Iterate each robot, checking to see if it was heading for that
+  // user. If so, stop the robot from doing that.
+  for (var i=0; i<robot_indexes.length; i++) {
+    var rbt_idx = robot_indexes[i];
+    var rbt = robots[rbt_idx];
+
+    // Check if this robot was helping this person
+    if (rbt.state == STATE_SERVING && rbt.servicing == phone_id) {
+      // This checks out. Stop the robot from what it was doing
+      // and send it home.
+      set_source_and_robot(phone_id, rbt_idx, 'remove');
+      update_status(rbt_idx, STATE_IDLE);
+      rbt.servicing = null;
+      publish_state();
+    }
+  }
+
+  // Now check that this user wasn't queued for a robot with that
+  // item. If it was, remove it.
+  var item_queue = ITEMS[selection].queue;
+  if (item_queue.indexOf(phone_id) > -1) {
+    item_queue.splice(item_queue.indexOf(phone_id), 1);
   }
 }
 
@@ -194,33 +243,7 @@ var Choice_in = function () {
 
         } else if (msg.type == 'cancelled' || msg.type == 'finished') {
           // User got the item or doesn't want it
-
-          // Get the list of robots that may have been navigating to the user
-          var robot_indexes = ITEMS[selection].robots;
-
-          // Iterate each robot, checking to see if it was heading for that
-          // user. If so, stop the robot from doing that.
-          for (var i=0; i<robot_indexes.length; i++) {
-            var rbt_idx = robot_indexes[i];
-            var rbt = robots[rbt_idx];
-
-            // Check if this robot was helping this person
-            if (rbt.state == STATE_SERVING && rbt.servicing == phone_id) {
-              // This checks out. Stop the robot from what it was doing
-              // and send it home.
-              set_source_and_robot(phone_id, rbt_idx, 'remove');
-              update_status(rbt_idx, STATE_IDLE);
-              rbt.servicing = null;
-              publish_state();
-            }
-          }
-
-          // Now check that this user wasn't queued for a robot with that
-          // item. If it was, remove it.
-          var item_queue = ITEMS[selection].queue;
-          if (item_queue.indexOf(phone_id) > -1) {
-            item_queue.splice(item_queue.indexOf(phone_id), 1);
-          }
+          cancel_delivery(phone_id, selection);
         }
 
         // And take care of our queues to see if we should dispatch robots
@@ -293,4 +316,14 @@ var Applause_in = function () {
 
 
   }
+}
+
+// Record the most recent timestamp for the alps update for each phone
+var ALPS_in = function () {
+  var a = get('ALPS');
+
+  var now = Date.now();
+  alps_updates_times[a.id] = now;
+
+  console.log('setting ' + a.id + ' to ' + now);
 }
