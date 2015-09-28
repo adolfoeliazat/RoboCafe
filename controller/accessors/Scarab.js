@@ -1,8 +1,8 @@
 // Copyright (c) 2014-2015 The Regents of the University of Michigan
 
-/** Scarab Accessor. 
+/** Scarab Accessor.
  *
- * Outputs battery charge percentage and 
+ * Outputs battery charge percentage and
  *
  *  @accessor Scarab
  */
@@ -73,7 +73,7 @@ exports.initialize = function() {
     }
   });
   batteryClient.on('error', function(message) {
-    error(message)
+    console.log(message);
   });
 
   // Keep track of what the robot is doing
@@ -93,7 +93,7 @@ exports.initialize = function() {
     send('state', msg.msg.state);
   });
   stateClient.on('error', function(message) {
-    error(message)
+    console.log(message);
   });
 
   // Get location updates from the robot
@@ -112,7 +112,7 @@ exports.initialize = function() {
     send('location', msg.msg.pose);
   });
   locationClient.on('error', function(message) {
-    error(message)
+    console.log(message);
   });
 
   // Send poses to the robot
@@ -128,7 +128,7 @@ exports.initialize = function() {
     });
   });
   poseClient.on('error', function(message) {
-    error(message)
+    console.log(message);
   });
   addInputHandler('pose', pose_in);
 
@@ -145,7 +145,7 @@ exports.initialize = function() {
     });
   });
   cmdvelClient.on('error', function(message) {
-    error(message)
+    console.log(message);
   });
   addInputHandler('cmdvel', cmdvel_in);
 
@@ -162,10 +162,10 @@ exports.initialize = function() {
     });
   });
   cancelClient.on('error', function(message) {
-    error(message)
+    console.log(message);
   });
   addInputHandler('cancel', cancel_in);
-} 
+}
 
 var pose_in = function () {
   var v = get('pose');
@@ -236,10 +236,12 @@ exports.wrapup = function() {
     locationClient = null;
   }
   if (poseClient) {
-    poseClient.send({
-        op: 'unadvertise',
-        topic: getParameter('topicPrefix') + '/goal'
-    });
+    if (poseClient.isOpen()) {
+      poseClient.send({
+          op: 'unadvertise',
+          topic: getParameter('topicPrefix') + '/goal'
+      });
+    }
     poseClient.removeAllListeners('open');
     poseClient.removeAllListeners('message');
     poseClient.removeAllListeners('close');
@@ -247,10 +249,12 @@ exports.wrapup = function() {
     poseClient = null;
   }
   if (cmdvelClient) {
-    cmdvelClient.send({
-        op: 'unadvertise',
-        topic: getParameter('topicPrefix') + '/cmd_vel'
-    });
+    if (cmdvelClient.isOpen()) {
+      cmdvelClient.send({
+          op: 'unadvertise',
+          topic: getParameter('topicPrefix') + '/cmd_vel'
+      });
+    }
     cmdvelClient.removeAllListeners('open');
     cmdvelClient.removeAllListeners('message');
     cmdvelClient.removeAllListeners('close');
@@ -258,10 +262,12 @@ exports.wrapup = function() {
     cmdvelClient = null;
   }
   if (cancelClient) {
-    cancelClient.send({
-        op: 'unadvertise',
-        topic: getParameter('topicPrefix') + '/cancel'
-    });
+    if (cancelClient.isOpen()) {
+      cancelClient.send({
+          op: 'unadvertise',
+          topic: getParameter('topicPrefix') + '/cancel'
+      });
+    }
     cancelClient.removeAllListeners('open');
     cancelClient.removeAllListeners('message');
     cancelClient.removeAllListeners('close');

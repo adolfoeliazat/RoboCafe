@@ -77,10 +77,14 @@ exports.initialize = function () {
   addInputHandler('UserChoice', Choice_in);
   addInputHandler('Applause', Applause_in);
 
-  // in case more than one request is received before a 'spin','cancelled' or
+  // In case more than one request is received before a 'spin','cancelled' or
   // 'finished' event, the second request ends up in the queue until the next
   // event. To avoid this, poll queues and process events if robots are free.
   setInterval(process_queue, 1000);
+
+  // Periodically send out the application status for any new devices
+  // that connect
+  setInterval(publish_state, 1000);
 }
 
 

@@ -69,6 +69,10 @@ var newLocationHandler = function() {
   currentIndex = currentIndex % locations.length;
 }
 
+var sendPoseHandler = function () {
+
+}
+
 var triggerHandler = function() {
   pose.X = locations[currentIndex][0];
   pose.Y = locations[currentIndex][1];
