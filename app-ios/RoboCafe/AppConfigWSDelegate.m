@@ -9,6 +9,7 @@
 #import "AppConfigWSDelegate.h"
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "ViewControllerSettings.h"
 #import "ViewControllerCafeSettings.h"
 
 @implementation AppConfigWSDelegate
@@ -56,20 +57,44 @@
         appDelegate.item3ordered = appDelegate.item3ordered;
     }
 
+    NSString* newALPSWSURL = [root valueForKey:@"setALPSWSURL"];
+    if (newALPSWSURL != nil) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+            [appDelegate.alpsWSReconnectTimer invalidate];
+            if (appDelegate.alpsWSState != WebsocketStateDisconnected) {
+                [appDelegate.alpsWS close];
+            }
+            [[NSUserDefaults standardUserDefaults] setObject:newALPSWSURL forKey:@"alps_ws_address"];
+            appDelegate.alpsWSAddress = newALPSWSURL;
+            appDelegate.vCSettings.alpsWSEntry.text = newALPSWSURL;
+            [appDelegate alpsWSConnect];
+        }];
+    }
 
     NSString* newCafeWSURL = [root valueForKey:@"setCafeStatusWSURL"];
     if (newCafeWSURL != nil) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+            [appDelegate.cafeOrderWSDelegate.reconnectTimer invalidate];
+            if (appDelegate.cafeOrderWSState != WebsocketStateDisconnected) {
+                [appDelegate.cafeOrderWS close];
+            }
+            [[NSUserDefaults standardUserDefaults] setObject:newCafeWSURL forKey:@"cafe_ws_address"];
+            appDelegate.cafeOrderWSAddress = newCafeWSURL;
             appDelegate.vCCafeSettings.cafeWSEntry.text = newCafeWSURL;
-            [appDelegate.vCCafeSettings cafeWSEditingEnd:self];
+            [appDelegate cafeOrderWSConnect];
         }];
     }
 
     NSString* newLocationWSURL = [root valueForKey:@"setLocationWSURL"];
     if (newLocationWSURL != nil) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+            [appDelegate.locationAnnounceWSDelegate.reconnectTimer invalidate];
+            if (appDelegate.locationAnnounceWSState != WebsocketStateDisconnected) {
+                [appDelegate.locationAnnounceWS close];
+            }
+            [[NSUserDefaults standardUserDefaults] setObject:newLocationWSURL forKey:@"loc_announce_ws_address"];
             appDelegate.vCCafeSettings.locationWSEntry.text = newLocationWSURL;
-            [appDelegate.vCCafeSettings locationWSEditingEnd:self];
+            [appDelegate locationAnnounceWSConnect];
         }];
     }
 }

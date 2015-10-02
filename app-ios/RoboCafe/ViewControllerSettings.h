@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *alpsWSEntry;
 - (IBAction)alpsWSEditingEnd:(id)sender;
 - (IBAction)alpsWSReconnect:(id)sender;
+- (IBAction)alpsWSEditingBegin:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIImageView *alpsWSClear;
 @property (weak, nonatomic) IBOutlet UIImageView *thresholdDivisorClear;

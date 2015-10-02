@@ -186,7 +186,7 @@
     self.alpsWS = nil;
     [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
     [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor redColor]];
-    [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
+    self.alpsWSReconnectTimer = [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
                                      target:self
                                    selector:@selector(reconnectWebSocket:)
                                    userInfo:webSocket
@@ -200,7 +200,7 @@
     self.alpsWS = nil;
     [[_vCSettings solverConnectionStatusLabel] setText:@"Disconnected"];
     [[_vCSettings solverConnectionStatusLabel] setTextColor:[UIColor redColor]];
-    [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
+    self.alpsWSReconnectTimer = [NSTimer scheduledTimerWithTimeInterval:WEBSOCKET_RECONNECT_TIMEOUT
                                      target:self
                                    selector:@selector(reconnectWebSocket:)
                                    userInfo:webSocket

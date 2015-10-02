@@ -23,7 +23,7 @@
     alps = [appDelegate ALPS];
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    
+
     _alpsWSEntry.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"alps_ws_address"];
     _alpsWSEntry.delegate = self;
     
@@ -143,6 +143,10 @@
     _thresholdMultiplierLabel.text = [[NSNumber numberWithFloat:_thresholdMultiplierSlider.value] stringValue];
 }
 
+
+- (IBAction)alpsWSEditingBegin:(id)sender {
+    [appDelegate.alpsWSReconnectTimer invalidate];
+}
 
 - (IBAction)alpsWSEditingEnd:(id)sender {
     if (appDelegate.alpsWSState != WebsocketStateDisconnected) {
