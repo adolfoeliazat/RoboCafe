@@ -32,8 +32,17 @@
                                     <constraint firstAttribute="width" secondItem="JaI-cP-age" secondAttribute="height" multiplier="10:1" id="z0n-yn-bc8"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="roboCafeStatusLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhz-Rm-a3I">
+                                <rect key="frame" x="16" y="458" width="288" height="20.5"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Um-2s-jez">
-                                <rect key="frame" x="256" y="148" width="48" height="30"/>
+                                <rect key="frame" x="256" y="242" width="48" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -42,7 +51,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErZ-Bv-ioe">
-                                <rect key="frame" x="16" y="227" width="40" height="30"/>
+                                <rect key="frame" x="16" y="313" width="40" height="30"/>
                                 <state key="normal" title="Order">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -51,7 +60,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH0-jH-iMT">
-                                <rect key="frame" x="256" y="227" width="48" height="30"/>
+                                <rect key="frame" x="256" y="313" width="48" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -60,22 +69,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No connection to cafe server." lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad5-Qy-Vic">
-                                <rect key="frame" x="16" y="265" width="288" height="17"/>
+                                <rect key="frame" x="16" y="351" width="288" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz4-m9-L61">
-                                <rect key="frame" x="16" y="306" width="40" height="30"/>
-                                <state key="normal" title="Order">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="orderBouncyBallTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lkC-xq-0HA"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4k-rM-Ho4">
-                                <rect key="frame" x="256" y="306" width="48" height="30"/>
+                                <rect key="frame" x="256" y="384" width="48" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -83,17 +83,28 @@
                                     <action selector="cancelBouncyBallTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RXz-eM-oCj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="roboCafeStatusLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhz-Rm-a3I">
-                                <rect key="frame" x="16" y="458" width="288" height="21"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No connection to cafe server." lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKT-27-Kmf">
+                                <rect key="frame" x="16" y="280" width="288" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No connection to cafe server." lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzN-Ha-4ne">
+                                <rect key="frame" x="16" y="422" width="288" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctb-Es-11N">
+                                <rect key="frame" x="12" y="148" width="296" height="82.5"/>
+                                <string key="text">Select an item below to have the robot deliver it to you. If you leave the delivery area (no position), you'll lose your place in line.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRT-CL-PLD">
-                                <rect key="frame" x="16" y="148" width="40" height="30"/>
+                                <rect key="frame" x="16" y="242" width="40" height="30"/>
                                 <state key="normal" title="Order">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -101,38 +112,36 @@
                                     <action selector="orderTwixTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ldp-Se-bkn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No connection to cafe server." lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKT-27-Kmf">
-                                <rect key="frame" x="16" y="186" width="288" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No connection to cafe server." lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzN-Ha-4ne">
-                                <rect key="frame" x="16" y="344" width="288" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz4-m9-L61">
+                                <rect key="frame" x="16" y="384" width="40" height="30"/>
+                                <state key="normal" title="Order">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="orderBouncyBallTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lkC-xq-0HA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5Um-2s-jez" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0Sp-Bm-5Yf"/>
-                            <constraint firstItem="VH0-jH-iMT" firstAttribute="top" secondItem="jKT-27-Kmf" secondAttribute="bottom" constant="24" id="3np-c8-kvP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ctb-Es-11N" secondAttribute="trailing" constant="-4" id="0xG-4I-psa"/>
+                            <constraint firstItem="VH0-jH-iMT" firstAttribute="top" secondItem="jKT-27-Kmf" secondAttribute="bottom" constant="16" id="3np-c8-kvP"/>
                             <constraint firstItem="VH0-jH-iMT" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8El-vy-ipV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JaI-cP-age" secondAttribute="bottom" id="8bl-6o-twp"/>
                             <constraint firstItem="jKT-27-Kmf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="AaM-J7-QBb"/>
-                            <constraint firstItem="5Um-2s-jez" firstAttribute="top" secondItem="3hM-SO-JVa" secondAttribute="bottom" constant="8" id="FYf-5I-Mgd"/>
                             <constraint firstItem="t4k-rM-Ho4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GAe-o0-JrS"/>
                             <constraint firstItem="3hM-SO-JVa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Hsc-RS-KXE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JaI-cP-age" secondAttribute="bottom" id="JBU-Og-kgN"/>
                             <constraint firstItem="jKT-27-Kmf" firstAttribute="top" secondItem="5Um-2s-jez" secondAttribute="bottom" constant="8" id="JxX-NF-390"/>
                             <constraint firstItem="ErZ-Bv-ioe" firstAttribute="leading" secondItem="Ad5-Qy-Vic" secondAttribute="leading" id="K7Y-FL-vxR"/>
+                            <constraint firstItem="Ctb-Es-11N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="Klr-ze-O4T"/>
                             <constraint firstItem="PRT-CL-PLD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Mgs-3Q-uIt"/>
                             <constraint firstItem="nzN-Ha-4ne" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QuD-HU-60S"/>
                             <constraint firstItem="nzN-Ha-4ne" firstAttribute="top" secondItem="t4k-rM-Ho4" secondAttribute="bottom" constant="8" id="RJT-th-6vk"/>
                             <constraint firstItem="jKT-27-Kmf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Slg-ta-2RO"/>
+                            <constraint firstItem="5Um-2s-jez" firstAttribute="centerY" secondItem="PRT-CL-PLD" secondAttribute="centerY" id="Ufr-Wm-l9v"/>
                             <constraint firstItem="JaI-cP-age" firstAttribute="top" secondItem="lhz-Rm-a3I" secondAttribute="bottom" constant="8" id="Vbc-kD-p7V"/>
-                            <constraint firstItem="PRT-CL-PLD" firstAttribute="top" secondItem="3hM-SO-JVa" secondAttribute="bottom" constant="8" id="VoG-kR-GCI"/>
                             <constraint firstItem="jKT-27-Kmf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YAG-xi-ra3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3hM-SO-JVa" secondAttribute="trailing" constant="-16" id="ZZ2-Hk-NGp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JaI-cP-age" secondAttribute="trailing" constant="-16" id="ai0-EF-pqP"/>
@@ -144,13 +153,15 @@
                             <constraint firstItem="Ad5-Qy-Vic" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gIz-4v-74A"/>
                             <constraint firstAttribute="centerX" secondItem="3hM-SO-JVa" secondAttribute="centerX" id="i0S-jF-eiP"/>
                             <constraint firstItem="nzN-Ha-4ne" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="iI9-xU-Mvo"/>
-                            <constraint firstItem="t4k-rM-Ho4" firstAttribute="top" secondItem="Ad5-Qy-Vic" secondAttribute="bottom" constant="24" id="iUZ-iP-oym"/>
+                            <constraint firstItem="t4k-rM-Ho4" firstAttribute="centerY" secondItem="Gz4-m9-L61" secondAttribute="centerY" id="kOV-qo-ybN"/>
                             <constraint firstItem="Ad5-Qy-Vic" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pmH-Ml-1cw"/>
                             <constraint firstItem="nzN-Ha-4ne" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="quH-7T-JXb"/>
                             <constraint firstItem="Ad5-Qy-Vic" firstAttribute="top" secondItem="VH0-jH-iMT" secondAttribute="bottom" constant="8" id="tXN-34-AoF"/>
-                            <constraint firstItem="Gz4-m9-L61" firstAttribute="top" secondItem="Ad5-Qy-Vic" secondAttribute="bottom" constant="24" id="tkl-9g-RX6"/>
+                            <constraint firstItem="Gz4-m9-L61" firstAttribute="top" secondItem="Ad5-Qy-Vic" secondAttribute="bottom" constant="16" id="tkl-9g-RX6"/>
                             <constraint firstItem="ErZ-Bv-ioe" firstAttribute="baseline" secondItem="VH0-jH-iMT" secondAttribute="baseline" id="tpG-aX-Lmh"/>
+                            <constraint firstItem="PRT-CL-PLD" firstAttribute="top" secondItem="Ctb-Es-11N" secondAttribute="bottom" constant="12" id="vkX-Et-rm6"/>
                             <constraint firstItem="Gz4-m9-L61" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xXL-aq-o56"/>
+                            <constraint firstItem="Ctb-Es-11N" firstAttribute="top" secondItem="3hM-SO-JVa" secondAttribute="bottom" constant="8" id="yT9-aB-jwg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JaI-cP-age" secondAttribute="bottom" id="zFv-Nn-nnD"/>
                         </constraints>
                     </view>
@@ -299,7 +310,7 @@
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="11"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(X.XX, Y.YY)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVN-WG-dPV">
@@ -308,7 +319,7 @@
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISp-0i-Xmy">
@@ -501,7 +512,7 @@
                                     <constraint firstAttribute="height" constant="17" id="h7b-QY-fxn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFH-0q-7J3">
@@ -530,24 +541,24 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wK-OY-4Uj">
                                 <rect key="frame" x="16" y="333" width="288" height="3"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="MCE-6n-YWd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debugging Features" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huw-kc-71A">
                                 <rect key="frame" x="16" y="346" width="288" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forcibly Enable All Buttons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejg-kY-HaW">
                                 <rect key="frame" x="16" y="378" width="174" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TNU-fu-EF1">
@@ -559,7 +570,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post location (" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcQ-jr-ioA">
                                 <rect key="frame" x="16" y="417" width="93" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVM-RI-oyS">
@@ -587,7 +598,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4M-FE-CHM">
                                 <rect key="frame" x="179" y="415" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=")" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8HN-aO-yeA">
@@ -596,7 +607,7 @@
                                     <constraint firstAttribute="width" constant="5" id="1p2-xm-tyX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ull-Zl-UQc">
@@ -612,13 +623,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Application Configuration:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFe-6i-vUJ">
                                 <rect key="frame" x="16" y="274" width="168" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhS-f3-kYR">
                                 <rect key="frame" x="268" y="274" width="36" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk4-FR-DeF">
