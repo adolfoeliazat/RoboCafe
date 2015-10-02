@@ -93,6 +93,7 @@
                 [appDelegate.locationAnnounceWS close];
             }
             [[NSUserDefaults standardUserDefaults] setObject:newLocationWSURL forKey:@"loc_announce_ws_address"];
+            appDelegate.locationAnnounceWSAddress = newLocationWSURL;
             appDelegate.vCCafeSettings.locationWSEntry.text = newLocationWSURL;
             [appDelegate locationAnnounceWSConnect];
         }];
