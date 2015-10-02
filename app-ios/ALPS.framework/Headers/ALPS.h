@@ -1,10 +1,24 @@
-//
-//  ALPS.h
-//  ALPS
-//
-//  Created by Patrick Lazik on 8/8/15.
-//  Copyright (c) 2015 Carnegie Mellon University. All rights reserved.
-//
+/******************************************************************************
+ *  ALPS, The Acoustic Location Processing System.
+ *  ALPS.h
+ *  Copyright (C) 2015, WiSE Lab, Carnegie Mellon University
+ *  All rights reserved.
+ *
+ *  This software is the property of Carnegie Mellon University. Source may
+ *  be modified, but this license does not allow distribution.  Binaries built
+ *  for research purposes may be freely distributed, but must acknowledge
+ *  Carnegie Mellon University.  No other use or distribution can be made
+ *  without the written permission of the authors and Carnegie Mellon
+ *  University.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ *  Contributing Author(s):
+ *  Patrick Lazik
+ *
+ *******************************************************************************/
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
