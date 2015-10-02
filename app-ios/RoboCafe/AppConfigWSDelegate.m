@@ -14,7 +14,7 @@
 @implementation AppConfigWSDelegate
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message{
-    //NSLog(@"AppConfigWS received message: %@", message);
+    NSLog(@"AppConfigWS received message: %@", message);
     
     NSError *error = nil;
     NSData* messageAsData;
@@ -35,11 +35,42 @@
         return;
     }
     
-    NSArray* command = [NSJSONSerialization JSONObjectWithData:messageAsData options:kNilOptions error:&error];
+    NSArray* root = [NSJSONSerialization JSONObjectWithData:messageAsData options:kNilOptions error:&error];
     
     if (error != nil) {
         NSLog(@"Error parsing JSON >>>%@<<<. Error: %@", message, error);
         return;
+    }
+    
+    
+    NSDictionary* setUserDefaults = [root valueForKey:@"setUserDefaults"];
+    if (setUserDefaults != nil) {
+        NSArray* keys = [setUserDefaults allKeys];
+        for (id key in keys) {
+            [[NSUserDefaults standardUserDefaults] setObject:[setUserDefaults objectForKey:key] forKey:key];
+        }
+
+        // This is a bit of a hack, but works
+        appDelegate.item1ordered = appDelegate.item1ordered;
+        appDelegate.item2ordered = appDelegate.item2ordered;
+        appDelegate.item3ordered = appDelegate.item3ordered;
+    }
+
+
+    NSString* newCafeWSURL = [root valueForKey:@"setCafeStatusWSURL"];
+    if (newCafeWSURL != nil) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+            appDelegate.vCCafeSettings.cafeWSEntry.text = newCafeWSURL;
+            [appDelegate.vCCafeSettings cafeWSEditingEnd:self];
+        }];
+    }
+
+    NSString* newLocationWSURL = [root valueForKey:@"setLocationWSURL"];
+    if (newLocationWSURL != nil) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
+            appDelegate.vCCafeSettings.locationWSEntry.text = newLocationWSURL;
+            [appDelegate.vCCafeSettings locationWSEditingEnd:self];
+        }];
     }
 }
 
