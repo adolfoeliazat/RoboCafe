@@ -138,10 +138,14 @@
         NSLog(@"No 'queue' in bouncyBalls");
         return;
     }
+
+    NSString* item1 = [[NSUserDefaults standardUserDefaults] stringForKey:@"item1"];
+    NSString* item2 = [[NSUserDefaults standardUserDefaults] stringForKey:@"item2"];
+    NSString* item3 = [[NSUserDefaults standardUserDefaults] stringForKey:@"item3"];
     
-    NSString* twixStatus = [self generateStatusTextForItem:@"candy" forItemQueue:twixQueue forItemRobotList:twixRobots forRobots:robots];
-    NSString* squirtGunStatus = [self generateStatusTextForItem:@"mints" forItemQueue:squirtGunQueue forItemRobotList:squirtGunRobots forRobots:robots];
-    NSString* bouncyBallsStatus = [self generateStatusTextForItem:@"granola" forItemQueue:bouncyBallsQueue forItemRobotList:bouncyBallsRobots forRobots:robots];
+    NSString* twixStatus = [self generateStatusTextForItem:item1 forItemQueue:twixQueue forItemRobotList:twixRobots forRobots:robots];
+    NSString* squirtGunStatus = [self generateStatusTextForItem:item2 forItemQueue:squirtGunQueue forItemRobotList:squirtGunRobots forRobots:robots];
+    NSString* bouncyBallsStatus = [self generateStatusTextForItem:item3 forItemQueue:bouncyBallsQueue forItemRobotList:bouncyBallsRobots forRobots:robots];
     
     appDelegate.item1ordered = [[NSNumber alloc] initWithBool:[self hasUserOrderedForItemQueue:twixQueue forItemRobotList:twixRobots forRobots:robots]];
     appDelegate.item2ordered = [[NSNumber alloc] initWithBool:[self hasUserOrderedForItemQueue:squirtGunQueue forItemRobotList:squirtGunRobots forRobots:robots]];
