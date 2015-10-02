@@ -211,7 +211,7 @@
                         if ([servicing isEqualToString:[[UIDevice currentDevice] identifierForVendor].UUIDString])  {
                             return [NSString stringWithFormat:@"Robot %u is on its way!", idx];
                         } else {
-                            currentBestStatus = [NSString stringWithFormat:@"Robot %u is making is last delivery.", idx];
+                            currentBestStatus = [NSString stringWithFormat:@"Robot %u is making its last delivery.", idx];
                         }
                     }
                 } else if ([state isEqualToString:@"SPINNING"]) {
@@ -236,7 +236,7 @@
             if (isSpinning) {
                 return [NSString stringWithFormat:@"Robot stopped to spin! (%u/%lu in queue)", i+1, (unsigned long)[queue count]];
             }
-            return [NSString stringWithFormat:@"Finishing last delivery. You are %u/%lu in the queue.", i+1, (unsigned long)[queue count]];
+            return [NSString stringWithFormat:@"Ordered. You are %u/%lu in the queue.", i+1, (unsigned long)[queue count]];
         } else {
             if (!isSpinning) {
                 currentBestStatus = [NSString stringWithFormat:@"Current queue length: %lu", (unsigned long)[queue count]];
