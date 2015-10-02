@@ -30,13 +30,13 @@
         <property name="_location" class="ptolemy.kernel.util.Location" value="[1515.0, 1070.0]">
         </property>
     </property>
-    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={65, 24, 2495, 1416}, maximized=true}">
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={65, 24, 1855, 1176}, maximized=true}">
     </property>
-    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[2281, 1327]">
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1641, 1087]">
     </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.4132495980963486">
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0366971565910874">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{914.4674140573061, 833.0255421349502}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{897.6328125, 886.5162237507664}">
     </property>
     <property name="_layoutConfiguration" class="ptolemy.vergil.basic.layout.LayoutConfiguration">
     </property>
@@ -67,7 +67,7 @@
     <property name="ModelID" class="ptolemy.vergil.kernel.attributes.IDAttribute">
         <property name="created" class="ptolemy.kernel.util.StringAttribute" value="Aug 12, 2015 4:54:58 PM">
         </property>
-        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Sep 28, 2015 6:47:33 PM">
+        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Oct 2, 2015 2:11:43 AM">
         </property>
         <property name="author" class="ptolemy.kernel.util.StringAttribute" value="bradjc">
         </property>
@@ -112,7 +112,7 @@
         <property name="_location" class="ptolemy.kernel.util.Location" value="[452.5, 942.5]">
         </property>
     </property>
-    <property name="rosBridgeIP" class="ptolemy.data.expr.StringParameter" value="192.168.11.108">
+    <property name="rosBridgeIP" class="ptolemy.data.expr.StringParameter" value="141.212.11.214">
         <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
         </property>
         <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
@@ -272,40 +272,26 @@
         </port>
         <port name="cmd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
         <port name="battery" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="state" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="location" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="pose" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="cmdvel" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="cancel" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
     </entity>
     <entity name="CoordinateLinearTransform" class="org.terraswarm.accessor.JSAccessor">
@@ -340,13 +326,9 @@
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
             <property name="multiport"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="Scarab2" class="org.terraswarm.accessor.JSAccessor">
@@ -384,40 +366,26 @@
         </port>
         <port name="cmd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
         <port name="battery" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="state" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="location" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="pose" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="cmdvel" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="cancel" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
     </entity>
     <entity name="WebSocketServer" class="org.terraswarm.accessor.JSAccessor">
@@ -534,27 +502,21 @@
         </port>
         <port name="toSend" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="false">
             </property>
         </port>
         <port name="received" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="connection" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
     </entity>
     <entity name="Display6" class="ptolemy.actor.lib.gui.Display">
         <display name="Connections"/>
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={128, 393, 759, 283}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={128, 421, 760, 311}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
@@ -593,50 +555,34 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="Select" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_cardinal" class="ptolemy.kernel.util.StringAttribute" value="SOUTH">
             </property>
         </port>
         <port name="Output0" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="Output1" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="Output2" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="Output3" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="Output4" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="Output5" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
     </entity>
     <entity name="RoboCafeController" class="org.terraswarm.accessor.JSAccessor">
         <display name="ApplicationController"/>
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** RoboCafe Controller&#10; *&#10; *  @accessor RoboCafeController&#10; *&#10;*/&#10;&#10;&#10;var NUM_ROBOTS = 4;&#10;&#10;// STATES&#10;var STATE_IDLE = 'IDLE';         // Robot is currently just sitting there.&#10;var STATE_SERVING = 'SERVING';   // Robot has been requested and is going to a person.&#10;var STATE_SPINNING = 'SPINNING'; // Applause was detected and the robot is interrupted to spin.&#10;&#10;var TIMEOUT_MS = 30000; // 30 seconds&#10;&#10;// MAPPING OF ITEM TO ROBOTS and the queue for that item&#10;var ITEMS = {&#10;  Twix:        {&#10;    robots: [0, 3],&#10;    queue: []&#10;  },&#10;  SquirtGun:   {&#10;    robots: [1],&#10;    queue: []&#10;  },&#10;  BouncyBalls: {&#10;    robots: [2],&#10;    queue: []&#10;  }&#10;}&#10;&#10;// Array of robot structs with state on each one.&#10;var robots = [];&#10;&#10;// Keep track of last known timestamp from alps for phone ids&#10;var alps_updates_times = {};&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function () {&#10;  //&#10;  // I/O&#10;  //&#10;  input('UserChoice');&#10;  input('Applause');&#10;  input('ALPS');&#10;&#10;  output('SelectPhoneRobot');&#10;  output('RobotStatus');&#10;  output('AppState');&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // Which robot to make spin.&#10;  parameter('SpinRobotIndex', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;  // Number of seconds the robot will spin for.&#10;  parameter('SpinRobotDuration', {&#10;    type: 'number',&#10;    value: 5&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  // Initialize all robots&#10;  for (var i=0; i&lt;NUM_ROBOTS; i++) {&#10;    var robot = {};&#10;    robot.state = STATE_IDLE;&#10;    robot.servicing = null;&#10;    robots[i] = robot;&#10;&#10;    // Output initial status&#10;    update_status(i, STATE_IDLE);&#10;  }&#10;&#10;  addInputHandler('UserChoice', Choice_in);&#10;  addInputHandler('Applause', Applause_in);&#10;  addInputHandler('ALPS', ALPS_in);&#10;&#10;  // In case more than one request is received before a 'spin','cancelled' or&#10;  // 'finished' event, the second request ends up in the queue until the next&#10;  // event. To avoid this, poll queues and process events if robots are free.&#10;  setInterval(process_queue, 1000);&#10;&#10;  // Periodically send out the application status for any new devices&#10;  // that connect&#10;  setInterval(publish_state, 1000);&#10;&#10;  // Periodically print the state for debugging purposes&#10;  setInterval(print_state, 10000);&#10;}&#10;&#10;&#10;// Effectively connect an incoming location stream to a robot's&#10;// /goal topic.&#10;// operation is whether to connect ('add') or disconnect ('remove')&#10;// the connection between the phone and robot.&#10;function set_source_and_robot (phone_id, robot_index, operation) {&#10;  var out = {&#10;    type: operation,&#10;    input: phone_id,&#10;    output: robot_index&#10;  }&#10;  send('SelectPhoneRobot', out);&#10;}&#10;&#10;// Publish on the status output a robot's state change&#10;function update_status (robot_index, state) {&#10;  robots[robot_index].state = state;&#10;  send('RobotStatus', {&#10;    robotid: robot_index,&#10;    status: state&#10;  });&#10;}&#10;&#10;// Tell all listeners what's going on in the controller.&#10;function publish_state () {&#10;  send('AppState', {robots: robots, items: ITEMS});&#10;}&#10;&#10;function print_state () {&#10;  console.log({robots: robots, items: ITEMS});&#10;}&#10;&#10;function process_queue () {&#10;&#10;  // Iterate over items, and in turn each robot&#10;  for (var item in ITEMS) {&#10;    var item_obj = ITEMS[item];&#10;&#10;    // Each robot for the item&#10;    for (var i=0; i&lt;item_obj.robots.length; i++) {&#10;      var rbt_idx = item_obj.robots[i];&#10;      var rbt = robots[rbt_idx];&#10;&#10;      // Our options are to send this robot to someone in the queue,&#10;      // leave it alone, or send it home.&#10;      if (rbt.state != STATE_IDLE) {&#10;        // Robot is busy, leave it alone&#10;        console.log('Robot ' + rbt_idx + ' is busy. Queue len: ' + item_obj.queue.length);&#10;&#10;        // However, we want to boot users who are no longer providing updates&#10;        var now = Date.now();&#10;        if (!(rbt.servicing in alps_updates_times)) {&#10;          // We have not gotten an ALPS update for this node.&#10;          // Use the current timestamp as an approximation&#10;          alps_updates_times[rbt.servicing] = now;&#10;        }&#10;        if (now - alps_updates_times[rbt.servicing] &gt; TIMEOUT_MS) {&#10;          // This node has timed out. Force cancel it.&#10;          console.log('Phone ' + rbt.servicing + ' timed out and was dropped from item ' + item);&#10;          cancel_delivery(rbt.servicing, item);&#10;        }&#10;&#10;      } else {&#10;        // Robot is idle.&#10;        if (item_obj.queue.length &gt; 0) {&#10;          // Aha! Someone is waiting for this item, and this robot is idle.&#10;          // Send it!&#10;          var next_phone = item_obj.queue.shift();&#10;          rbt.state = STATE_SERVING;&#10;          // Keep track of which user this robot is attached to&#10;          rbt.servicing = next_phone;&#10;          // And send the robot to the person&#10;          set_source_and_robot(next_phone, rbt_idx, 'add');&#10;          // And update output status&#10;          update_status(rbt_idx, STATE_SERVING);&#10;          publish_state();&#10;&#10;        } else {&#10;          // This robot is idle and no one wants anything from it.&#10;          // Make sure it is going home. It's entirely possible this line&#10;          // of code gets called multiple times. This is OK as the switch&#10;          // handles that.&#10;          set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');&#10;        }&#10;      }&#10;    }&#10;  }&#10;}&#10;&#10;function cancel_delivery (phone_id, selection) {&#10;  // Get the list of robots that may have been navigating to the user&#10;  var robot_indexes = ITEMS[selection].robots;&#10;&#10;  // Iterate each robot, checking to see if it was heading for that&#10;  // user. If so, stop the robot from doing that.&#10;  for (var i=0; i&lt;robot_indexes.length; i++) {&#10;    var rbt_idx = robot_indexes[i];&#10;    var rbt = robots[rbt_idx];&#10;&#10;    // Check if this robot was helping this person&#10;    if (rbt.state == STATE_SERVING &amp;&amp; rbt.servicing == phone_id) {&#10;      // This checks out. Stop the robot from what it was doing&#10;      // and send it home.&#10;      set_source_and_robot(phone_id, rbt_idx, 'remove');&#10;      update_status(rbt_idx, STATE_IDLE);&#10;      rbt.servicing = null;&#10;      publish_state();&#10;    }&#10;  }&#10;&#10;  // Now check that this user wasn't queued for a robot with that&#10;  // item. If it was, remove it.&#10;  var item_queue = ITEMS[selection].queue;&#10;  if (item_queue.indexOf(phone_id) &gt; -1) {&#10;    item_queue.splice(item_queue.indexOf(phone_id), 1);&#10;  }&#10;}&#10;&#10;var Choice_in = function () {&#10;  var ws_payload = get('UserChoice');&#10;&#10;  // Check if this is a normal message from a client or a status message&#10;  if ('message' in ws_payload) {&#10;    var msg = ws_payload.message;&#10;&#10;    // Get the unique identifier for what sent this packet&#10;    var phone_id = msg.phone_id;&#10;&#10;    // Do some common operations for choice selections, cancellations,&#10;    // and done events&#10;    if (msg.type == 'selection' ||&#10;        msg.type == 'cancelled' ||&#10;        msg.type == 'finished') {&#10;&#10;      // What item/candy the user asked for&#10;      var selection = msg.selection;&#10;&#10;      // Now that we know what the user wants, figure out if we can satisfy&#10;      // the request&#10;      if (selection in ITEMS) {&#10;&#10;        // We know what this is. If the user wants it we add them to the queue&#10;        // and we'll process the queue to dispatch a robot.&#10;        if (msg.type == 'selection') {&#10;          // Add the request to the queue for that item, if the user is not&#10;          // already in the queue.&#10;          if (ITEMS[selection].queue.indexOf(phone_id) == -1) {&#10;            ITEMS[selection].queue.push(phone_id);&#10;            publish_state();&#10;          }&#10;&#10;        } else if (msg.type == 'cancelled' || msg.type == 'finished') {&#10;          // User got the item or doesn't want it&#10;          cancel_delivery(phone_id, selection);&#10;        }&#10;&#10;        // And take care of our queues to see if we should dispatch robots&#10;        // anywhere.&#10;        process_queue();&#10;&#10;      } else {&#10;        console.log('Could not find a robot that matched item ' + selection);&#10;      }&#10;&#10;    }&#10;&#10;  } else {&#10;    console.log('Not a valid web socket message');&#10;  }&#10;&#10;}&#10;&#10;var Applause_in = function () {&#10;  var a = get('Applause');&#10;&#10;  if (a == 'no_applause') {&#10;    // ignore&#10;&#10;  } else if (a == 'some_applause') {&#10;    // Make one robot spin&#10;&#10;    var robot_index = parseInt(getParameter('SpinRobotIndex'));&#10;    var robot = robots[robot_index];&#10;&#10;    //unset the service status.&#10;    // var old_servicing = robot.servicing;&#10;&#10;    // Robot is busy with spinning!&#10;    update_status(robot_index, STATE_SPINNING);&#10;&#10;    if (robot.servicing != null) {&#10;      console.log(&quot;Will queue &quot; + robot.servicing + &quot; to be processed later.&quot;);&#10;      // Find which item this robot is carrying, and add this user to that&#10;      // queue.&#10;      for (var item in ITEMS) {&#10;        if (ITEMS[item].robots.indexOf(robot_index) != -1) {&#10;          ITEMS[item].queue.unshift(robot.servicing);&#10;        }&#10;      }&#10;&#10;      // Stop what ever was controlling the robot before&#10;      set_source_and_robot(robot.servicing, robot_index, 'remove');&#10;&#10;      // Clear this&#10;      robot.servicing = null;&#10;    }&#10;&#10;    // Make it spin&#10;    set_source_and_robot('Spin', robot_index, 'add');&#10;&#10;    // After the spin is done, put it back&#10;    setTimeout(function () {&#10;      // Stop the spin command&#10;      set_source_and_robot('Spin', robot_index, 'remove');&#10;&#10;      // Go idle for now&#10;      update_status(robot_index, STATE_IDLE);&#10;&#10;      // Keep all of the update logic in one place. Since we added the previous&#10;      // user to the front of the queue we can just use that to reconfigure the&#10;      // robot.&#10;      process_queue();&#10;    }, getParameter('SpinRobotDuration') * 1000);&#10;&#10;&#10;  }&#10;}&#10;&#10;// Record the most recent timestamp for the alps update for each phone&#10;var ALPS_in = function () {&#10;  var a = get('ALPS');&#10;&#10;  var now = Date.now();&#10;  alps_updates_times[a.id] = now;&#10;}&#10;">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** RoboCafe Controller&#10; *&#10; *  @accessor RoboCafeController&#10; *&#10;*/&#10;&#10;&#10;var NUM_ROBOTS = 4;&#10;&#10;// STATES&#10;var STATE_IDLE = 'IDLE';         // Robot is currently just sitting there.&#10;var STATE_SERVING = 'SERVING';   // Robot has been requested and is going to a person.&#10;var STATE_SPINNING = 'SPINNING'; // Applause was detected and the robot is interrupted to spin.&#10;&#10;var TIMEOUT_MS = 30000; // 30 seconds&#10;&#10;// MAPPING OF ITEM TO ROBOTS and the queue for that item&#10;var ITEMS = {&#10;  Twix:        {&#10;    robots: [0, 3],&#10;    queue: []&#10;  },&#10;  SquirtGun:   {&#10;    robots: [1],&#10;    queue: []&#10;  },&#10;  BouncyBalls: {&#10;    robots: [2],&#10;    queue: []&#10;  }&#10;}&#10;&#10;// Array of robot structs with state on each one.&#10;var robots = [];&#10;&#10;// Keep track of last known timestamp from alps for phone ids&#10;var alps_updates_times = {};&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function () {&#10;  //&#10;  // I/O&#10;  //&#10;  input('UserChoice');&#10;  input('Applause');&#10;  input('ALPS');&#10;&#10;  output('SelectPhoneRobot');&#10;  output('RobotStatus');&#10;  output('AppState');&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // Which robot to make spin.&#10;  parameter('SpinRobotIndex', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;  // Number of seconds the robot will spin for.&#10;  parameter('SpinRobotDuration', {&#10;    type: 'number',&#10;    value: 5&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  // Initialize all robots&#10;  for (var i=0; i&lt;NUM_ROBOTS; i++) {&#10;    var robot = {};&#10;    robot.state = STATE_IDLE;&#10;    robot.servicing = null;&#10;    robots[i] = robot;&#10;&#10;    // Output initial status&#10;    update_status(i, STATE_IDLE);&#10;  }&#10;&#10;  addInputHandler('UserChoice', Choice_in);&#10;  addInputHandler('Applause', Applause_in);&#10;  addInputHandler('ALPS', ALPS_in);&#10;&#10;  // In case more than one request is received before a 'spin','cancelled' or&#10;  // 'finished' event, the second request ends up in the queue until the next&#10;  // event. To avoid this, poll queues and process events if robots are free.&#10;  setInterval(process_queue, 1000);&#10;&#10;  // Periodically send out the application status for any new devices&#10;  // that connect&#10;  setInterval(publish_state, 1000);&#10;&#10;  // Periodically print the state for debugging purposes&#10;  setInterval(print_state, 10000);&#10;}&#10;&#10;&#10;// Effectively connect an incoming location stream to a robot's&#10;// /goal topic.&#10;// operation is whether to connect ('add') or disconnect ('remove')&#10;// the connection between the phone and robot.&#10;function set_source_and_robot (phone_id, robot_index, operation) {&#10;  var out = {&#10;    type: operation,&#10;    input: phone_id,&#10;    output: robot_index&#10;  }&#10;  send('SelectPhoneRobot', out);&#10;}&#10;&#10;// Publish on the status output a robot's state change&#10;function update_status (robot_index, state) {&#10;  robots[robot_index].state = state;&#10;  send('RobotStatus', {&#10;    robotid: robot_index,&#10;    status: state&#10;  });&#10;}&#10;&#10;// Tell all listeners what's going on in the controller.&#10;function publish_state () {&#10;  send('AppState', {robots: robots, items: ITEMS});&#10;}&#10;&#10;function print_state () {&#10;  console.log({robots: robots, items: ITEMS});&#10;}&#10;&#10;function process_queue () {&#10;&#10;  // Iterate over items, and in turn each robot&#10;  for (var item in ITEMS) {&#10;    var item_obj = ITEMS[item];&#10;&#10;    // Each robot for the item&#10;    for (var i=0; i&lt;item_obj.robots.length; i++) {&#10;      var rbt_idx = item_obj.robots[i];&#10;      var rbt = robots[rbt_idx];&#10;&#10;      // Our options are to send this robot to someone in the queue,&#10;      // leave it alone, or send it home.&#10;      if (rbt.state != STATE_IDLE) {&#10;        // Robot is busy, leave it alone&#10;        //console.log('Robot ' + rbt_idx + ' is busy. Queue len: ' + item_obj.queue.length);&#10;&#10;        // However, we want to boot users who are no longer providing updates&#10;        var now = Date.now();&#10;        if (!(rbt.servicing in alps_updates_times)) {&#10;          // We have not gotten an ALPS update for this node.&#10;          // Use the current timestamp as an approximation&#10;          alps_updates_times[rbt.servicing] = now;&#10;        }&#10;        if (now - alps_updates_times[rbt.servicing] &gt; TIMEOUT_MS) {&#10;          // This node has timed out. Force cancel it.&#10;          console.log('Phone ' + rbt.servicing + ' timed out and was dropped from item ' + item);&#10;          cancel_delivery(rbt.servicing, item);&#10;        }&#10;&#10;      } else {&#10;        // Robot is idle.&#10;        if (item_obj.queue.length &gt; 0) {&#10;          // Aha! Someone is waiting for this item, and this robot is idle.&#10;          // Send it!&#10;          var next_phone = item_obj.queue.shift();&#10;          rbt.state = STATE_SERVING;&#10;          // Keep track of which user this robot is attached to&#10;          rbt.servicing = next_phone;&#10;          // And send the robot to the person&#10;          set_source_and_robot(next_phone, rbt_idx, 'add');&#10;          // And update output status&#10;          update_status(rbt_idx, STATE_SERVING);&#10;          publish_state();&#10;&#10;        } else {&#10;          // This robot is idle and no one wants anything from it.&#10;          // Make sure it is going home. It's entirely possible this line&#10;          // of code gets called multiple times. This is OK as the switch&#10;          // handles that.&#10;          set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');&#10;        }&#10;      }&#10;    }&#10;  }&#10;}&#10;&#10;function cancel_delivery (phone_id, selection) {&#10;  // Get the list of robots that may have been navigating to the user&#10;  var robot_indexes = ITEMS[selection].robots;&#10;&#10;  // Iterate each robot, checking to see if it was heading for that&#10;  // user. If so, stop the robot from doing that.&#10;  for (var i=0; i&lt;robot_indexes.length; i++) {&#10;    var rbt_idx = robot_indexes[i];&#10;    var rbt = robots[rbt_idx];&#10;&#10;    // Check if this robot was helping this person&#10;    if (rbt.state == STATE_SERVING &amp;&amp; rbt.servicing == phone_id) {&#10;      // This checks out. Stop the robot from what it was doing&#10;      // and send it home.&#10;      set_source_and_robot(phone_id, rbt_idx, 'remove');&#10;      update_status(rbt_idx, STATE_IDLE);&#10;      rbt.servicing = null;&#10;      publish_state();&#10;    }&#10;  }&#10;&#10;  // Now check that this user wasn't queued for a robot with that&#10;  // item. If it was, remove it.&#10;  var item_queue = ITEMS[selection].queue;&#10;  if (item_queue.indexOf(phone_id) &gt; -1) {&#10;    item_queue.splice(item_queue.indexOf(phone_id), 1);&#10;  }&#10;}&#10;&#10;var Choice_in = function () {&#10;  var ws_payload = get('UserChoice');&#10;&#10;  // Check if this is a normal message from a client or a status message&#10;  if ('message' in ws_payload) {&#10;    var msg = ws_payload.message;&#10;&#10;    // Get the unique identifier for what sent this packet&#10;    var phone_id = msg.phone_id;&#10;&#10;    // Do some common operations for choice selections, cancellations,&#10;    // and done events&#10;    if (msg.type == 'selection' ||&#10;        msg.type == 'cancelled' ||&#10;        msg.type == 'finished') {&#10;&#10;      // What item/candy the user asked for&#10;      var selection = msg.selection;&#10;&#10;      // Now that we know what the user wants, figure out if we can satisfy&#10;      // the request&#10;      if (selection in ITEMS) {&#10;&#10;        // We know what this is. If the user wants it we add them to the queue&#10;        // and we'll process the queue to dispatch a robot.&#10;        if (msg.type == 'selection') {&#10;          // Add the request to the queue for that item, if the user is not&#10;          // already in the queue.&#10;          if (ITEMS[selection].queue.indexOf(phone_id) == -1) {&#10;            // Also pretend like we got a location update&#10;            // so we don't immediately timeout&#10;            alps_updates_times[phone_id] = Date.now();&#10;            &#10;            ITEMS[selection].queue.push(phone_id);&#10;            publish_state();&#10;          }&#10;&#10;        } else if (msg.type == 'cancelled' || msg.type == 'finished') {&#10;          // User got the item or doesn't want it&#10;          cancel_delivery(phone_id, selection);&#10;        }&#10;&#10;        // And take care of our queues to see if we should dispatch robots&#10;        // anywhere.&#10;        process_queue();&#10;&#10;      } else {&#10;        console.log('Could not find a robot that matched item ' + selection);&#10;      }&#10;&#10;    }&#10;&#10;  } else {&#10;    console.log('Not a valid web socket message');&#10;  }&#10;&#10;}&#10;&#10;var Applause_in = function () {&#10;  var a = get('Applause');&#10;&#10;  if (a == 'no_applause') {&#10;    // ignore&#10;&#10;  } else if (a == 'some_applause') {&#10;    // Make one robot spin&#10;&#10;    var robot_index = parseInt(getParameter('SpinRobotIndex'));&#10;    var robot = robots[robot_index];&#10;&#10;    //unset the service status.&#10;    // var old_servicing = robot.servicing;&#10;&#10;    // Robot is busy with spinning!&#10;    update_status(robot_index, STATE_SPINNING);&#10;&#10;    if (robot.servicing != null) {&#10;      console.log(&quot;Will queue &quot; + robot.servicing + &quot; to be processed later.&quot;);&#10;      // Find which item this robot is carrying, and add this user to that&#10;      // queue.&#10;      for (var item in ITEMS) {&#10;        if (ITEMS[item].robots.indexOf(robot_index) != -1) {&#10;          ITEMS[item].queue.unshift(robot.servicing);&#10;        }&#10;      }&#10;&#10;      // Stop what ever was controlling the robot before&#10;      set_source_and_robot(robot.servicing, robot_index, 'remove');&#10;&#10;      // Clear this&#10;      robot.servicing = null;&#10;    }&#10;&#10;    // Make it spin&#10;    set_source_and_robot('Spin', robot_index, 'add');&#10;&#10;    // After the spin is done, put it back&#10;    setTimeout(function () {&#10;      // Stop the spin command&#10;      set_source_and_robot('Spin', robot_index, 'remove');&#10;&#10;      // Go idle for now&#10;      update_status(robot_index, STATE_IDLE);&#10;&#10;      // Keep all of the update logic in one place. Since we added the previous&#10;      // user to the front of the queue we can just use that to reconfigure the&#10;      // robot.&#10;      process_queue();&#10;    }, getParameter('SpinRobotDuration') * 1000);&#10;&#10;&#10;  }&#10;}&#10;&#10;// Record the most recent timestamp for the alps update for each phone&#10;var ALPS_in = function () {&#10;  var a = get('ALPS');&#10;&#10;  var now = Date.now();&#10;  alps_updates_times[a.id] = now;&#10;}&#10;">
             <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
                 <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
                 </property>
@@ -665,42 +611,28 @@
         </port>
         <port name="UserChoice" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="SelectPhoneRobot" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="RobotStatus" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="Applause" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="AppState" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="ALPS" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
             <property name="_cardinal" class="ptolemy.kernel.util.StringAttribute" value="NORTH">
             </property>
         </port>
     </entity>
     <entity name="Display7" class="ptolemy.actor.lib.gui.Display">
         <display name="User Choices"/>
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={73, 550, 759, 283}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={75, 550, 759, 311}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
@@ -744,40 +676,26 @@
         </port>
         <port name="cmd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
         <port name="battery" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="state" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="location" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="pose" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="cmdvel" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="cancel" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
     </entity>
     <entity name="Command2Pose" class="org.terraswarm.accessor.JSAccessor">
@@ -806,30 +724,20 @@
         </port>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Location" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
             <property name="_cardinal" class="ptolemy.kernel.util.StringAttribute" value="SOUTH">
             </property>
         </port>
         <port name="Pose" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="CmdVel" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="Cancel" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
     </entity>
     <entity name="Command2Pose2" class="org.terraswarm.accessor.JSAccessor">
@@ -858,30 +766,20 @@
         </port>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Location" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
             <property name="_cardinal" class="ptolemy.kernel.util.StringAttribute" value="SOUTH">
             </property>
         </port>
         <port name="Pose" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="CmdVel" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="Cancel" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
     </entity>
     <entity name="Command2Pose3" class="org.terraswarm.accessor.JSAccessor">
@@ -910,30 +808,20 @@
         </port>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Location" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
             <property name="_cardinal" class="ptolemy.kernel.util.StringAttribute" value="SOUTH">
             </property>
         </port>
         <port name="Pose" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="CmdVel" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="Cancel" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
     </entity>
     <entity name="Command2Pose4" class="org.terraswarm.accessor.JSAccessor">
@@ -962,30 +850,20 @@
         </port>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Location" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
             <property name="_cardinal" class="ptolemy.kernel.util.StringAttribute" value="SOUTH">
             </property>
         </port>
         <port name="Pose" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="CmdVel" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="Cancel" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
     </entity>
     <entity name="Location2Command" class="org.terraswarm.accessor.JSAccessor">
@@ -1012,13 +890,9 @@
         </port>
         <port name="Location" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="Scarab3" class="org.terraswarm.accessor.JSAccessor">
@@ -1056,40 +930,26 @@
         </port>
         <port name="cmd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
         <port name="battery" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="state" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="location" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="pose" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="cmdvel" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="cancel" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
     </entity>
     <entity name="OpAddKeyValue" class="org.terraswarm.accessor.JSAccessor">
@@ -1126,13 +986,9 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="ConstantKeyValue" class="org.terraswarm.accessor.JSAccessor">
@@ -1251,8 +1107,6 @@
         </port>
         <port name="kv" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
     </entity>
     <entity name="OpAddKeyValue2" class="org.terraswarm.accessor.JSAccessor">
@@ -1319,13 +1173,9 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
     </entity>
     <entity name="WebSocketServer2" class="org.terraswarm.accessor.JSAccessor">
@@ -1443,27 +1293,21 @@
         </port>
         <port name="toSend" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
         <port name="received" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="connection" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
     </entity>
     <entity name="Display9" class="ptolemy.actor.lib.gui.Display">
         <display name="ALPS Location"/>
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={129, 630, 761, 312}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={269, 346, 759, 283}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
@@ -1500,13 +1344,9 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="ContainerLocation" class="org.terraswarm.accessor.JSAccessor">
@@ -1537,13 +1377,9 @@
         </port>
         <port name="LocationIn" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="LocationOut" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="GoCommandFilter" class="org.terraswarm.accessor.JSAccessor">
@@ -1574,13 +1410,9 @@
         </port>
         <port name="CommandIn" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="CommandOut" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="GoCommandFilter2" class="org.terraswarm.accessor.JSAccessor">
@@ -1613,13 +1445,9 @@
         </port>
         <port name="CommandIn" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="CommandOut" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="GoCommandFilter3" class="org.terraswarm.accessor.JSAccessor">
@@ -1650,13 +1478,9 @@
         </port>
         <port name="CommandIn" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="CommandOut" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="GoCommandFilter4" class="org.terraswarm.accessor.JSAccessor">
@@ -1687,13 +1511,9 @@
         </port>
         <port name="CommandIn" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="CommandOut" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="WebSocketServer3" class="org.terraswarm.accessor.JSAccessor">
@@ -1810,20 +1630,14 @@
         </port>
         <port name="toSend" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
         <port name="received" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="connection" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
@@ -1892,13 +1706,9 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="Display14" class="ptolemy.actor.lib.gui.Display">
@@ -1946,13 +1756,9 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="OpAddKeyValue4" class="org.terraswarm.accessor.JSAccessor">
@@ -1989,13 +1795,9 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="OpAddKeyValue5" class="org.terraswarm.accessor.JSAccessor">
@@ -2032,17 +1834,13 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="LocationRosPublisher" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2015 The Regents of the University of Michigan.&#10;// All rights reserved.&#10;&#10;// Permission is hereby granted, without written agreement and without&#10;// license or royalty fees, to use, copy, modify, and distribute this&#10;// software and its documentation for any purpose, provided that the above&#10;// copyright notice and the following two paragraphs appear in all copies&#10;// of this software.&#10;&#10;// IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY&#10;// FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES&#10;// ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF&#10;// THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF&#10;// SUCH DAMAGE.&#10;&#10;// THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES,&#10;// INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF&#10;// MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE&#10;// PROVIDED HEREUNDER IS ON AN &quot;AS IS&quot; BASIS, AND THE UNIVERSITY OF&#10;// CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,&#10;// ENHANCEMENTS, OR MODIFICATIONS.&#10;&#10;/** Publish location X,Y,Z coordinates as a PointCloud to a ROS topic.&#10; *&#10; *  Incoming packets should have at least these keys:&#10; *     {&#10; *       X: &lt;x coordinate&gt;,&#10; *       Y: &lt;y coordinate&gt;,&#10; *       id: &lt;unique id for this location&gt;&#10; *     }&#10; *&#10; *  All locations are published as a PointCloud so that the ROS visualization&#10; *  only needs to subscribe to one topic.&#10; *&#10; *  @accessor robotics/LocationRosPublisher&#10; *  @parameter {string} topic The ROS topic to publish to.&#10; *  @parameter {string} frame_id The frame_id of the header (only needed if a header is required).&#10; *  @author Brad Campbell&#10; *  @version $$Id: RosPublisher.js 271 2015-08-22 08:23:01Z eal $$&#10; */&#10;&#10;&#10;ROS_TYPE = 'sensor_msgs/PointCloud';&#10;&#10;// location_id -&gt; {position: {X, Y, Z}, color: &lt;some color as a float&gt;}&#10;locations = {};&#10;&#10;/** Sets up by accessor by inheriting inputs from setup() in WebSocketClient. Adds additional parameters regarding the ROS topic to publish to. */&#10;exports.setup = function() {&#10;   extend('net/WebSocketClient');&#10;   parameter('topic', {&#10;      type: &quot;string&quot;&#10;   });&#10;   parameter('frame_id', {&#10;      type: &quot;string&quot;,&#10;      value: &quot;&quot;&#10;   });&#10;}&#10;&#10;/**  Inherits initialize from WebSocketClient.&#10; *   Advertise the topic we are publishing to.*/&#10;exports.initialize = function() {&#10;   this.ssuper.initialize.apply(this);&#10;}&#10;&#10;/** Override onOpen from WebSocketClient */&#10;exports.onOpen = function() {&#10;   this.ssuper.onOpen.apply(this);&#10;&#10;   // Advertise what we have when the websocket opens.&#10;   var advertise = {&#10;      &quot;op&quot;: &quot;advertise&quot;,&#10;      &quot;topic&quot;: getParameter('topic'),&#10;      &quot;type&quot;: ROS_TYPE&#10;   };&#10;   exports.sendToWebSocket(advertise);&#10;}&#10;&#10;function random_color () {&#10;   var letters = '0123456789ABCDEF'.split('');&#10;   var color = '0x';&#10;   for (var i = 0; i &lt; 6; i++ ) {&#10;      color += letters[Math.floor(Math.random() * 16)];&#10;   }&#10;   return parseInt(color, 16);&#10;&#10;}&#10;&#10;/** Override inputHandler on 'toSend' from WebSocketClient */&#10;exports.toSendInputHandler = function() {&#10;   var msg = get('toSend');&#10;&#10;   // Update the current location map with this incoming packet&#10;   var id = msg.id;&#10;   var x = msg.X || 0;&#10;   var y = msg.Y || 0;&#10;   var z = msg.Z || 0;&#10;&#10;   // Check if this ID already has a color&#10;   var color = 0.0;&#10;   if (id in locations) {&#10;      color = locations[id].color;&#10;   } else {&#10;      color = random_color();&#10;   }&#10;&#10;   // Actually update the record&#10;   locations[id] = {&#10;      position: {&#10;         x: x,&#10;         y: y,&#10;         z: z&#10;      },&#10;      color: color&#10;   };&#10;&#10;   // Create arrays we can publish&#10;   var location_points = [];&#10;   var colors = [];&#10;   Object.keys(locations).forEach(function (key) {&#10;      location_points.push(locations[key].position);&#10;      colors.push(locations[key].color);&#10;   });&#10;&#10;   var out = {&#10;      header: {&#10;         frame_id: getParameter('frame_id')&#10;      },&#10;      points: location_points,&#10;      channels: [&#10;         {&#10;            name: 'rgb',&#10;            values: colors&#10;         }&#10;      ]&#10;   };&#10;&#10;   var data = {&#10;      &quot;op&quot;: &quot;publish&quot;,&#10;      &quot;topic&quot;: getParameter('topic'),&#10;      &quot;msg&quot;: out&#10;   }&#10;&#10;   exports.sendToWebSocket(data);&#10;}&#10;&#10;&#10;&#10;/** Unadvertise the topic and inherit wrapup from WebSocketClient */&#10;exports.wrapup = function() {&#10;   if (exports.isOpen()) {&#10;      var unadvertise = {&#10;         &quot;op&quot;: &quot;unadvertise&quot;,&#10;         &quot;topic&quot;: getParameter('topic')&#10;      };&#10;      exports.sendToWebSocket(unadvertise);&#10;   }&#10;   this.ssuper.wrapup();&#10;}&#10;">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2015 The Regents of the University of Michigan.&#10;// All rights reserved.&#10;&#10;// Permission is hereby granted, without written agreement and without&#10;// license or royalty fees, to use, copy, modify, and distribute this&#10;// software and its documentation for any purpose, provided that the above&#10;// copyright notice and the following two paragraphs appear in all copies&#10;// of this software.&#10;&#10;// IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY&#10;// FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES&#10;// ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF&#10;// THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF&#10;// SUCH DAMAGE.&#10;&#10;// THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES,&#10;// INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF&#10;// MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE&#10;// PROVIDED HEREUNDER IS ON AN &quot;AS IS&quot; BASIS, AND THE UNIVERSITY OF&#10;// CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,&#10;// ENHANCEMENTS, OR MODIFICATIONS.&#10;&#10;/** Publish location X,Y,Z coordinates as a PointCloud to a ROS topic.&#10; *&#10; *  Incoming packets should have at least these keys:&#10; *     {&#10; *       X: &lt;x coordinate&gt;,&#10; *       Y: &lt;y coordinate&gt;,&#10; *       id: &lt;unique id for this location&gt;&#10; *     }&#10; *&#10; *  All locations are published as a PointCloud so that the ROS visualization&#10; *  only needs to subscribe to one topic.&#10; *&#10; *  @accessor robotics/LocationRosPublisher&#10; *  @parameter {string} topic The ROS topic to publish to.&#10; *  @parameter {string} frame_id The frame_id of the header (only needed if a header is required).&#10; *  @author Brad Campbell&#10; *  @version $$Id: RosPublisher.js 271 2015-08-22 08:23:01Z eal $$&#10; */&#10;&#10;&#10;ROS_TYPE = 'sensor_msgs/PointCloud';&#10;&#10;// location_id -&gt; {position: {X, Y, Z}, color: &lt;some color as a float&gt;}&#10;locations = {};&#10;&#10;/** Sets up by accessor by inheriting inputs from setup() in WebSocketClient. Adds additional parameters regarding the ROS topic to publish to. */&#10;exports.setup = function() {&#10;   extend('net/WebSocketClient');&#10;   parameter('topic', {&#10;      type: &quot;string&quot;&#10;   });&#10;   parameter('frame_id', {&#10;      type: &quot;string&quot;,&#10;      value: &quot;&quot;&#10;   });&#10;}&#10;&#10;/**  Inherits initialize from WebSocketClient.&#10; *   Advertise the topic we are publishing to.*/&#10;exports.initialize = function() {&#10;console.log(this)&#10;console.log(this.ssuper)&#10;   this.ssuper.initialize.apply(this);&#10;}&#10;&#10;/** Override onOpen from WebSocketClient */&#10;exports.onOpen = function() {&#10;//console.log(this)&#10;//console.log(this.ssuper)&#10; //  this.ssuper.onOpen.apply(this);&#10;&#10;   // Advertise what we have when the websocket opens.&#10;   var advertise = {&#10;      &quot;op&quot;: &quot;advertise&quot;,&#10;      &quot;topic&quot;: getParameter('topic'),&#10;      &quot;type&quot;: ROS_TYPE&#10;   };&#10;   exports.sendToWebSocket(advertise);&#10;}&#10;&#10;function random_color () {&#10;   var letters = '0123456789ABCDEF'.split('');&#10;   var color = '0x';&#10;   for (var i = 0; i &lt; 6; i++ ) {&#10;      color += letters[Math.floor(Math.random() * 16)];&#10;   }&#10;   return parseInt(color, 16);&#10;&#10;}&#10;&#10;/** Override inputHandler on 'toSend' from WebSocketClient */&#10;exports.toSendInputHandler = function() {&#10;   var msg = get('toSend');&#10;&#10;   // Update the current location map with this incoming packet&#10;   var id = msg.id;&#10;   var x = msg.X || 0;&#10;   var y = msg.Y || 0;&#10;   var z = msg.Z || 0;&#10;&#10;   // Check if this ID already has a color&#10;   var color = 0.0;&#10;   if (id in locations) {&#10;      color = locations[id].color;&#10;   } else {&#10;      color = random_color();&#10;   }&#10;&#10;   // Actually update the record&#10;   locations[id] = {&#10;      position: {&#10;         x: x,&#10;         y: y,&#10;         z: z&#10;      },&#10;      color: color&#10;   };&#10;&#10;   // Create arrays we can publish&#10;   var location_points = [];&#10;   var colors = [];&#10;   Object.keys(locations).forEach(function (key) {&#10;      location_points.push(locations[key].position);&#10;      colors.push(locations[key].color);&#10;   });&#10;&#10;   var out = {&#10;      header: {&#10;         frame_id: getParameter('frame_id')&#10;      },&#10;      points: location_points,&#10;      channels: [&#10;         {&#10;            name: 'rgb',&#10;            values: colors&#10;         }&#10;      ]&#10;   };&#10;&#10;   var data = {&#10;      &quot;op&quot;: &quot;publish&quot;,&#10;      &quot;topic&quot;: getParameter('topic'),&#10;      &quot;msg&quot;: out&#10;   }&#10;&#10;   exports.sendToWebSocket(data);&#10;}&#10;&#10;&#10;&#10;/** Unadvertise the topic and inherit wrapup from WebSocketClient */&#10;exports.wrapup = function() {&#10;   if (exports.isOpen()) {&#10;      var unadvertise = {&#10;         &quot;op&quot;: &quot;unadvertise&quot;,&#10;         &quot;topic&quot;: getParameter('topic')&#10;      };&#10;      exports.sendToWebSocket(unadvertise);&#10;   }&#10;   this.ssuper.wrapup();&#10;}&#10;">
             <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
                 <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
                 </property>
@@ -2058,7 +1856,7 @@
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="[585.0, 445.0]">
         </property>
-        <property name="server" class="ptolemy.data.expr.Parameter" value="192.168.11.108">
+        <property name="server" class="ptolemy.data.expr.Parameter" value="$rosBridgeIP">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
@@ -2193,20 +1991,14 @@
         </port>
         <port name="toSend" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="connected" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
         <port name="received" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
@@ -2308,20 +2100,14 @@
         </port>
         <port name="toSend" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="received" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
         <port name="connection" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
@@ -2356,13 +2142,9 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="OpAddKeyValue6" class="org.terraswarm.accessor.JSAccessor">
@@ -2399,13 +2181,9 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="WebSocketServer5" class="org.terraswarm.accessor.JSAccessor">
@@ -2426,7 +2204,7 @@
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="[1590.0, 665.0]">
         </property>
-        <property name="hostInterface" class="ptolemy.data.expr.Parameter" value="localhost">
+        <property name="hostInterface" class="ptolemy.data.expr.Parameter" value="0.0.0.0">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
@@ -2473,20 +2251,14 @@
         </port>
         <port name="toSend" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
         <port name="received" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
         <port name="connection" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
             <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
@@ -2521,13 +2293,9 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="OpAddKeyValue7" class="org.terraswarm.accessor.JSAccessor">
@@ -2564,13 +2332,9 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="OpMakeKeyValue3" class="org.terraswarm.accessor.JSAccessor">
@@ -2603,13 +2367,9 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="OpAddKeyValue8" class="org.terraswarm.accessor.JSAccessor">
@@ -2646,13 +2406,9 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="OpMakeKeyValue4" class="org.terraswarm.accessor.JSAccessor">
@@ -2685,13 +2441,9 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="OpAddKeyValue9" class="org.terraswarm.accessor.JSAccessor">
@@ -2728,13 +2480,9 @@
         </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
         </port>
     </entity>
     <entity name="MicrostepDelay5" class="ptolemy.actor.lib.MicrostepDelay">
@@ -2777,8 +2525,6 @@
         </port>
         <port name="pose" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
     </entity>
     <entity name="IndexedLocation2" class="org.terraswarm.accessor.JSAccessor">
@@ -2813,8 +2559,6 @@
         </port>
         <port name="pose" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
     </entity>
     <entity name="IndexedLocation3" class="org.terraswarm.accessor.JSAccessor">
@@ -2849,8 +2593,6 @@
         </port>
         <port name="pose" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
     </entity>
     <entity name="IndexedLocation4" class="org.terraswarm.accessor.JSAccessor">
@@ -2885,8 +2627,6 @@
         </port>
         <port name="pose" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
         </port>
     </entity>
     <relation name="relation17" class="ptolemy.actor.TypedIORelation">

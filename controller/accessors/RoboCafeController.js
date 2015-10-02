@@ -144,7 +144,7 @@ function process_queue () {
       // leave it alone, or send it home.
       if (rbt.state != STATE_IDLE) {
         // Robot is busy, leave it alone
-        console.log('Robot ' + rbt_idx + ' is busy. Queue len: ' + item_obj.queue.length);
+        //console.log('Robot ' + rbt_idx + ' is busy. Queue len: ' + item_obj.queue.length);
 
         // However, we want to boot users who are no longer providing updates
         var now = Date.now();
@@ -244,6 +244,10 @@ var Choice_in = function () {
           // Add the request to the queue for that item, if the user is not
           // already in the queue.
           if (ITEMS[selection].queue.indexOf(phone_id) == -1) {
+            // Also pretend like we got a location update
+            // so we don't immediately timeout
+            alps_updates_times[phone_id] = Date.now();
+            
             ITEMS[selection].queue.push(phone_id);
             publish_state();
           }
