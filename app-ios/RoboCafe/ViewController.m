@@ -76,10 +76,10 @@ AppDelegate *appDelegate;
         }
     }
 
-    if (!canEnableButtons) {
-        [_roboCafeStatusLabel setTextColor:[UIColor redColor]];
-    } else {
+    if (canEnableButtons && ([appDelegate.alpsPositionValid boolValue] == YES)) {
         [_roboCafeStatusLabel setTextColor:[UIColor blackColor]];
+    } else {
+        [_roboCafeStatusLabel setTextColor:[UIColor redColor]];
     }
 
     if (context == &_roboCafeStatusLabel) {
