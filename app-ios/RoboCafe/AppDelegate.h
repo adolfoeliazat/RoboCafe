@@ -18,6 +18,8 @@
 #define WEBSOCKET_RECONNECT_TIMEOUT 3 // Websocket reconnect timeout in seconds
 #define LOCAITON_REPEAT_TIME 0.5f //seconds
 
+#define POSITION_INVALIDATE_TIME 30.0f // seconds
+
 typedef NS_ENUM(NSInteger, WebsocketState) {
     WebsocketStateDisconnected,
     WebsocketStateConnecting,
@@ -63,6 +65,8 @@ typedef NS_ENUM(NSInteger, WebsocketState) {
 @property (nonatomic) NSDictionary *locationMsg;
 @property (nonatomic) NSTimer *locationResendTimer;
 @property (nonatomic) NSTimer* alpsWSReconnectTimer;
+@property (nonatomic) NSTimer* invalidPositionTimer;
+@property (nonatomic) NSNumber* alpsPositionValid;
 
 - (void) alpsWSConnect;
 

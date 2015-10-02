@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 #import "ViewControllerSettings.h"
 #import "ViewControllerCafeSettings.h"
 #import "LocationAnnounceWSDelegate.h"
@@ -32,6 +33,8 @@
     [[NSUserDefaults standardUserDefaults] registerDefaults:userDefaultsDefaults];
     
     _position = nil;
+
+    self.alpsPositionValid = [[NSNumber alloc] initWithBool:NO];
     
     // Set up ALPS
     _ALPS = [[ALPS alloc] initWithOptions:RECORD_LENGTH :TDMA_SLOTS];
@@ -164,10 +167,23 @@
                                    selector:@selector(repeatLocation:)
                                    userInfo:[self locationMsg]
                                     repeats:YES];
+
+    [_invalidPositionTimer invalidate];
+    self.alpsPositionValid = [NSNumber numberWithBool:YES];
+    _invalidPositionTimer = [NSTimer scheduledTimerWithTimeInterval:POSITION_INVALIDATE_TIME
+                                                             target:self
+                                                           selector:@selector(invalidatePosition:)
+                                                           userInfo:nil
+                                                            repeats:NO];
+
+}
+
+- (void)invalidatePosition:(NSTimer *)timer {
+    [_locationResendTimer invalidate];
+    self.alpsPositionValid = [NSNumber numberWithBool:NO];
 }
 
 - (void)repeatLocation:(NSTimer *)timer {
-    NSLog(@"Resending location");
     [self sendToLocationAnnounceWS:[self locationMsg]];
 }
 

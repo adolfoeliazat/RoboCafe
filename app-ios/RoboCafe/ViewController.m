@@ -29,11 +29,11 @@ AppDelegate *appDelegate;
     _cancelTwixButton.hidden = YES;
     _cancelBouncyBallButton.hidden = YES;
     _cancelSquirtGunButton.hidden = YES;
-    
+
     UIFontDescriptor* fontItalic = [_roboCafeStatusLabel.font.fontDescriptor fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitItalic];
     _roboCafeStatusLabel.font = [UIFont fontWithDescriptor:fontItalic size:0];
-    [_roboCafeStatusLabel setTextColor:[UIColor redColor]];
 
+    [appDelegate addObserver:self forKeyPath:@"alpsPositionValid" options:NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
     [appDelegate addObserver:self forKeyPath:@"alpsWSState" options:NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
     [appDelegate addObserver:self forKeyPath:@"cafeOrderWSState" options:NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
     [appDelegate addObserver:self forKeyPath:@"locationAnnounceWSState" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionNew context:&_roboCafeStatusLabel];
@@ -68,8 +68,18 @@ AppDelegate *appDelegate;
     } else if (appDelegate.locationAnnounceWSState != WebsocketStateConnected) {
         [self.roboCafeStatusLabel setText:@"No connection to location server"];
     } else {
-        [self.roboCafeStatusLabel setText:@""];
         canEnableButtons = YES;
+        if ([appDelegate.alpsPositionValid boolValue] == YES) {
+            [self.roboCafeStatusLabel setText:@"Got your location!"];
+        } else {
+            [self.roboCafeStatusLabel setText:@"Your location is unknown"];
+        }
+    }
+
+    if (!canEnableButtons) {
+        [_roboCafeStatusLabel setTextColor:[UIColor redColor]];
+    } else {
+        [_roboCafeStatusLabel setTextColor:[UIColor blackColor]];
     }
 
     if (context == &_roboCafeStatusLabel) {
