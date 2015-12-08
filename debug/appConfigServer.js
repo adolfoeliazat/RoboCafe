@@ -12,13 +12,16 @@ wss.on('connection', function connection(ws) {
 		ws.send(JSON.stringify({
 			setUserDefaults: {
 				item1: "Candy",
-				item2: "Snacks",
-				item3: "Beer!"
+				item2: "Gummy Bears",
+				item3: "Drinks"
 			},
-			setALPSWSURL: "ws://35.2.33.183:30005",
-			setCafeStatusWSURL: "ws://141.212.11.214:8081",
-			setLocationWSURL: "ws://141.212.11.214:8082"
-		}));
-		console.log('sent ' + Date.now());
+			setALPSWSURL: "ws://169.229.86.245:30005",
+			setCafeStatusWSURL: "ws://169.229.86.245:8081",
+			setLocationWSURL: "ws://169.229.86.245:8082"
+		}), function ack(error) {
+			console.log(error);
+		});
+		var now = new Date().toISOString()
+		console.log('sent ' + now);
 	}, 2000);
 });
